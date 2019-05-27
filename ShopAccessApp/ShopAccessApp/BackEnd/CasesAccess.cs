@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShopAccessApp.BackEnd
 {
-    public class Cases
+    public class CasesAccess
     {
-        List<cases> GetAllCases()
+        public List<cases> GetAllCases()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -16,7 +16,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        cases GetCasesByModel(string caseModel)
+        public cases GetCasesByModel(string caseModel)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -24,7 +24,16 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        void DeleteCasesByModel(string caseModelName)
+        public void CreateNewCase(cases newCase)
+        {
+            using (var db = new StudiaProjektBazyDanychEntities())
+            {
+                db.cases.Add(newCase);
+                db.SaveChanges();
+            }
+        }
+
+        public void DeleteCasesByModel(string caseModelName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
