@@ -34,7 +34,7 @@ namespace ShopAccessApp
         public virtual DbSet<ram_memories> ram_memories { get; set; }
         public virtual DbSet<Registration> Registration { get; set; }
         public virtual DbSet<services> services { get; set; }
-        public virtual DbSet<graphics_cards> graphic_cards { get; set; }
+        public virtual DbSet<users> users { get; set; }
         public virtual DbSet<warehouse_orders> warehouse_orders { get; set; }
         public virtual DbSet<wholesalers> wholesalers { get; set; }
         public virtual DbSet<client_order_set_view> client_order_set_view { get; set; }
