@@ -6,29 +6,29 @@ using System.Threading.Tasks;
 
 namespace ShopAccessApp.BackEnd
 {
-    public class MotherBoardsAcessor
+    public class ProcessorsAccessor
     {
-        public List<motherboards> GetAll()
+        public List<processors> GetAll()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.motherboards.ToList();
+                return db.processors.ToList();
             }
         }
 
-        public motherboards GetByModel(string modelName)
+        public processors GetByModel(string modelName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.motherboards.SingleOrDefault(t => t.model == modelName);
+                return db.processors.SingleOrDefault(t => t.model == modelName);
             }
         }
 
-        public void CreateNew(motherboards newGraphicCard)
+        public void CreateNew(processors newProcessor)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                db.motherboards.Add(newGraphicCard);
+                db.processors.Add(newProcessor);
                 db.SaveChanges();
             }
         }
@@ -37,8 +37,8 @@ namespace ShopAccessApp.BackEnd
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                var motherBoardToDelete = db.motherboards.SingleOrDefault(t => t.model == modelName);
-                db.motherboards.Remove(motherBoardToDelete);
+                var processorToDelete = db.processors.SingleOrDefault(t => t.model == modelName);
+                db.processors.Remove(processorToDelete);
                 db.SaveChanges();
             }
         }
