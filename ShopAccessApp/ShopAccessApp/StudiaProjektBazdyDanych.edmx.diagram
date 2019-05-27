@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cbe37cb7c9974d17a15fb7f7ec9e289c" Name="Diagram1">
+        <EntityTypeShape EntityType="StudiaProjektBazyDanychModel.cases" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudiaProjektBazyDanychModel.client_order_sets" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudiaProjektBazyDanychModel.clients" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudiaProjektBazyDanychModel.graphics_cards" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudiaProjektBazyDanychModel.motherboards" Width="1.5" PointX="0.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudiaProjektBazyDanychModel.processors" Width="1.5" PointX="0.75" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudiaProjektBazyDanychModel.ram_memories" Width="1.5" PointX="0.75" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudiaProjektBazyDanychModel.Registration" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudiaProjektBazyDanychModel.services" Width="1.5" PointX="0.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudiaProjektBazyDanychModel.users" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudiaProjektBazyDanychModel.warehouse_orders" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudiaProjektBazyDanychModel.wholesalers" Width="1.5" PointX="3.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudiaProjektBazyDanychModel.client_order_set_view" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudiaProjektBazyDanychModel.warehouse_order_view" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudiaProjektBazyDanychModel.database_firewall_rules" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="StudiaProjektBazyDanychModel.FK_client_order_sets_cases" ManuallyRouted="false" />
+        <AssociationConnector Association="StudiaProjektBazyDanychModel.FK_warehouse_orders_cases" ManuallyRouted="false" />
+        <AssociationConnector Association="StudiaProjektBazyDanychModel.FK_client_order_sets_clients" ManuallyRouted="false" />
+        <AssociationConnector Association="StudiaProjektBazyDanychModel.FK_client_order_sets_graphics_cards" ManuallyRouted="false" />
+        <AssociationConnector Association="StudiaProjektBazyDanychModel.FK_client_order_sets_motherboards" ManuallyRouted="false" />
+        <AssociationConnector Association="StudiaProjektBazyDanychModel.FK_client_order_sets_processors" ManuallyRouted="false" />
+        <AssociationConnector Association="StudiaProjektBazyDanychModel.FK_client_order_sets_ram_memories" ManuallyRouted="false" />
+        <AssociationConnector Association="StudiaProjektBazyDanychModel.FK_client_order_sets_services" ManuallyRouted="false" />
+        <AssociationConnector Association="StudiaProjektBazyDanychModel.FK_warehouse_orders_graphics_cards" ManuallyRouted="false" />
+        <AssociationConnector Association="StudiaProjektBazyDanychModel.FK_warehouse_orders_motherboards" ManuallyRouted="false" />
+        <AssociationConnector Association="StudiaProjektBazyDanychModel.FK_warehouse_orders_processors" ManuallyRouted="false" />
+        <AssociationConnector Association="StudiaProjektBazyDanychModel.FK_warehouse_orders_ram_memories" ManuallyRouted="false" />
+        <AssociationConnector Association="StudiaProjektBazyDanychModel.FK_warehouse_orders_wholesalers" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

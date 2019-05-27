@@ -1,0 +1,1254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="StudiaProjektBazyDanychModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cases">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="model" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="amount" Type="int" />
+          <Property Name="image_source" Type="nvarchar" MaxLength="128" />
+          <Property Name="description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="client_order_sets">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_client" Type="int" Nullable="false" />
+          <Property Name="id_motherboard" Type="int" />
+          <Property Name="motherboard_amount" Type="int" />
+          <Property Name="id_processor" Type="int" />
+          <Property Name="processor_amount" Type="int" />
+          <Property Name="id_graphics_card" Type="int" />
+          <Property Name="graphics_card_amount" Type="int" />
+          <Property Name="id_case" Type="int" />
+          <Property Name="case_amount" Type="int" />
+          <Property Name="id_ram_memory" Type="int" />
+          <Property Name="ram_memory_amount" Type="int" />
+          <Property Name="id_service" Type="int" />
+          <Property Name="additional_information" Type="nvarchar" MaxLength="500" />
+          <Property Name="order_date" Type="datetime" />
+          <Property Name="status" Type="smallint" Nullable="false" />
+          <Property Name="order_price" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="clients">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="city" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="street" Type="nvarchar" MaxLength="40" />
+          <Property Name="building_number" Type="nvarchar" MaxLength="7" Nullable="false" />
+          <Property Name="apartment_number" Type="nvarchar" MaxLength="5" />
+          <Property Name="post_code" Type="nchar" MaxLength="6" Nullable="false" />
+          <Property Name="phone_number" Type="nvarchar" MaxLength="16" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="graphics_cards">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="model" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="brand" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="amount" Type="int" />
+          <Property Name="image_source" Type="nvarchar" MaxLength="128" />
+          <Property Name="description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="motherboards">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="model" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cpu_socket" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ram_memory_type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ram_memory_slots" Type="int" Nullable="false" />
+          <Property Name="price" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="amount" Type="int" />
+          <Property Name="image_source" Type="nvarchar" MaxLength="128" />
+          <Property Name="description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="processors">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="model" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="brand" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="socket" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="price" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="amount" Type="int" />
+          <Property Name="image_source" Type="nvarchar" MaxLength="128" />
+          <Property Name="description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ram_memories">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="model" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="capacity_gb" Type="int" Nullable="false" />
+          <Property Name="price" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="amount" Type="int" />
+          <Property Name="image_source" Type="nvarchar" MaxLength="128" />
+          <Property Name="description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="activation_code" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="access_level" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="services">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="service" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="price" Type="decimal" Precision="7" Scale="2" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="access_level" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="warehouse_orders">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_wholesaler" Type="int" Nullable="false" />
+          <Property Name="id_motherboard" Type="int" />
+          <Property Name="motherboard_amount" Type="int" />
+          <Property Name="id_processor" Type="int" />
+          <Property Name="processor_amount" Type="int" />
+          <Property Name="id_graphics_card" Type="int" />
+          <Property Name="graphics_card_amount" Type="int" />
+          <Property Name="id_case" Type="int" />
+          <Property Name="case_amount" Type="int" />
+          <Property Name="id_ram_memory" Type="int" />
+          <Property Name="ram_memory_amount" Type="int" />
+          <Property Name="additional_information" Type="nvarchar" MaxLength="500" />
+          <Property Name="order_date" Type="datetime" />
+          <Property Name="status" Type="smallint" Nullable="false" />
+          <Property Name="order_price" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="wholesalers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'StudiaProjektBazyDanych.dbo.client_order_set_view' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="client_order_set_view">
+          <Key>
+            <PropertyRef Name="status" />
+            <PropertyRef Name="order_price" />
+          </Key>
+          <Property Name="status" Type="smallint" Nullable="false" />
+          <Property Name="order_date" Type="datetime" />
+          <Property Name="additional_information" Type="nvarchar" MaxLength="500" />
+          <Property Name="order_price" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="case_model" Type="nvarchar" MaxLength="50" />
+          <Property Name="case_amount" Type="int" />
+          <Property Name="case_price" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="graphics_card_model" Type="nvarchar" MaxLength="50" />
+          <Property Name="graphics_card_amount" Type="int" />
+          <Property Name="graphics_card_price" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="motherboard_model" Type="nvarchar" MaxLength="50" />
+          <Property Name="motherboard_amount" Type="int" />
+          <Property Name="motherboard_price" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="processor_model" Type="nvarchar" MaxLength="50" />
+          <Property Name="processor_amount" Type="int" />
+          <Property Name="processor_price" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="ram_memory_model" Type="nvarchar" MaxLength="50" />
+          <Property Name="ram_memory_amount" Type="int" />
+          <Property Name="ram_memory_price" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="service" Type="nvarchar" MaxLength="64" />
+          <Property Name="service_price" Type="decimal" Precision="7" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'StudiaProjektBazyDanych.dbo.warehouse_order_view' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="warehouse_order_view">
+          <Key>
+            <PropertyRef Name="status" />
+            <PropertyRef Name="order_price" />
+          </Key>
+          <Property Name="status" Type="smallint" Nullable="false" />
+          <Property Name="order_date" Type="datetime" />
+          <Property Name="additional_information" Type="nvarchar" MaxLength="500" />
+          <Property Name="company" Type="nvarchar" MaxLength="50" />
+          <Property Name="order_price" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="case_model" Type="nvarchar" MaxLength="50" />
+          <Property Name="case_amount" Type="int" />
+          <Property Name="case_price" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="graphics_card_model" Type="nvarchar" MaxLength="50" />
+          <Property Name="graphics_card_amount" Type="int" />
+          <Property Name="graphics_card_price" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="motherboard_model" Type="nvarchar" MaxLength="50" />
+          <Property Name="motherboard_amount" Type="int" />
+          <Property Name="motherboard_price" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="processor_model" Type="nvarchar" MaxLength="50" />
+          <Property Name="processor_amount" Type="int" />
+          <Property Name="processor_price" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="ram_memory_model" Type="nvarchar" MaxLength="50" />
+          <Property Name="ram_memory_amount" Type="int" />
+          <Property Name="rem_memory_price" Type="decimal" Precision="7" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'StudiaProjektBazyDanych.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_client_order_sets_cases">
+          <End Role="cases" Type="Self.cases" Multiplicity="0..1" />
+          <End Role="client_order_sets" Type="Self.client_order_sets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cases">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="client_order_sets">
+              <PropertyRef Name="id_case" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_client_order_sets_clients">
+          <End Role="clients" Type="Self.clients" Multiplicity="1" />
+          <End Role="client_order_sets" Type="Self.client_order_sets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="clients">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="client_order_sets">
+              <PropertyRef Name="id_client" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_client_order_sets_graphics_cards">
+          <End Role="graphics_cards" Type="Self.graphics_cards" Multiplicity="0..1" />
+          <End Role="client_order_sets" Type="Self.client_order_sets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="graphics_cards">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="client_order_sets">
+              <PropertyRef Name="id_graphics_card" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_client_order_sets_motherboards">
+          <End Role="motherboards" Type="Self.motherboards" Multiplicity="0..1" />
+          <End Role="client_order_sets" Type="Self.client_order_sets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="motherboards">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="client_order_sets">
+              <PropertyRef Name="id_motherboard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_client_order_sets_processors">
+          <End Role="processors" Type="Self.processors" Multiplicity="0..1" />
+          <End Role="client_order_sets" Type="Self.client_order_sets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="processors">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="client_order_sets">
+              <PropertyRef Name="id_processor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_client_order_sets_ram_memories">
+          <End Role="ram_memories" Type="Self.ram_memories" Multiplicity="0..1" />
+          <End Role="client_order_sets" Type="Self.client_order_sets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ram_memories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="client_order_sets">
+              <PropertyRef Name="id_ram_memory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_client_order_sets_services">
+          <End Role="services" Type="Self.services" Multiplicity="0..1" />
+          <End Role="client_order_sets" Type="Self.client_order_sets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="services">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="client_order_sets">
+              <PropertyRef Name="id_service" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_warehouse_orders_cases">
+          <End Role="cases" Type="Self.cases" Multiplicity="0..1" />
+          <End Role="warehouse_orders" Type="Self.warehouse_orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cases">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehouse_orders">
+              <PropertyRef Name="id_case" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_warehouse_orders_graphics_cards">
+          <End Role="graphics_cards" Type="Self.graphics_cards" Multiplicity="0..1" />
+          <End Role="warehouse_orders" Type="Self.warehouse_orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="graphics_cards">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehouse_orders">
+              <PropertyRef Name="id_graphics_card" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_warehouse_orders_motherboards">
+          <End Role="motherboards" Type="Self.motherboards" Multiplicity="0..1" />
+          <End Role="warehouse_orders" Type="Self.warehouse_orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="motherboards">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehouse_orders">
+              <PropertyRef Name="id_motherboard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_warehouse_orders_processors">
+          <End Role="processors" Type="Self.processors" Multiplicity="0..1" />
+          <End Role="warehouse_orders" Type="Self.warehouse_orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="processors">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehouse_orders">
+              <PropertyRef Name="id_processor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_warehouse_orders_ram_memories">
+          <End Role="ram_memories" Type="Self.ram_memories" Multiplicity="0..1" />
+          <End Role="warehouse_orders" Type="Self.warehouse_orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ram_memories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehouse_orders">
+              <PropertyRef Name="id_ram_memory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_warehouse_orders_wholesalers">
+          <End Role="wholesalers" Type="Self.wholesalers" Multiplicity="1" />
+          <End Role="warehouse_orders" Type="Self.warehouse_orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="wholesalers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehouse_orders">
+              <PropertyRef Name="id_wholesaler" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="StudiaProjektBazyDanychModelStoreContainer">
+          <EntitySet Name="cases" EntityType="Self.cases" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="client_order_sets" EntityType="Self.client_order_sets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="clients" EntityType="Self.clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="graphics_cards" EntityType="Self.graphics_cards" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="motherboards" EntityType="Self.motherboards" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="processors" EntityType="Self.processors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ram_memories" EntityType="Self.ram_memories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="services" EntityType="Self.services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="warehouse_orders" EntityType="Self.warehouse_orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="wholesalers" EntityType="Self.wholesalers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="client_order_set_view" EntityType="Self.client_order_set_view" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [client_order_set_view].[status] AS [status], 
+    [client_order_set_view].[order_date] AS [order_date], 
+    [client_order_set_view].[additional_information] AS [additional_information], 
+    [client_order_set_view].[order_price] AS [order_price], 
+    [client_order_set_view].[case_model] AS [case_model], 
+    [client_order_set_view].[case_amount] AS [case_amount], 
+    [client_order_set_view].[case_price] AS [case_price], 
+    [client_order_set_view].[graphics_card_model] AS [graphics_card_model], 
+    [client_order_set_view].[graphics_card_amount] AS [graphics_card_amount], 
+    [client_order_set_view].[graphics_card_price] AS [graphics_card_price], 
+    [client_order_set_view].[motherboard_model] AS [motherboard_model], 
+    [client_order_set_view].[motherboard_amount] AS [motherboard_amount], 
+    [client_order_set_view].[motherboard_price] AS [motherboard_price], 
+    [client_order_set_view].[processor_model] AS [processor_model], 
+    [client_order_set_view].[processor_amount] AS [processor_amount], 
+    [client_order_set_view].[processor_price] AS [processor_price], 
+    [client_order_set_view].[ram_memory_model] AS [ram_memory_model], 
+    [client_order_set_view].[ram_memory_amount] AS [ram_memory_amount], 
+    [client_order_set_view].[ram_memory_price] AS [ram_memory_price], 
+    [client_order_set_view].[service] AS [service], 
+    [client_order_set_view].[service_price] AS [service_price]
+    FROM [dbo].[client_order_set_view] AS [client_order_set_view]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="warehouse_order_view" EntityType="Self.warehouse_order_view" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [warehouse_order_view].[status] AS [status], 
+    [warehouse_order_view].[order_date] AS [order_date], 
+    [warehouse_order_view].[additional_information] AS [additional_information], 
+    [warehouse_order_view].[company] AS [company], 
+    [warehouse_order_view].[order_price] AS [order_price], 
+    [warehouse_order_view].[case_model] AS [case_model], 
+    [warehouse_order_view].[case_amount] AS [case_amount], 
+    [warehouse_order_view].[case_price] AS [case_price], 
+    [warehouse_order_view].[graphics_card_model] AS [graphics_card_model], 
+    [warehouse_order_view].[graphics_card_amount] AS [graphics_card_amount], 
+    [warehouse_order_view].[graphics_card_price] AS [graphics_card_price], 
+    [warehouse_order_view].[motherboard_model] AS [motherboard_model], 
+    [warehouse_order_view].[motherboard_amount] AS [motherboard_amount], 
+    [warehouse_order_view].[motherboard_price] AS [motherboard_price], 
+    [warehouse_order_view].[processor_model] AS [processor_model], 
+    [warehouse_order_view].[processor_amount] AS [processor_amount], 
+    [warehouse_order_view].[processor_price] AS [processor_price], 
+    [warehouse_order_view].[ram_memory_model] AS [ram_memory_model], 
+    [warehouse_order_view].[ram_memory_amount] AS [ram_memory_amount], 
+    [warehouse_order_view].[rem_memory_price] AS [rem_memory_price]
+    FROM [dbo].[warehouse_order_view] AS [warehouse_order_view]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+            <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_client_order_sets_cases" Association="Self.FK_client_order_sets_cases">
+            <End Role="cases" EntitySet="cases" />
+            <End Role="client_order_sets" EntitySet="client_order_sets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_client_order_sets_clients" Association="Self.FK_client_order_sets_clients">
+            <End Role="clients" EntitySet="clients" />
+            <End Role="client_order_sets" EntitySet="client_order_sets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_client_order_sets_graphics_cards" Association="Self.FK_client_order_sets_graphics_cards">
+            <End Role="graphics_cards" EntitySet="graphics_cards" />
+            <End Role="client_order_sets" EntitySet="client_order_sets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_client_order_sets_motherboards" Association="Self.FK_client_order_sets_motherboards">
+            <End Role="motherboards" EntitySet="motherboards" />
+            <End Role="client_order_sets" EntitySet="client_order_sets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_client_order_sets_processors" Association="Self.FK_client_order_sets_processors">
+            <End Role="processors" EntitySet="processors" />
+            <End Role="client_order_sets" EntitySet="client_order_sets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_client_order_sets_ram_memories" Association="Self.FK_client_order_sets_ram_memories">
+            <End Role="ram_memories" EntitySet="ram_memories" />
+            <End Role="client_order_sets" EntitySet="client_order_sets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_client_order_sets_services" Association="Self.FK_client_order_sets_services">
+            <End Role="services" EntitySet="services" />
+            <End Role="client_order_sets" EntitySet="client_order_sets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_warehouse_orders_cases" Association="Self.FK_warehouse_orders_cases">
+            <End Role="cases" EntitySet="cases" />
+            <End Role="warehouse_orders" EntitySet="warehouse_orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_warehouse_orders_graphics_cards" Association="Self.FK_warehouse_orders_graphics_cards">
+            <End Role="graphics_cards" EntitySet="graphics_cards" />
+            <End Role="warehouse_orders" EntitySet="warehouse_orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_warehouse_orders_motherboards" Association="Self.FK_warehouse_orders_motherboards">
+            <End Role="motherboards" EntitySet="motherboards" />
+            <End Role="warehouse_orders" EntitySet="warehouse_orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_warehouse_orders_processors" Association="Self.FK_warehouse_orders_processors">
+            <End Role="processors" EntitySet="processors" />
+            <End Role="warehouse_orders" EntitySet="warehouse_orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_warehouse_orders_ram_memories" Association="Self.FK_warehouse_orders_ram_memories">
+            <End Role="ram_memories" EntitySet="ram_memories" />
+            <End Role="warehouse_orders" EntitySet="warehouse_orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_warehouse_orders_wholesalers" Association="Self.FK_warehouse_orders_wholesalers">
+            <End Role="wholesalers" EntitySet="wholesalers" />
+            <End Role="warehouse_orders" EntitySet="warehouse_orders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StudiaProjektBazyDanychModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="cases">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="amount" Type="Int32" />
+          <Property Name="image_source" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="client_order_sets" Relationship="Self.FK_client_order_sets_cases" FromRole="cases" ToRole="client_order_sets" />
+          <NavigationProperty Name="warehouse_orders" Relationship="Self.FK_warehouse_orders_cases" FromRole="cases" ToRole="warehouse_orders" />
+        </EntityType>
+        <EntityType Name="client_order_sets">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_client" Type="Int32" Nullable="false" />
+          <Property Name="id_motherboard" Type="Int32" />
+          <Property Name="motherboard_amount" Type="Int32" />
+          <Property Name="id_processor" Type="Int32" />
+          <Property Name="processor_amount" Type="Int32" />
+          <Property Name="id_graphics_card" Type="Int32" />
+          <Property Name="graphics_card_amount" Type="Int32" />
+          <Property Name="id_case" Type="Int32" />
+          <Property Name="case_amount" Type="Int32" />
+          <Property Name="id_ram_memory" Type="Int32" />
+          <Property Name="ram_memory_amount" Type="Int32" />
+          <Property Name="id_service" Type="Int32" />
+          <Property Name="additional_information" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="order_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Int16" Nullable="false" />
+          <Property Name="order_price" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <NavigationProperty Name="cases" Relationship="Self.FK_client_order_sets_cases" FromRole="client_order_sets" ToRole="cases" />
+          <NavigationProperty Name="clients" Relationship="Self.FK_client_order_sets_clients" FromRole="client_order_sets" ToRole="clients" />
+          <NavigationProperty Name="graphics_cards" Relationship="Self.FK_client_order_sets_graphics_cards" FromRole="client_order_sets" ToRole="graphics_cards" />
+          <NavigationProperty Name="motherboards" Relationship="Self.FK_client_order_sets_motherboards" FromRole="client_order_sets" ToRole="motherboards" />
+          <NavigationProperty Name="processors" Relationship="Self.FK_client_order_sets_processors" FromRole="client_order_sets" ToRole="processors" />
+          <NavigationProperty Name="ram_memories" Relationship="Self.FK_client_order_sets_ram_memories" FromRole="client_order_sets" ToRole="ram_memories" />
+          <NavigationProperty Name="services" Relationship="Self.FK_client_order_sets_services" FromRole="client_order_sets" ToRole="services" />
+        </EntityType>
+        <EntityType Name="clients">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="city" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="street" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="building_number" Type="String" MaxLength="7" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="apartment_number" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="post_code" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="phone_number" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="client_order_sets" Relationship="Self.FK_client_order_sets_clients" FromRole="clients" ToRole="client_order_sets" />
+        </EntityType>
+        <EntityType Name="graphics_cards">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="amount" Type="Int32" />
+          <Property Name="image_source" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="client_order_sets" Relationship="Self.FK_client_order_sets_graphics_cards" FromRole="graphics_cards" ToRole="client_order_sets" />
+          <NavigationProperty Name="warehouse_orders" Relationship="Self.FK_warehouse_orders_graphics_cards" FromRole="graphics_cards" ToRole="warehouse_orders" />
+        </EntityType>
+        <EntityType Name="motherboards">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cpu_socket" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ram_memory_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ram_memory_slots" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="amount" Type="Int32" />
+          <Property Name="image_source" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="client_order_sets" Relationship="Self.FK_client_order_sets_motherboards" FromRole="motherboards" ToRole="client_order_sets" />
+          <NavigationProperty Name="warehouse_orders" Relationship="Self.FK_warehouse_orders_motherboards" FromRole="motherboards" ToRole="warehouse_orders" />
+        </EntityType>
+        <EntityType Name="processors">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="socket" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="amount" Type="Int32" />
+          <Property Name="image_source" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="client_order_sets" Relationship="Self.FK_client_order_sets_processors" FromRole="processors" ToRole="client_order_sets" />
+          <NavigationProperty Name="warehouse_orders" Relationship="Self.FK_warehouse_orders_processors" FromRole="processors" ToRole="warehouse_orders" />
+        </EntityType>
+        <EntityType Name="ram_memories">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="capacity_gb" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="amount" Type="Int32" />
+          <Property Name="image_source" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="client_order_sets" Relationship="Self.FK_client_order_sets_ram_memories" FromRole="ram_memories" ToRole="client_order_sets" />
+          <NavigationProperty Name="warehouse_orders" Relationship="Self.FK_warehouse_orders_ram_memories" FromRole="ram_memories" ToRole="warehouse_orders" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="activation_code" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="access_level" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="services">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="service" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="7" Scale="2" />
+          <NavigationProperty Name="client_order_sets" Relationship="Self.FK_client_order_sets_services" FromRole="services" ToRole="client_order_sets" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="access_level" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="warehouse_orders">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_wholesaler" Type="Int32" Nullable="false" />
+          <Property Name="id_motherboard" Type="Int32" />
+          <Property Name="motherboard_amount" Type="Int32" />
+          <Property Name="id_processor" Type="Int32" />
+          <Property Name="processor_amount" Type="Int32" />
+          <Property Name="id_graphics_card" Type="Int32" />
+          <Property Name="graphics_card_amount" Type="Int32" />
+          <Property Name="id_case" Type="Int32" />
+          <Property Name="case_amount" Type="Int32" />
+          <Property Name="id_ram_memory" Type="Int32" />
+          <Property Name="ram_memory_amount" Type="Int32" />
+          <Property Name="additional_information" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="order_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Int16" Nullable="false" />
+          <Property Name="order_price" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <NavigationProperty Name="cases" Relationship="Self.FK_warehouse_orders_cases" FromRole="warehouse_orders" ToRole="cases" />
+          <NavigationProperty Name="graphics_cards" Relationship="Self.FK_warehouse_orders_graphics_cards" FromRole="warehouse_orders" ToRole="graphics_cards" />
+          <NavigationProperty Name="motherboards" Relationship="Self.FK_warehouse_orders_motherboards" FromRole="warehouse_orders" ToRole="motherboards" />
+          <NavigationProperty Name="processors" Relationship="Self.FK_warehouse_orders_processors" FromRole="warehouse_orders" ToRole="processors" />
+          <NavigationProperty Name="ram_memories" Relationship="Self.FK_warehouse_orders_ram_memories" FromRole="warehouse_orders" ToRole="ram_memories" />
+          <NavigationProperty Name="wholesalers" Relationship="Self.FK_warehouse_orders_wholesalers" FromRole="warehouse_orders" ToRole="wholesalers" />
+        </EntityType>
+        <EntityType Name="wholesalers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="warehouse_orders" Relationship="Self.FK_warehouse_orders_wholesalers" FromRole="wholesalers" ToRole="warehouse_orders" />
+        </EntityType>
+        <EntityType Name="client_order_set_view">
+          <Key>
+            <PropertyRef Name="status" />
+            <PropertyRef Name="order_price" />
+          </Key>
+          <Property Name="status" Type="Int16" Nullable="false" />
+          <Property Name="order_date" Type="DateTime" Precision="3" />
+          <Property Name="additional_information" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="order_price" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="case_model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="case_amount" Type="Int32" />
+          <Property Name="case_price" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="graphics_card_model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="graphics_card_amount" Type="Int32" />
+          <Property Name="graphics_card_price" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="motherboard_model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="motherboard_amount" Type="Int32" />
+          <Property Name="motherboard_price" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="processor_model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="processor_amount" Type="Int32" />
+          <Property Name="processor_price" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="ram_memory_model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ram_memory_amount" Type="Int32" />
+          <Property Name="ram_memory_price" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="service" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="service_price" Type="Decimal" Precision="7" Scale="2" />
+        </EntityType>
+        <EntityType Name="warehouse_order_view">
+          <Key>
+            <PropertyRef Name="status" />
+            <PropertyRef Name="order_price" />
+          </Key>
+          <Property Name="status" Type="Int16" Nullable="false" />
+          <Property Name="order_date" Type="DateTime" Precision="3" />
+          <Property Name="additional_information" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="order_price" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="case_model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="case_amount" Type="Int32" />
+          <Property Name="case_price" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="graphics_card_model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="graphics_card_amount" Type="Int32" />
+          <Property Name="graphics_card_price" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="motherboard_model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="motherboard_amount" Type="Int32" />
+          <Property Name="motherboard_price" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="processor_model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="processor_amount" Type="Int32" />
+          <Property Name="processor_price" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="ram_memory_model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ram_memory_amount" Type="Int32" />
+          <Property Name="rem_memory_price" Type="Decimal" Precision="7" Scale="2" />
+        </EntityType>
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_client_order_sets_cases">
+          <End Role="cases" Type="Self.cases" Multiplicity="0..1" />
+          <End Role="client_order_sets" Type="Self.client_order_sets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cases">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="client_order_sets">
+              <PropertyRef Name="id_case" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_warehouse_orders_cases">
+          <End Role="cases" Type="Self.cases" Multiplicity="0..1" />
+          <End Role="warehouse_orders" Type="Self.warehouse_orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cases">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehouse_orders">
+              <PropertyRef Name="id_case" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_client_order_sets_clients">
+          <End Role="clients" Type="Self.clients" Multiplicity="1" />
+          <End Role="client_order_sets" Type="Self.client_order_sets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="clients">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="client_order_sets">
+              <PropertyRef Name="id_client" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_client_order_sets_graphics_cards">
+          <End Role="graphics_cards" Type="Self.graphics_cards" Multiplicity="0..1" />
+          <End Role="client_order_sets" Type="Self.client_order_sets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="graphics_cards">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="client_order_sets">
+              <PropertyRef Name="id_graphics_card" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_client_order_sets_motherboards">
+          <End Role="motherboards" Type="Self.motherboards" Multiplicity="0..1" />
+          <End Role="client_order_sets" Type="Self.client_order_sets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="motherboards">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="client_order_sets">
+              <PropertyRef Name="id_motherboard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_client_order_sets_processors">
+          <End Role="processors" Type="Self.processors" Multiplicity="0..1" />
+          <End Role="client_order_sets" Type="Self.client_order_sets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="processors">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="client_order_sets">
+              <PropertyRef Name="id_processor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_client_order_sets_ram_memories">
+          <End Role="ram_memories" Type="Self.ram_memories" Multiplicity="0..1" />
+          <End Role="client_order_sets" Type="Self.client_order_sets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ram_memories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="client_order_sets">
+              <PropertyRef Name="id_ram_memory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_client_order_sets_services">
+          <End Role="services" Type="Self.services" Multiplicity="0..1" />
+          <End Role="client_order_sets" Type="Self.client_order_sets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="services">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="client_order_sets">
+              <PropertyRef Name="id_service" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_warehouse_orders_graphics_cards">
+          <End Role="graphics_cards" Type="Self.graphics_cards" Multiplicity="0..1" />
+          <End Role="warehouse_orders" Type="Self.warehouse_orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="graphics_cards">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehouse_orders">
+              <PropertyRef Name="id_graphics_card" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_warehouse_orders_motherboards">
+          <End Role="motherboards" Type="Self.motherboards" Multiplicity="0..1" />
+          <End Role="warehouse_orders" Type="Self.warehouse_orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="motherboards">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehouse_orders">
+              <PropertyRef Name="id_motherboard" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_warehouse_orders_processors">
+          <End Role="processors" Type="Self.processors" Multiplicity="0..1" />
+          <End Role="warehouse_orders" Type="Self.warehouse_orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="processors">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehouse_orders">
+              <PropertyRef Name="id_processor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_warehouse_orders_ram_memories">
+          <End Role="ram_memories" Type="Self.ram_memories" Multiplicity="0..1" />
+          <End Role="warehouse_orders" Type="Self.warehouse_orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ram_memories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehouse_orders">
+              <PropertyRef Name="id_ram_memory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_warehouse_orders_wholesalers">
+          <End Role="wholesalers" Type="Self.wholesalers" Multiplicity="1" />
+          <End Role="warehouse_orders" Type="Self.warehouse_orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="wholesalers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="warehouse_orders">
+              <PropertyRef Name="id_wholesaler" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="StudiaProjektBazyDanychEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cases" EntityType="Self.cases" />
+          <EntitySet Name="client_order_sets" EntityType="Self.client_order_sets" />
+          <EntitySet Name="clients" EntityType="Self.clients" />
+          <EntitySet Name="graphics_cards" EntityType="Self.graphics_cards" />
+          <EntitySet Name="motherboards" EntityType="Self.motherboards" />
+          <EntitySet Name="processors" EntityType="Self.processors" />
+          <EntitySet Name="ram_memories" EntityType="Self.ram_memories" />
+          <EntitySet Name="Registration" EntityType="Self.Registration" />
+          <EntitySet Name="services" EntityType="Self.services" />
+          <EntitySet Name="users" EntityType="Self.users" />
+          <EntitySet Name="warehouse_orders" EntityType="Self.warehouse_orders" />
+          <EntitySet Name="wholesalers" EntityType="Self.wholesalers" />
+          <EntitySet Name="client_order_set_view" EntityType="Self.client_order_set_view" />
+          <EntitySet Name="warehouse_order_view" EntityType="Self.warehouse_order_view" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+          <AssociationSet Name="FK_client_order_sets_cases" Association="Self.FK_client_order_sets_cases">
+            <End Role="cases" EntitySet="cases" />
+            <End Role="client_order_sets" EntitySet="client_order_sets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_warehouse_orders_cases" Association="Self.FK_warehouse_orders_cases">
+            <End Role="cases" EntitySet="cases" />
+            <End Role="warehouse_orders" EntitySet="warehouse_orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_client_order_sets_clients" Association="Self.FK_client_order_sets_clients">
+            <End Role="clients" EntitySet="clients" />
+            <End Role="client_order_sets" EntitySet="client_order_sets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_client_order_sets_graphics_cards" Association="Self.FK_client_order_sets_graphics_cards">
+            <End Role="graphics_cards" EntitySet="graphics_cards" />
+            <End Role="client_order_sets" EntitySet="client_order_sets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_client_order_sets_motherboards" Association="Self.FK_client_order_sets_motherboards">
+            <End Role="motherboards" EntitySet="motherboards" />
+            <End Role="client_order_sets" EntitySet="client_order_sets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_client_order_sets_processors" Association="Self.FK_client_order_sets_processors">
+            <End Role="processors" EntitySet="processors" />
+            <End Role="client_order_sets" EntitySet="client_order_sets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_client_order_sets_ram_memories" Association="Self.FK_client_order_sets_ram_memories">
+            <End Role="ram_memories" EntitySet="ram_memories" />
+            <End Role="client_order_sets" EntitySet="client_order_sets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_client_order_sets_services" Association="Self.FK_client_order_sets_services">
+            <End Role="services" EntitySet="services" />
+            <End Role="client_order_sets" EntitySet="client_order_sets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_warehouse_orders_graphics_cards" Association="Self.FK_warehouse_orders_graphics_cards">
+            <End Role="graphics_cards" EntitySet="graphics_cards" />
+            <End Role="warehouse_orders" EntitySet="warehouse_orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_warehouse_orders_motherboards" Association="Self.FK_warehouse_orders_motherboards">
+            <End Role="motherboards" EntitySet="motherboards" />
+            <End Role="warehouse_orders" EntitySet="warehouse_orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_warehouse_orders_processors" Association="Self.FK_warehouse_orders_processors">
+            <End Role="processors" EntitySet="processors" />
+            <End Role="warehouse_orders" EntitySet="warehouse_orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_warehouse_orders_ram_memories" Association="Self.FK_warehouse_orders_ram_memories">
+            <End Role="ram_memories" EntitySet="ram_memories" />
+            <End Role="warehouse_orders" EntitySet="warehouse_orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_warehouse_orders_wholesalers" Association="Self.FK_warehouse_orders_wholesalers">
+            <End Role="wholesalers" EntitySet="wholesalers" />
+            <End Role="warehouse_orders" EntitySet="warehouse_orders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StudiaProjektBazyDanychModelStoreContainer" CdmEntityContainer="StudiaProjektBazyDanychEntities">
+          <EntitySetMapping Name="cases">
+            <EntityTypeMapping TypeName="StudiaProjektBazyDanychModel.cases">
+              <MappingFragment StoreEntitySet="cases">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="image_source" ColumnName="image_source" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="client_order_sets">
+            <EntityTypeMapping TypeName="StudiaProjektBazyDanychModel.client_order_sets">
+              <MappingFragment StoreEntitySet="client_order_sets">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_client" ColumnName="id_client" />
+                <ScalarProperty Name="id_motherboard" ColumnName="id_motherboard" />
+                <ScalarProperty Name="motherboard_amount" ColumnName="motherboard_amount" />
+                <ScalarProperty Name="id_processor" ColumnName="id_processor" />
+                <ScalarProperty Name="processor_amount" ColumnName="processor_amount" />
+                <ScalarProperty Name="id_graphics_card" ColumnName="id_graphics_card" />
+                <ScalarProperty Name="graphics_card_amount" ColumnName="graphics_card_amount" />
+                <ScalarProperty Name="id_case" ColumnName="id_case" />
+                <ScalarProperty Name="case_amount" ColumnName="case_amount" />
+                <ScalarProperty Name="id_ram_memory" ColumnName="id_ram_memory" />
+                <ScalarProperty Name="ram_memory_amount" ColumnName="ram_memory_amount" />
+                <ScalarProperty Name="id_service" ColumnName="id_service" />
+                <ScalarProperty Name="additional_information" ColumnName="additional_information" />
+                <ScalarProperty Name="order_date" ColumnName="order_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="order_price" ColumnName="order_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clients">
+            <EntityTypeMapping TypeName="StudiaProjektBazyDanychModel.clients">
+              <MappingFragment StoreEntitySet="clients">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="building_number" ColumnName="building_number" />
+                <ScalarProperty Name="apartment_number" ColumnName="apartment_number" />
+                <ScalarProperty Name="post_code" ColumnName="post_code" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="graphics_cards">
+            <EntityTypeMapping TypeName="StudiaProjektBazyDanychModel.graphics_cards">
+              <MappingFragment StoreEntitySet="graphics_cards">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="image_source" ColumnName="image_source" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="motherboards">
+            <EntityTypeMapping TypeName="StudiaProjektBazyDanychModel.motherboards">
+              <MappingFragment StoreEntitySet="motherboards">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="cpu_socket" ColumnName="cpu_socket" />
+                <ScalarProperty Name="ram_memory_type" ColumnName="ram_memory_type" />
+                <ScalarProperty Name="ram_memory_slots" ColumnName="ram_memory_slots" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="image_source" ColumnName="image_source" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="processors">
+            <EntityTypeMapping TypeName="StudiaProjektBazyDanychModel.processors">
+              <MappingFragment StoreEntitySet="processors">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="socket" ColumnName="socket" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="image_source" ColumnName="image_source" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ram_memories">
+            <EntityTypeMapping TypeName="StudiaProjektBazyDanychModel.ram_memories">
+              <MappingFragment StoreEntitySet="ram_memories">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="capacity_gb" ColumnName="capacity_gb" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="image_source" ColumnName="image_source" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registration">
+            <EntityTypeMapping TypeName="StudiaProjektBazyDanychModel.Registration">
+              <MappingFragment StoreEntitySet="Registration">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="activation_code" ColumnName="activation_code" />
+                <ScalarProperty Name="access_level" ColumnName="access_level" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="services">
+            <EntityTypeMapping TypeName="StudiaProjektBazyDanychModel.services">
+              <MappingFragment StoreEntitySet="services">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="service" ColumnName="service" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="StudiaProjektBazyDanychModel.users">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="access_level" ColumnName="access_level" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="warehouse_orders">
+            <EntityTypeMapping TypeName="StudiaProjektBazyDanychModel.warehouse_orders">
+              <MappingFragment StoreEntitySet="warehouse_orders">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_wholesaler" ColumnName="id_wholesaler" />
+                <ScalarProperty Name="id_motherboard" ColumnName="id_motherboard" />
+                <ScalarProperty Name="motherboard_amount" ColumnName="motherboard_amount" />
+                <ScalarProperty Name="id_processor" ColumnName="id_processor" />
+                <ScalarProperty Name="processor_amount" ColumnName="processor_amount" />
+                <ScalarProperty Name="id_graphics_card" ColumnName="id_graphics_card" />
+                <ScalarProperty Name="graphics_card_amount" ColumnName="graphics_card_amount" />
+                <ScalarProperty Name="id_case" ColumnName="id_case" />
+                <ScalarProperty Name="case_amount" ColumnName="case_amount" />
+                <ScalarProperty Name="id_ram_memory" ColumnName="id_ram_memory" />
+                <ScalarProperty Name="ram_memory_amount" ColumnName="ram_memory_amount" />
+                <ScalarProperty Name="additional_information" ColumnName="additional_information" />
+                <ScalarProperty Name="order_date" ColumnName="order_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="order_price" ColumnName="order_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wholesalers">
+            <EntityTypeMapping TypeName="StudiaProjektBazyDanychModel.wholesalers">
+              <MappingFragment StoreEntitySet="wholesalers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="company" ColumnName="company" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="client_order_set_view">
+            <EntityTypeMapping TypeName="StudiaProjektBazyDanychModel.client_order_set_view">
+              <MappingFragment StoreEntitySet="client_order_set_view">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="order_date" ColumnName="order_date" />
+                <ScalarProperty Name="additional_information" ColumnName="additional_information" />
+                <ScalarProperty Name="order_price" ColumnName="order_price" />
+                <ScalarProperty Name="case_model" ColumnName="case_model" />
+                <ScalarProperty Name="case_amount" ColumnName="case_amount" />
+                <ScalarProperty Name="case_price" ColumnName="case_price" />
+                <ScalarProperty Name="graphics_card_model" ColumnName="graphics_card_model" />
+                <ScalarProperty Name="graphics_card_amount" ColumnName="graphics_card_amount" />
+                <ScalarProperty Name="graphics_card_price" ColumnName="graphics_card_price" />
+                <ScalarProperty Name="motherboard_model" ColumnName="motherboard_model" />
+                <ScalarProperty Name="motherboard_amount" ColumnName="motherboard_amount" />
+                <ScalarProperty Name="motherboard_price" ColumnName="motherboard_price" />
+                <ScalarProperty Name="processor_model" ColumnName="processor_model" />
+                <ScalarProperty Name="processor_amount" ColumnName="processor_amount" />
+                <ScalarProperty Name="processor_price" ColumnName="processor_price" />
+                <ScalarProperty Name="ram_memory_model" ColumnName="ram_memory_model" />
+                <ScalarProperty Name="ram_memory_amount" ColumnName="ram_memory_amount" />
+                <ScalarProperty Name="ram_memory_price" ColumnName="ram_memory_price" />
+                <ScalarProperty Name="service" ColumnName="service" />
+                <ScalarProperty Name="service_price" ColumnName="service_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="warehouse_order_view">
+            <EntityTypeMapping TypeName="StudiaProjektBazyDanychModel.warehouse_order_view">
+              <MappingFragment StoreEntitySet="warehouse_order_view">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="order_date" ColumnName="order_date" />
+                <ScalarProperty Name="additional_information" ColumnName="additional_information" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="order_price" ColumnName="order_price" />
+                <ScalarProperty Name="case_model" ColumnName="case_model" />
+                <ScalarProperty Name="case_amount" ColumnName="case_amount" />
+                <ScalarProperty Name="case_price" ColumnName="case_price" />
+                <ScalarProperty Name="graphics_card_model" ColumnName="graphics_card_model" />
+                <ScalarProperty Name="graphics_card_amount" ColumnName="graphics_card_amount" />
+                <ScalarProperty Name="graphics_card_price" ColumnName="graphics_card_price" />
+                <ScalarProperty Name="motherboard_model" ColumnName="motherboard_model" />
+                <ScalarProperty Name="motherboard_amount" ColumnName="motherboard_amount" />
+                <ScalarProperty Name="motherboard_price" ColumnName="motherboard_price" />
+                <ScalarProperty Name="processor_model" ColumnName="processor_model" />
+                <ScalarProperty Name="processor_amount" ColumnName="processor_amount" />
+                <ScalarProperty Name="processor_price" ColumnName="processor_price" />
+                <ScalarProperty Name="ram_memory_model" ColumnName="ram_memory_model" />
+                <ScalarProperty Name="ram_memory_amount" ColumnName="ram_memory_amount" />
+                <ScalarProperty Name="rem_memory_price" ColumnName="rem_memory_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="database_firewall_rules">
+            <EntityTypeMapping TypeName="StudiaProjektBazyDanychModel.database_firewall_rules">
+              <MappingFragment StoreEntitySet="database_firewall_rules">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
