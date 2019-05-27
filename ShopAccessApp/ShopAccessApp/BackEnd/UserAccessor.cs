@@ -6,29 +6,29 @@ using System.Threading.Tasks;
 
 namespace ShopAccessApp.BackEnd
 {
-    public class UserAccess
+    public class UserAccessor
     {
-        public List<users> GetAllUsers()
+        public List<graphics_cards> GetAllUsers()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.users.ToList();
+                return db.graphic_cards.ToList();
             }
         }
 
-        public users GetUserByUsername(string username)
+        public graphics_cards GetUserByUsername(string username)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.users.SingleOrDefault(t => t.username == username);
+                return db.graphic_cards.SingleOrDefault(t => t.username == username);
             }
         }
 
-        public void CreateNewUser(users newUser)
+        public void CreateNewUser(graphics_cards newUser)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                db.users.Add(newUser);
+                db.graphic_cards.Add(newUser);
                 db.SaveChanges();
             }
         }
@@ -37,8 +37,8 @@ namespace ShopAccessApp.BackEnd
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                var userToDelete = db.users.SingleOrDefault(t => t.username == username);
-                db.users.Remove(userToDelete);
+                var userToDelete = db.graphic_cards.SingleOrDefault(t => t.username == username);
+                db.graphic_cards.Remove(userToDelete);
                 db.SaveChanges();
             }
         }

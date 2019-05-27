@@ -7,15 +7,15 @@ namespace ShopAccessUnitTests
     [TestClass]
     public class UserAccessTests
     {
-        UserAccess access;
+        UserAccessor access;
         string testUsername;
-        readonly users testUser;
+        readonly graphics_cards testUser;
 
         public UserAccessTests()
         {
-            access = new UserAccess();
+            access = new UserAccessor();
             testUsername = "TestUser";
-            testUser = new users()
+            testUser = new graphics_cards()
             {
                 username = testUsername,
                 password = "test",

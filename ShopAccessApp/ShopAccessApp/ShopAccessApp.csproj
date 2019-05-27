@@ -71,7 +71,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BackEnd\Cases.cs" />
-    <Compile Include="BackEnd\UserAccess.cs" />
+    <Compile Include="BackEnd\GraphicsCardsAccessor.cs" />
+    <Compile Include="BackEnd\UserAccessor.cs" />
     <Compile Include="cases.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
