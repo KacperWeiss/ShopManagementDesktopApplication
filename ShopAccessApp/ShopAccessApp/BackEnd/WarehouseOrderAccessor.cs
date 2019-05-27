@@ -32,14 +32,6 @@ namespace ShopAccessApp.BackEnd
                 return db.warehouse_orders.SingleOrDefault(t => t.status == status);
             }
         }
-
-        public wholesalers GetWholesalersByName(string companyName)
-        {
-            using (var db = new StudiaProjektBazyDanychEntities())
-            {
-                return db.wholesalers.SingleOrDefault(t => t.company == companyName);
-            }
-        }
         #endregion
 
         public void CreateWarehouseOrder(warehouse_orders order)
