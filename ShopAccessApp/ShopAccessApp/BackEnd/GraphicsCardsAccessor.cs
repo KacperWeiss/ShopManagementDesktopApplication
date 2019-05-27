@@ -8,45 +8,45 @@ namespace ShopAccessApp.BackEnd
 {
     public class GraphicsCardsAccessor
     {
-        public List<graphics_cards> GetAllGraphicCards()
+        public List<graphics_cards> GetAll()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.graphic_cards.ToList();
+                return db.graphics_cards.ToList();
             }
         }
 
-        public graphics_cards GetGraphicCardByModel(string modelName)
+        public graphics_cards GetByModel(string modelName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.graphic_cards.SingleOrDefault(t => t.model == modelName);
+                return db.graphics_cards.SingleOrDefault(t => t.model == modelName);
             }
         }
 
-        public List<graphics_cards> GetGraphicCardsByBrand(string brandName)
+        public List<graphics_cards> GetByBrand(string brandName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.graphic_cards.Where(t => t.brand == brandName).ToList();
+                return db.graphics_cards.Where(t => t.brand == brandName).ToList();
             }
         }
 
-        public void CreateNewGraphicCard(graphics_cards newGraphicCard)
+        public void CreateNew(graphics_cards newGraphicCard)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                db.graphic_cards.Add(newGraphicCard);
+                db.graphics_cards.Add(newGraphicCard);
                 db.SaveChanges();
             }
         }
 
-        public void DeleteGraphicCardByModel(string brandName)
+        public void DeleteByModel(string modelName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                var userToDelete = db.graphic_cards.SingleOrDefault(t => t.brand == brandName);
-                db.graphic_cards.Remove(userToDelete);
+                var userToDelete = db.graphics_cards.SingleOrDefault(t => t.model == modelName);
+                db.graphics_cards.Remove(userToDelete);
                 db.SaveChanges();
             }
         }

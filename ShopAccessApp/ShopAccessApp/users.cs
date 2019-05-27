@@ -12,7 +12,7 @@ namespace ShopAccessApp
     using System;
     using System.Collections.Generic;
     
-    public partial class graphics_cards
+    public partial class users
     {
         public int id { get; set; }
         public string username { get; set; }

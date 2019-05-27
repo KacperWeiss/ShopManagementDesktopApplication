@@ -9,13 +9,13 @@ namespace ShopAccessUnitTests
     {
         UserAccessor access;
         string testUsername;
-        readonly graphics_cards testUser;
+        readonly users testUser;
 
         public UserAccessTests()
         {
             access = new UserAccessor();
             testUsername = "TestUser";
-            testUser = new graphics_cards()
+            testUser = new users()
             {
                 username = testUsername,
                 password = "test",

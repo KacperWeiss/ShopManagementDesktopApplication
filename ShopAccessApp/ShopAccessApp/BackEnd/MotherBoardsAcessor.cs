@@ -6,39 +6,39 @@ using System.Threading.Tasks;
 
 namespace ShopAccessApp.BackEnd
 {
-    public class UserAccessor
+    public class MotherBoardsAcessor
     {
-        public List<users> GetAll()
+        public List<motherboards> GetAll()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.users.ToList();
+                return db.motherboards.ToList();
             }
         }
 
-        public users GetByUsername(string username)
+        public motherboards GetByModel(string modelName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.users.SingleOrDefault(t => t.username == username);
+                return db.motherboards.SingleOrDefault(t => t.model == modelName);
             }
         }
 
-        public void CreateNew(users newUser)
+        public void CreateNew(motherboards newGraphicCard)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                db.users.Add(newUser);
+                db.motherboards.Add(newGraphicCard);
                 db.SaveChanges();
             }
         }
 
-        public void DeleteByUsername(string username)
+        public void DeleteByModel(string modelName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                var userToDelete = db.users.SingleOrDefault(t => t.username == username);
-                db.users.Remove(userToDelete);
+                var userToDelete = db.motherboards.SingleOrDefault(t => t.model == modelName);
+                db.motherboards.Remove(userToDelete);
                 db.SaveChanges();
             }
         }
