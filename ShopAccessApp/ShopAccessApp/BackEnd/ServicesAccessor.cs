@@ -16,7 +16,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public services GetCasesByID(int id)
+        public services GetServiceByID(int id)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
