@@ -50,6 +50,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -68,6 +70,66 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="cases.cs">
+      <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="clients.cs">
+      <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="client_order_sets.cs">
+      <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="client_order_set_view.cs">
+      <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database_firewall_rules.cs">
+      <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="graphics_cards.cs">
+      <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="motherboards.cs">
+      <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="processors.cs">
+      <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ram_memories.cs">
+      <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.cs">
+      <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="services.cs">
+      <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudiaProjektBazdyDanych.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudiaProjektBazdyDanych.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudiaProjektBazdyDanych.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudiaProjektBazdyDanych.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudiaProjektBazdyDanych.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="users.cs">
+      <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="warehouse_orders.cs">
+      <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="warehouse_order_view.cs">
+      <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="wholesalers.cs">
+      <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -99,14 +161,38 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <EntityDeploy Include="StudiaProjektBazdyDanych.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StudiaProjektBazdyDanych.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="StudiaProjektBazdyDanych.edmx.diagram">
+      <DependentUpon>StudiaProjektBazdyDanych.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StudiaProjektBazdyDanych.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudiaProjektBazdyDanych.edmx</DependentUpon>
+      <LastGenOutput>StudiaProjektBazdyDanych.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="StudiaProjektBazdyDanych.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudiaProjektBazdyDanych.edmx</DependentUpon>
+      <LastGenOutput>StudiaProjektBazdyDanych.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
