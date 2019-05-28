@@ -98,6 +98,9 @@
     <Compile Include="graphics_cards.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
+    <Compile Include="LoginForm.xaml.cs">
+      <DependentUpon>LoginForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="motherboards.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
@@ -141,6 +144,10 @@
     <Compile Include="wholesalers.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
+    <Page Include="LoginForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
