@@ -7,13 +7,11 @@ namespace ShopAccessUnitTests
     [TestClass]
     public class UserAccessTests
     {
-        UserAccessor access;
         string testUsername;
         readonly users testUser;
 
         public UserAccessTests()
         {
-            access = new UserAccessor();
             testUsername = "TestUser";
             testUser = new users()
             {
@@ -22,15 +20,15 @@ namespace ShopAccessUnitTests
                 access_level = 1
             };
 
-            access.CreateNew(testUser);
+            UserAccessor.CreateNew(testUser);
         }
 
-        ~UserAccessTests() => access.DeleteByUsername(testUsername);
+        ~UserAccessTests() => UserAccessor.DeleteByUsername(testUsername);
 
         [TestMethod]
         public void SelectUserFromDataBaseTest()
         {
-            Assert.AreEqual(testUser, access.GetByUsername(testUsername));
+            Assert.AreEqual(testUser, UserAccessor.GetByUsername(testUsername));
         }
     }
 }

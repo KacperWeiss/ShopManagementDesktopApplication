@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShopAccessApp.BackEnd
 {
-    public class WarehouseOrderAccessor
+    static public class WarehouseOrderAccessor
     {
-        public List<warehouse_orders> GetAllWarehouseOrder()
+        static public List<warehouse_orders> GetAllWarehouseOrder()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -17,7 +17,7 @@ namespace ShopAccessApp.BackEnd
         }
 
         #region get
-        public warehouse_orders GetWholesalersByWholesalerID(int id)
+        static public warehouse_orders GetWholesalersByWholesalerID(int id)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -25,7 +25,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public warehouse_orders GetWholesalersByStatus(short status)
+        static public warehouse_orders GetWholesalersByStatus(short status)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -34,7 +34,7 @@ namespace ShopAccessApp.BackEnd
         }
         #endregion
 
-        public void CreateWarehouseOrder(warehouse_orders order)
+        static public void CreateWarehouseOrder(warehouse_orders order)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -43,7 +43,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public void DeleteWholesalerByID(int id)
+        static public void DeleteWholesalerByID(int id)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {

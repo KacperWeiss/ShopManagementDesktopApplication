@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShopAccessApp.BackEnd
 {
-    public class MotherBoardsAcessor
+    static public class MotherBoardsAcessor
     {
-        public List<motherboards> GetAll()
+        static public List<motherboards> GetAll()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -16,7 +16,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public motherboards GetByModel(string modelName)
+        static public motherboards GetByModel(string modelName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -24,7 +24,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public void CreateNew(motherboards newGraphicCard)
+        static public void CreateNew(motherboards newGraphicCard)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -33,7 +33,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public void DeleteByModel(string modelName)
+        static public void DeleteByModel(string modelName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {

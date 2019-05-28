@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShopAccessApp.BackEnd
 {
-    public class RamMemoriesAccessor
+    static public class RamMemoriesAccessor
     {
-        public List<ram_memories> GetAllRamMemories()
+        static public List<ram_memories> GetAllRamMemories()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -16,7 +16,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public ram_memories GetRamMemoriesByType(string type)
+        static public ram_memories GetRamMemoriesByType(string type)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -24,7 +24,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public ram_memories GetRamMemoriesByModel(string model)
+        static public ram_memories GetRamMemoriesByModel(string model)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -32,7 +32,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public void CreateRamMemories(ram_memories ram)
+        static public void CreateRamMemories(ram_memories ram)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -41,7 +41,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public void DeleteRamMemoriesByModel(string model)
+        static public void DeleteRamMemoriesByModel(string model)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShopAccessApp.BackEnd
 {
-    public class GraphicsCardsAccessor
+    static public class GraphicsCardsAccessor
     {
-        public List<graphics_cards> GetAll()
+        static public List<graphics_cards> GetAll()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -16,7 +16,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public graphics_cards GetByModel(string modelName)
+        static public graphics_cards GetByModel(string modelName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -24,7 +24,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public List<graphics_cards> GetByBrand(string brandName)
+        static public List<graphics_cards> GetByBrand(string brandName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -32,7 +32,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public void CreateNew(graphics_cards newGraphicCard)
+        static public void CreateNew(graphics_cards newGraphicCard)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -41,7 +41,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public void DeleteByModel(string modelName)
+        static public void DeleteByModel(string modelName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
