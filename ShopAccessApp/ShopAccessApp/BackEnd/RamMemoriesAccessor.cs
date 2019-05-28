@@ -8,7 +8,7 @@ namespace ShopAccessApp.BackEnd
 {
     static public class RamMemoriesAccessor
     {
-        static public List<ram_memories> GetAllRamMemories()
+        static public List<ram_memories> GetAll()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -16,7 +16,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public ram_memories GetRamMemoriesByType(string type)
+        static public ram_memories GetByType(string type)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -24,7 +24,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public ram_memories GetRamMemoriesByModel(string model)
+        static public ram_memories GetByModel(string model)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -32,7 +32,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public void CreateRamMemories(ram_memories ram)
+        static public void Create(ram_memories ram)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -41,7 +41,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public void DeleteRamMemoriesByModel(string model)
+        static public void DeleteByModel(string model)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {

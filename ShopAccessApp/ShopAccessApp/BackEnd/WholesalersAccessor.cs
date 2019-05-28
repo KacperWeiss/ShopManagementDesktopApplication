@@ -8,7 +8,7 @@ namespace ShopAccessApp.BackEnd
 {
     static public class WholesalersAccessor
     {
-        static public List<wholesalers> GetAllWholesalers()
+        static public List<wholesalers> GetAll()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -16,7 +16,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public wholesalers GetWholesalersByName(string companyName)
+        static public wholesalers GetByName(string companyName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -24,7 +24,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public void CreateWholesaler(wholesalers wholesaler)
+        static public void Create(wholesalers wholesaler)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -33,7 +33,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public void DeleteWholesalerByName(string companyName)
+        static public void DeleteByName(string companyName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {

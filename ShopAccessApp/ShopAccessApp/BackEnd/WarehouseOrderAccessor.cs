@@ -8,7 +8,7 @@ namespace ShopAccessApp.BackEnd
 {
     static public class WarehouseOrderAccessor
     {
-        static public List<warehouse_orders> GetAllWarehouseOrder()
+        static public List<warehouse_orders> GetAll()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -17,7 +17,7 @@ namespace ShopAccessApp.BackEnd
         }
 
         #region get
-        static public warehouse_orders GetWholesalersByWholesalerID(int id)
+        static public warehouse_orders GetByID(int id)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -25,7 +25,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public warehouse_orders GetWholesalersByStatus(short status)
+        static public warehouse_orders GetByStatus(short status)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -34,7 +34,7 @@ namespace ShopAccessApp.BackEnd
         }
         #endregion
 
-        static public void CreateWarehouseOrder(warehouse_orders order)
+        static public void CreateNew(warehouse_orders order)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -43,7 +43,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public void DeleteWholesalerByID(int id)
+        static public void DeleteByID(int id)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {

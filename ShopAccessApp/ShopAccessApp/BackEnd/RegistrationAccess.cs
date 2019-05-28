@@ -8,7 +8,7 @@ namespace ShopAccessApp.BackEnd
 {
     static public class RegistrationAccess
     {
-        static public List<Registration> GetAllRegistration()
+        static public List<Registration> GetAll()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -16,7 +16,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public Registration GetRegistrationByActivationCode(string activationCode)
+        static public Registration GetByActivationCode(string activationCode)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -24,7 +24,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public void CreateNewRegistration(Registration newRegistration)
+        static public void CreateNew(Registration newRegistration)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -33,7 +33,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public void DeleteRegistrationByActivationCode(string activationCode)
+        static public void DeleteByActivationCode(string activationCode)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {

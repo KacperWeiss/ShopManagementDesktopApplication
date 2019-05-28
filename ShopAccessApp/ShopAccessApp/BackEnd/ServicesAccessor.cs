@@ -8,7 +8,7 @@ namespace ShopAccessApp.BackEnd
 {
     static public class ServicesAccessor
     {
-        static public List<services> GetAllServices()
+        static public List<services> GetAll()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -16,7 +16,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public services GetServiceByID(int id)
+        static public services GetByID(int id)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -24,7 +24,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public void CreateNewService(services newService)
+        static public void CreateNew(services newService)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -33,7 +33,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public void DeleteServiceByID(int id)
+        static public void DeleteByID(int id)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
