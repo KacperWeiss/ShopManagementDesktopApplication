@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ShopAccessApp
+namespace ShopAccessApp.UserControlers
 {
     /// <summary>
     /// Interaction logic for LoginForm.xaml
