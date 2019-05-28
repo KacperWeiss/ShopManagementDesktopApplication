@@ -22,15 +22,15 @@ namespace ShopAccessUnitTests
                 access_level = 1
             };
 
-            access.CreateNewUser(testUser);
+            access.CreateNew(testUser);
         }
 
-        ~UserAccessTests() => access.DeleteUserByUsername(testUsername);
+        ~UserAccessTests() => access.DeleteByUsername(testUsername);
 
         [TestMethod]
         public void SelectUserFromDataBaseTest()
         {
-            Assert.AreEqual(testUser, access.GetUserByUsername(testUsername));
+            Assert.AreEqual(testUser, access.GetByUsername(testUsername));
         }
     }
 }
