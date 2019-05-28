@@ -72,6 +72,7 @@
     </ApplicationDefinition>
     <Compile Include="BackEnd\GraphicsCardsAccessor.cs" />
     <Compile Include="BackEnd\ProcessorsAccessor.cs" />
+    <Compile Include="BackEnd\RamMemoriesAccessor.cs" />
     <Compile Include="BackEnd\ServicesAccessor.cs" />
     <Compile Include="BackEnd\MotherBoardsAcessor.cs" />
     <Compile Include="BackEnd\UserAccessor.cs" />
@@ -80,11 +81,11 @@
     <Compile Include="cases.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
-    <Compile Include="BackEnd\CasesAccess.cs" />
+    <Compile Include="BackEnd\CasesAccessor.cs" />
     <Compile Include="clients.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
-    <Compile Include="BackEnd\ClientsAccess.cs" />
+    <Compile Include="BackEnd\ClientsAccessor.cs" />
     <Compile Include="client_order_sets.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
