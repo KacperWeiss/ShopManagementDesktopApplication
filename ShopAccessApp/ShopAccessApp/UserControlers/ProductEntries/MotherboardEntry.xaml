@@ -42,8 +42,8 @@
                     <Border Grid.RowSpan="2" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
                     <Label Content="Na magazynie" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <Label Content="Przychodzące" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Label Content="" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Label Content="" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="StorageCountTextBlock" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="StorageOrderCountTextBlock" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Grid>
             </StackPanel>
             <Grid Grid.Column="1">
