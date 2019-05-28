@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShopAccessApp.BackEnd
 {
-    public class ProcessorsAccessor
+    static public class ProcessorsAccessor
     {
-        public List<processors> GetAll()
+        static public List<processors> GetAll()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -16,7 +16,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public processors GetByModel(string modelName)
+        static public processors GetByModel(string modelName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -24,7 +24,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public void CreateNew(processors newProcessor)
+        static public void CreateNew(processors newProcessor)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -33,7 +33,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public void DeleteByModel(string modelName)
+        static public void DeleteByModel(string modelName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {

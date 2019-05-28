@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShopAccessApp.BackEnd
 {
-    public class WholesalersAccessor
+    static public class WholesalersAccessor
     {
-        public List<wholesalers> GetAllWholesalers()
+        static public List<wholesalers> GetAllWholesalers()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -16,7 +16,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public wholesalers GetWholesalersByName(string companyName)
+        static public wholesalers GetWholesalersByName(string companyName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -24,7 +24,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public void CreateWholesaler(wholesalers wholesaler)
+        static public void CreateWholesaler(wholesalers wholesaler)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -33,7 +33,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public void DeleteWholesalerByName(string companyName)
+        static public void DeleteWholesalerByName(string companyName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {

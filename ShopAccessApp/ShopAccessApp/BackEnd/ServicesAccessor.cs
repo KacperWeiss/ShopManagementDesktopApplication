@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShopAccessApp.BackEnd
 {
-    public class ServicesAccessor
+    static public class ServicesAccessor
     {
-        public List<services> GetAllServices()
+        static public List<services> GetAllServices()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -16,7 +16,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public services GetServiceByID(int id)
+        static public services GetServiceByID(int id)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -24,7 +24,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public void CreateNewService(services newService)
+        static public void CreateNewService(services newService)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -33,7 +33,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public void DeleteServiceByID(int id)
+        static public void DeleteServiceByID(int id)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {

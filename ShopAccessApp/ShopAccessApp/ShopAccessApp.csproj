@@ -81,11 +81,11 @@
     <Compile Include="cases.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
-    <Compile Include="BackEnd\CasesAccess.cs" />
+    <Compile Include="BackEnd\CasesAccessor.cs" />
     <Compile Include="clients.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
-    <Compile Include="BackEnd\ClientsAccess.cs" />
+    <Compile Include="BackEnd\ClientsAccessor.cs" />
     <Compile Include="client_order_sets.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
@@ -211,6 +211,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControlers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

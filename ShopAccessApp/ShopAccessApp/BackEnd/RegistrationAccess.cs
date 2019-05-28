@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ShopAccessApp.BackEnd
 {
-    public class RegistrationAccess
+    static public class RegistrationAccess
     {
-        public List<Registration> GetAllRegistration()
+        static public List<Registration> GetAllRegistration()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -16,7 +16,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public Registration GetRegistrationByActivationCode(string activationCode)
+        static public Registration GetRegistrationByActivationCode(string activationCode)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -24,7 +24,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public void CreateNewRegistration(Registration newRegistration)
+        static public void CreateNewRegistration(Registration newRegistration)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -33,7 +33,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        public void DeleteRegistrationByActivationCode(string activationCode)
+        static public void DeleteRegistrationByActivationCode(string activationCode)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
