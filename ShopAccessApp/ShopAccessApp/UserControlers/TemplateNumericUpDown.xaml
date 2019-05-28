@@ -12,7 +12,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" Background="{x:Null}" />
-        <TextBox x:Name="txtNum" x:FieldModifier="private" Grid.Column="0" Text="{Binding Path=NumValue}" TextChanged="TxtNum_TextChanged" FontSize="36" BorderThickness="0" VerticalAlignment="Center" Padding="5,0"/>
+        <TextBox x:Name="txtNum" x:FieldModifier="private" Grid.Column="0" Text="{Binding Path=NumValue}" TextChanged="TxtNum_TextChanged" FontSize="13" BorderThickness="0" VerticalAlignment="Center" Padding="5,0"/>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30*"/>
