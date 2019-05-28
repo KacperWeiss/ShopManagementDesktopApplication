@@ -8,15 +8,51 @@
              xmlns:userControlers="clr-namespace:ShopAccessApp.UserControlers"
              mc:Ignorable="d" 
              TextElement.FontSize="14"
-             d:DesignHeight="450" d:DesignWidth="1150">
-    <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth2" VerticalAlignment="Stretch" Padding="10">
+             d:DesignHeight="250" d:DesignWidth="1150">
+    <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth2" VerticalAlignment="Stretch" Padding="10" Height="250">
         <Grid Margin="0 10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="230"/>
                 <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="230"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
-                <Image Source="default_product_image.png"/>
+            <Image Source="default_product_image.png" Grid.Column="0" Height="200" Width="200"/>
+            <Grid Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.ColumnSpan="2" Grid.Row="0" BorderBrush="Black" BorderThickness="1 1 1 0" Background="{x:Null}" />
+                    <Border Grid.ColumnSpan="2" Grid.Row="1" BorderBrush="Black" BorderThickness="1 1 1 0" Background="{x:Null}" />
+                    <Border Grid.ColumnSpan="2" Grid.Row="2" BorderBrush="Black" BorderThickness="1 1 1 0" Background="{x:Null}" />
+                    <Border Grid.ColumnSpan="2" Grid.Row="3" BorderBrush="Black" BorderThickness="1 1 1 0" Background="{x:Null}" />
+                    <Border Grid.ColumnSpan="2" Grid.Row="4" BorderBrush="Black" BorderThickness="1 1 1 0" Background="{x:Null}" />
+                    <Border Grid.ColumnSpan="2" Grid.Row="5" BorderBrush="Black" BorderThickness="1" Background="{x:Null}" />
+                    <Border Grid.RowSpan="6" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
+                    <Label Content="Model" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Label Content="Cena" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Label Content="Opis słowny" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Label Content="Gniazda procesora" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Label Content="Typ pamięci RAM" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Label Content="Ilość gniazd pamięci" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="ModelTextBlock" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="PriceTextBlock" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="DescriptionTextBlock" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" TextWrapping="Wrap" />
+                    <TextBlock x:Name="SocketTextBlock" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="RamMemoryTypeTextBlock" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="RamMemorySlotsTextBlock" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </Grid>
+            <StackPanel Grid.Column="2" Margin="10 0" VerticalAlignment="Center">
                 <Label Content="Dodaj do koszyka" FontSize="20" HorizontalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal">
                     <Grid>
@@ -46,41 +82,6 @@
                     <TextBlock x:Name="StorageOrderCountTextBlock" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Grid>
             </StackPanel>
-            <Grid Grid.Column="1">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Border Grid.ColumnSpan="2" Grid.Row="0" BorderBrush="Black" BorderThickness="1 1 1 0" Background="{x:Null}" />
-                    <Border Grid.ColumnSpan="2" Grid.Row="1" BorderBrush="Black" BorderThickness="1 1 1 0" Background="{x:Null}" />
-                    <Border Grid.ColumnSpan="2" Grid.Row="2" BorderBrush="Black" BorderThickness="1 1 1 0" Background="{x:Null}" />
-                    <Border Grid.ColumnSpan="2" Grid.Row="3" BorderBrush="Black" BorderThickness="1 1 1 0" Background="{x:Null}" />
-                    <Border Grid.ColumnSpan="2" Grid.Row="4" BorderBrush="Black" BorderThickness="1 1 1 0" Background="{x:Null}" />
-                    <Border Grid.ColumnSpan="2" Grid.Row="5" BorderBrush="Black" BorderThickness="1" Background="{x:Null}" />
-                    <Border Grid.RowSpan="6" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
-                    <Label Content="Model" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Label Content="Cena" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Label Content="Opis słowny" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Label Content="Gniazda procesora" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Label Content="Typ pamięci RAM" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <Label Content="Ilość gniazd pamięci" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="ModelTextBlock" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="PriceTextBlock" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="DescriptionTextBlock" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="SocketTextBlock" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="RamMemoryTypeTextBlock" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="RamMemorySlotsTextBlock" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                </Grid>
-            </Grid>
         </Grid>
     </materialDesign:Card>
 </UserControl>
