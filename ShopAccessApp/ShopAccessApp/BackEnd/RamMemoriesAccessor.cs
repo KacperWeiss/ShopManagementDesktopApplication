@@ -45,13 +45,13 @@ namespace ShopAccessApp.BackEnd
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                ram_memories ramModel = db.warehouse_orders.SingleOrDefault(x => x.model == model);
+                //ram_memories ramModel = db.warehouse_orders.SingleOrDefault(x => x.model == model);
 
-                var entry = db.Entry(ramModel);
-                if (entry.State == System.Data.Entity.EntityState.Detached)
-                    db.ram_memories.Attach(ramModel);
-                db.ram_memories.Remove(ramModel);
-                db.SaveChanges();
+                //var entry = db.Entry(ramModel);
+                //if (entry.State == System.Data.Entity.EntityState.Detached)
+                //    db.ram_memories.Attach(ramModel);
+                //db.ram_memories.Remove(ramModel);
+                //db.SaveChanges();
             }
         }
     }
