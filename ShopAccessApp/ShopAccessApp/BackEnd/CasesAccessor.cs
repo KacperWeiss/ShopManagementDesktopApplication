@@ -8,7 +8,7 @@ namespace ShopAccessApp.BackEnd
 {
     static public class CasesAccessor
     {
-        static public List<cases> GetAllCases()
+        static public List<cases> GetAll()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -16,7 +16,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public cases GetCasesByModel(string caseModel)
+        static public cases GetByModel(string caseModel)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -24,7 +24,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public void CreateNewCase(cases newCase)
+        static public void CreateNew(cases newCase)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -33,7 +33,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public void DeleteCasesByModel(string caseModelName)
+        static public void DeleteByModel(string caseModelName)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {

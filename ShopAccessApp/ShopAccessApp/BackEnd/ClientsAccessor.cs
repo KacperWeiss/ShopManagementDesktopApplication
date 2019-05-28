@@ -8,7 +8,7 @@ namespace ShopAccessApp.BackEnd
 {
     static public class ClientsAccessor
     {
-        static public List<clients> GetAllClients()
+        static public List<clients> GetAll()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -16,7 +16,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public clients GetCasesByName(string name, string surname)
+        static public clients GetByName(string name, string surname)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -24,7 +24,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public void CreateNewClient(clients newClient)
+        static public void CreateNew(clients newClient)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -33,7 +33,7 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
-        static public void DeleteCasesByName(string name, string surname)
+        static public void DeleteByName(string name, string surname)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
