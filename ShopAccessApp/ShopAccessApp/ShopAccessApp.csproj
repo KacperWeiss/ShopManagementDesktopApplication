@@ -138,6 +138,9 @@
     <Compile Include="UserControlers\Tabs\ProductTab.xaml.cs">
       <DependentUpon>ProductTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlers\TemplateNumericUpDown.xaml.cs">
+      <DependentUpon>TemplateNumericUpDown.xaml</DependentUpon>
+    </Compile>
     <Compile Include="users.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
@@ -171,6 +174,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlers\Tabs\ProductTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlers\TemplateNumericUpDown.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
