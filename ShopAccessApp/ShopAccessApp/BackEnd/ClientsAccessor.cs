@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShopAccessApp.BackEnd
 {
-    public class ClientsAccess
+    public class ClientsAccessor
     {
         public List<clients> GetAllClients()
         {

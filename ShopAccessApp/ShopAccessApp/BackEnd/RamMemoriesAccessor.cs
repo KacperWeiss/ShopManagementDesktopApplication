@@ -45,7 +45,7 @@ namespace ShopAccessApp.BackEnd
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                ram_memories ramModel = db.warehouse_orders.SingleOrDefault(x => x.model == model);
+                ram_memories ramModel = db.ram_memories.SingleOrDefault(x => x.model == model);
 
                 var entry = db.Entry(ramModel);
                 if (entry.State == System.Data.Entity.EntityState.Detached)
