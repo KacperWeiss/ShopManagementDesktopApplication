@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:ShopAccessApp.UserControlers.ProductEntries"
+             xmlns:userControlers="clr-namespace:ShopAccessApp.UserControlers"
              mc:Ignorable="d" 
              TextElement.FontSize="14"
              d:DesignHeight="450" d:DesignWidth="1150">
@@ -23,8 +24,8 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        
-                        <Button Grid.Column="1"/>
+                        <userControlers:TemplateNumericUpDown Grid.Column="0" Height="30" Width="130" Margin="10 0"/>
+                        <Button Grid.Column="1" Content="Ok"/>
                     </Grid>
                 </StackPanel>
             </StackPanel>

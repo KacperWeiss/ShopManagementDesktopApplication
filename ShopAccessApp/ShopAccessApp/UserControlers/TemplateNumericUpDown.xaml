@@ -1,17 +1,18 @@
-﻿<UserControl x:Class="ShopAccessApp.TemplateNumericUpDown"
+﻿<UserControl x:Class="ShopAccessApp.UserControlers.TemplateNumericUpDown"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:UserControlTemplate"
+             xmlns:local="clr-namespace:ShopAccessApp.UserControlers"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d" MinHeight="48">
-    <Grid Background="{DynamicResource {x:Static SystemColors.WindowFrameBrushKey}}">
+             mc:Ignorable="d" MinHeight="24">
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="txtNum" x:FieldModifier="private" Text="{Binding Path=NumValue}" TextChanged="TxtNum_TextChanged" FontSize="36" BorderThickness="0" VerticalAlignment="Center" Padding="5,0"/>
+        <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" Background="{x:Null}" />
+        <TextBox x:Name="txtNum" x:FieldModifier="private" Grid.Column="0" Text="{Binding Path=NumValue}" TextChanged="TxtNum_TextChanged" FontSize="36" BorderThickness="0" VerticalAlignment="Center" Padding="5,0"/>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30*"/>

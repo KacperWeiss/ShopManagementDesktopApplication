@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace ShopAccessApp
+namespace ShopAccessApp.UserControlers
 {
     /// <summary>
     /// Interaction logic for TemplateNumericUpDown.xaml
