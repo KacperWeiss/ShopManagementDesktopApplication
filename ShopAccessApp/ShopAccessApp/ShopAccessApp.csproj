@@ -135,6 +135,9 @@
     <Compile Include="UserControlers\ProductEntries\MotherboardEntry.xaml.cs">
       <DependentUpon>MotherboardEntry.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlers\ProductEntries\ProcessorEntry.xaml.cs">
+      <DependentUpon>ProcessorEntry.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlers\Tabs\ProductTab.xaml.cs">
       <DependentUpon>ProductTab.xaml</DependentUpon>
     </Compile>
@@ -170,6 +173,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UserControlers\ProductEntries\MotherboardEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlers\ProductEntries\ProcessorEntry.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
