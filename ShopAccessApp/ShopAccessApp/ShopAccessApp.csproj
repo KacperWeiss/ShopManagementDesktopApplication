@@ -147,6 +147,9 @@
     <Compile Include="UserControlers\ProductEntries\RamMemoryEntry.xaml.cs">
       <DependentUpon>RamMemoryEntry.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlers\ProductEntries\ServiceEntry.xaml.cs">
+      <DependentUpon>ServiceEntry.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlers\Tabs\ProductTab.xaml.cs">
       <DependentUpon>ProductTab.xaml</DependentUpon>
     </Compile>
@@ -198,6 +201,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlers\ProductEntries\RamMemoryEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlers\ProductEntries\ServiceEntry.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
