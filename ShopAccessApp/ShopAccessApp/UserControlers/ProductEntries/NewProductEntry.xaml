@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="ShopAccessApp.UserControlers.ProductEntries.NewProductEntry"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:ShopAccessApp"
+             mc:Ignorable="d" 
+             TextElement.FontSize="11"
+             d:DesignHeight="500" d:DesignWidth="700">
+    <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth2" VerticalAlignment="Stretch" Padding="10" Width="700" Height="500">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Column="0" Grid.Row="0">
+                <materialDesign:PackIcon Kind="FileImage" Height="200" Width="200" Margin="0 10 0 10" HorizontalAlignment="Center"/> <!--Do zmiany na image pobierany z lokalizacji obrazu-->
+                <Label Content="Opis Słowny:"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="0">
+                <Label Content="Lokalizacja obrazu:"/>
+                <TextBox x:Name="LinkToImageTextBox"/>
+                <Label Content="Lokalizacja obrazu:"/>
+                <TextBox x:Name="ModelNameTextBox"/>
+                <Label Content="Cena:"/>
+                <TextBox x:Name="PriceTextBox"/>
+            </StackPanel>
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
+                <Label Content="Opis słowny:"/>
+                <TextBox x:Name="DescriptionTextBox"/>
+            </StackPanel>
+            <StackPanel Grid.Column="0" Grid.Row="2">
+                <Label Content=""/>
+                <TextBox x:Name="ProductFirstAdditionalDataTextBox"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="2">
+                <Label Content=""/>
+                <TextBox x:Name="ProductSecondAdditionalDataTextBox"/>
+            </StackPanel>
+        </Grid>
+    </materialDesign:Card>
+</UserControl>
+

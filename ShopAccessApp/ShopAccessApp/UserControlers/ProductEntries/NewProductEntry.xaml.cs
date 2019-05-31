@@ -13,16 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ShopAccessApp
+namespace ShopAccessApp.UserControlers.ProductEntries
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for NewProductEntry.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class NewProductEntry : UserControl
     {
-        public MainWindow()
-        { 
-                InitializeComponent();
+        public NewProductEntry()
+        {
+            InitializeComponent();
         }
     }
 }
