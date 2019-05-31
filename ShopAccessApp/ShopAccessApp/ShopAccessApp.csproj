@@ -132,6 +132,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudiaProjektBazdyDanych.edmx</DependentUpon>
     </Compile>
+    <Compile Include="UserControlers\ProductEntries\GraphicCardEntry.xaml.cs">
+      <DependentUpon>GraphicCardEntry.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlers\ProductEntries\MotherboardEntry.xaml.cs">
       <DependentUpon>MotherboardEntry.xaml</DependentUpon>
     </Compile>
@@ -172,6 +175,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControlers\ProductEntries\GraphicCardEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControlers\ProductEntries\MotherboardEntry.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
