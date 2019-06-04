@@ -153,8 +153,17 @@
     <Compile Include="UserControlers\ProductEntries\ServiceEntry.xaml.cs">
       <DependentUpon>ServiceEntry.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlers\Tabs\OrderTab.xaml.cs">
+      <DependentUpon>OrderTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlers\Tabs\ProductTab.xaml.cs">
       <DependentUpon>ProductTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlers\Tabs\TechnicianCurrentOrderTab.xaml.cs">
+      <DependentUpon>TechnicianCurrentOrderTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlers\Tabs\TechnicianOrderListTab.xaml.cs">
+      <DependentUpon>TechnicianOrderListTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlers\TemplateNumericUpDown.xaml.cs">
       <DependentUpon>TemplateNumericUpDown.xaml</DependentUpon>
@@ -215,7 +224,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControlers\Tabs\OrderTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControlers\Tabs\ProductTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlers\Tabs\TechnicianCurrentOrderTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlers\Tabs\TechnicianOrderListTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
