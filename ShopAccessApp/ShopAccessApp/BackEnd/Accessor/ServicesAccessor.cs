@@ -12,7 +12,9 @@ namespace ShopAccessApp.BackEnd
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.services.ToList<services>();
+                return db.services
+                         .Where(t => t.client_order_sets.Count == 0)
+                         .ToList<services>();
             }
         }
 
@@ -20,7 +22,9 @@ namespace ShopAccessApp.BackEnd
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.services.SingleOrDefault(t => t.id == id);
+                return db.services
+                         .Where(t => t.client_order_sets.Count == 0)
+                         .SingleOrDefault(t => t.id == id);
             }
         }
 

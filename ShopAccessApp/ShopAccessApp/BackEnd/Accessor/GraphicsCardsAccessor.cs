@@ -12,7 +12,9 @@ namespace ShopAccessApp.BackEnd
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.graphics_cards.ToList();
+                return db.graphics_cards
+                         .Where(t => t.client_order_sets.Count == 0)
+                         .ToList();
             }
         }
 
@@ -20,7 +22,9 @@ namespace ShopAccessApp.BackEnd
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.graphics_cards.SingleOrDefault(t => t.model == modelName);
+                return db.graphics_cards
+                         .Where(t => t.client_order_sets.Count == 0)
+                         .SingleOrDefault(t => t.model == modelName);
             }
         }
 
@@ -28,7 +32,9 @@ namespace ShopAccessApp.BackEnd
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.graphics_cards.Where(t => t.brand == brandName).ToList();
+                return db.graphics_cards
+                         .Where(t => t.client_order_sets.Count == 0)
+                         .Where(t => t.brand == brandName).ToList();
             }
         }
 

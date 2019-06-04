@@ -12,7 +12,9 @@ namespace ShopAccessApp.BackEnd
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.cases.ToList<cases>();
+                return db.cases
+                         .Where(t => t.client_order_sets.Count == 0)
+                         .ToList<cases>();
             }
         }
 
@@ -20,7 +22,9 @@ namespace ShopAccessApp.BackEnd
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.cases.SingleOrDefault(t => t.model.ToString() == caseModel);
+                return db.cases
+                         .Where(t => t.client_order_sets.Count == 0)
+                         .SingleOrDefault(t => t.model.ToString() == caseModel);
             }
         }
 
@@ -37,7 +41,7 @@ namespace ShopAccessApp.BackEnd
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                cases casesModel = db.cases.SingleOrDefault(x => x.model == caseModelName);
+                cases casesModel = db.cases.Where(t => t.client_order_sets.Count == 0).SingleOrDefault(x => x.model == caseModelName);
 
                 var entry = db.Entry(casesModel);
                 if (entry.State == System.Data.Entity.EntityState.Detached)

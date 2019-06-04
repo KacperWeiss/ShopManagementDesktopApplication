@@ -12,7 +12,9 @@ namespace ShopAccessApp.BackEnd
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.ram_memories.ToList<ram_memories>();
+                return db.ram_memories
+                         .Where(t => t.client_order_sets.Count == 0)
+                         .ToList<ram_memories>();
             }
         }
 
@@ -20,7 +22,9 @@ namespace ShopAccessApp.BackEnd
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.ram_memories.SingleOrDefault(t => t.type == type);
+                return db.ram_memories
+                         .Where(t => t.client_order_sets.Count == 0)
+                         .SingleOrDefault(t => t.type == type);
             }
         }
 
@@ -28,7 +32,9 @@ namespace ShopAccessApp.BackEnd
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.ram_memories.SingleOrDefault(t => t.model == model);
+                return db.ram_memories
+                         .Where(t => t.client_order_sets.Count == 0)
+                         .SingleOrDefault(t => t.model == model);
             }
         }
 
