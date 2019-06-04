@@ -37,7 +37,7 @@
             </StackPanel>
         </Grid>
         <Grid x:Name="ContentGrid" Margin="60 30 0 0">
-            <tabs:ProductTab/>
+            <tabs:OrderTab/>
         </Grid>
         <Grid x:Name="MenuGrid" HorizontalAlignment="Left" Width="250" Background="#FC353535">
             <materialDesign:TransitioningContent x:Name="transitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
