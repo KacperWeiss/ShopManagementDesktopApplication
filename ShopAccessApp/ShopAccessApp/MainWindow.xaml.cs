@@ -20,9 +20,32 @@ namespace ShopAccessApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool menuExtended = true;
         public MainWindow()
-        { 
-                InitializeComponent();
+        {
+            InitializeComponent();
+        }
+
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int index = listViewMenu.SelectedIndex;
+            transitioningContentSlide.OnApplyTemplate();
+            //transitioningMenuSlide.tran
+            menuPointer.Margin = new Thickness(0, 100 + (60 * index), 0, 0);
+        }
+
+        private void MenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (menuExtended)
+            {
+                menuGrid.Width = 60;
+                menuExtended = false;
+            }
+            else
+            {
+                menuGrid.Width = 250;
+                menuExtended = true;
+            }
         }
     }
 }

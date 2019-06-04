@@ -3,20 +3,57 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:ShopAccessApp"
         xmlns:userControlers="clr-namespace:ShopAccessApp.UserControlers"
-        xmlns:ProductEntries="clr-namespace:ShopAccessApp.UserControlers.ProductEntries"
+        xmlns:productEntries="clr-namespace:ShopAccessApp.UserControlers.ProductEntries"
+        xmlns:tabs="clr-namespace:ShopAccessApp.UserControlers.Tabs"
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280">
 
     <Grid>
         <!--<userControlers:LoginForm/>-->
-        <Grid Margin="0 10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="230"/>
-                <ColumnDefinition Width="4*"/>
-            </Grid.ColumnDefinitions>
-            <ProductEntries:NewProductEntry Grid.Column="1" VerticalAlignment="Top" Margin="0 10 20 10"/>
+        <Grid Margin="60 0 0 0">
+            <tabs:ProductTab/>
+        </Grid>
+        <Grid x:Name="menuGrid" HorizontalAlignment="Left" Width="250" Background="#353535">
+            <materialDesign:TransitioningContent x:Name="transitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
+                <Grid x:Name="menuPointer" Width="10" HorizontalAlignment="Left" Background="{DynamicResource PrimaryHueMidBrush}" Height="60" VerticalAlignment="Top" Margin="0 100 0 0"/>
+            </materialDesign:TransitioningContent>
+            <StackPanel VerticalAlignment="Top">
+                <Button x:Name="MenuButton" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Margin="10 8 0 0" Click="MenuButton_Click">
+                    <StackPanel Orientation="Horizontal" >
+                        <materialDesign:PackIcon Kind="Menu" Width="30" Height="30" Foreground="LightGray"/>
+                        <TextBlock Text="Menu" VerticalAlignment="Center" FontSize="20" Margin="20 0" Foreground="LightGray"/>
+                    </StackPanel>
+                </Button>
+                <ListView x:Name="listViewMenu" Margin="10 60 0 0" Foreground="LightGray" SelectionChanged="ListViewMenu_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Plus" Width="30" Height="30"/>
+                            <TextBlock Text="Dodaj zamówienie" VerticalAlignment="Center" FontSize="20" Margin="15 0"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="FileDocumentOutline" Width="30" Height="30"/>
+                            <TextBlock Text="Reklamacja" VerticalAlignment="Center" FontSize="20" Margin="15 0"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Briefcase" Width="30" Height="30"/>
+                            <TextBlock Text="??????" VerticalAlignment="Center" FontSize="20" Margin="15 0"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Power" Width="30" Height="30"/>
+                            <TextBlock Text="Wyloguj" VerticalAlignment="Center" FontSize="20" Margin="15 0"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>

@@ -3,10 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:ShopAccessApp.UserControlers.Tabs"
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="1200">
     <Grid>
-            
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Background="LightGray">
+                <Button Uid="0" Content="Płyta główna" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
+                <Button Uid="1" Content="Procesor" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
+                <Button Uid="2" Content="Karta graficzna" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
+                <Button Uid="3" Content="Pamięć ram" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
+                <Button Uid="4" Content="Obudowa" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
+                <Button Uid="5" Content="Usługi" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
+                <Button Uid="6" Content="Koszyk" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
+            </StackPanel>
+            <Grid x:Name="TabPointer" Width="150" Height="5" HorizontalAlignment="Left" Background="{DynamicResource PrimaryHueMidBrush}" Margin="10 0"/>
+        </StackPanel>
     </Grid>
 </UserControl>
