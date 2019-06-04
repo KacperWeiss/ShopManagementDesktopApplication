@@ -78,6 +78,7 @@
     <Compile Include="BackEnd\Accessor\UserAccessor.cs" />
     <Compile Include="BackEnd\Accessor\WarehouseOrderAccessor.cs" />
     <Compile Include="BackEnd\Accessor\WholesalersAccessor.cs" />
+    <Compile Include="BackEnd\Logics\ClientOrderManagement.cs" />
     <Compile Include="cases.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
