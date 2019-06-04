@@ -9,24 +9,51 @@
         xmlns:productEntries="clr-namespace:ShopAccessApp.UserControlers.ProductEntries"
         xmlns:tabs="clr-namespace:ShopAccessApp.UserControlers.Tabs"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280">
+        Title="MainWindow" Height="720" Width="1280" WindowStyle="None">
+    <WindowChrome.WindowChrome>
+        <WindowChrome     
+        CaptionHeight="1"  
+        CornerRadius ="0"
+        ResizeBorderThickness="4"         
+        GlassFrameThickness="0">
+        </WindowChrome>
+    </WindowChrome.WindowChrome>
 
-    <Grid>
-        <!--<userControlers:LoginForm/>-->
-        <Grid Margin="60 0 0 0">
+    <Grid x:Name="MainGrid">
+        <Grid x:Name="MainWindowBar" Background="#FC353535" VerticalAlignment="Top" Height="30" MouseDown="MainWindowBar_MouseDown">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="settingsButton" Margin="0 0 30 0" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
+                    <materialDesign:PackIcon Kind="Settings" Height="25" Width="25"/>
+                </Button>
+                <Button x:Name="minimizeButton" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="MinimizeButton_Click">
+                    <materialDesign:PackIcon Kind="WindowMinimize" Height="25" Width="25"/>
+                </Button>
+                <Button x:Name="maximizeButton" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="MaximizeButton_Click">
+                    <materialDesign:PackIcon Kind="WindowMaximize" Height="25" Width="25"/>
+                </Button>
+                <Button x:Name="closeButton" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="closeButton_Click">
+                    <materialDesign:PackIcon Kind="WindowClose" Height="25" Width="25"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="ContentGrid" Margin="60 30 0 0">
             <tabs:ProductTab/>
         </Grid>
-        <Grid x:Name="menuGrid" HorizontalAlignment="Left" Width="250" Background="#353535">
+        <Grid x:Name="MenuGrid" HorizontalAlignment="Left" Width="250" Background="#FC353535">
             <materialDesign:TransitioningContent x:Name="transitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
-                <Grid x:Name="menuPointer" Width="10" HorizontalAlignment="Left" Background="{DynamicResource PrimaryHueMidBrush}" Height="60" VerticalAlignment="Top" Margin="0 100 0 0"/>
+                <Grid x:Name="menuPointer" Width="10" HorizontalAlignment="Left" Background="{DynamicResource PrimaryHueMidBrush}" Height="60" VerticalAlignment="Top" Margin="0 110 0 0"/>
             </materialDesign:TransitioningContent>
             <StackPanel VerticalAlignment="Top">
-                <Button x:Name="MenuButton" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Margin="10 8 0 0" Click="MenuButton_Click">
-                    <StackPanel Orientation="Horizontal" >
-                        <materialDesign:PackIcon Kind="Menu" Width="30" Height="30" Foreground="LightGray"/>
-                        <TextBlock Text="Menu" VerticalAlignment="Center" FontSize="20" Margin="20 0" Foreground="LightGray"/>
-                    </StackPanel>
+
+                <Button x:Name="MenuButton" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Margin="0 0 0 0" Width="250" Height="50" Click="MenuButton_Click" MouseEnter="MenuButton_MouseEnter" MouseLeave="MenuButton_MouseLeave">
+                    <Grid x:Name="MenuButtonColor" Width="250" Height="50" Background="{x:Null}">
+                        <StackPanel Orientation="Horizontal" Margin="15 0 0 0">
+                            <materialDesign:PackIcon Kind="Menu" Width="30" Height="30" Foreground="LightGray" VerticalAlignment="Center"/>
+                            <TextBlock Text="Menu" VerticalAlignment="Center" FontSize="20" Margin="20 0" Foreground="LightGray"/>
+                        </StackPanel>
+                    </Grid>
                 </Button>
+
                 <ListView x:Name="listViewMenu" Margin="10 60 0 0" Foreground="LightGray" SelectionChanged="ListViewMenu_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
@@ -55,5 +82,6 @@
                 </ListView>
             </StackPanel>
         </Grid>
+        <Grid x:Name="MiddleScreenPopupGrid" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </Window>

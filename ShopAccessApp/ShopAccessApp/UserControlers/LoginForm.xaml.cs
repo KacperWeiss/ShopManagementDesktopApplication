@@ -23,6 +23,21 @@ namespace ShopAccessApp.UserControlers
         public LoginForm()
         {
             InitializeComponent();
+
+            
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.GetType() == typeof(MainWindow))
+                {
+                    MainWindow parentWindow = (window as MainWindow);
+                    parentWindow.HideLoginForm();
+                }
+            }
+            
         }
     }
 }

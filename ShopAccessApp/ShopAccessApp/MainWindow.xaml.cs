@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopAccessApp.UserControlers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,31 +21,98 @@ namespace ShopAccessApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        LoginForm loginForm = new LoginForm();
+
         bool menuExtended = true;
         public MainWindow()
         {
             InitializeComponent();
+            ShowLoginForm();
+            
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow = this;
+        }
+
+        private void ShowLoginForm()
+        {
+            MenuGrid.Visibility = Visibility.Collapsed;
+            ContentGrid.Visibility = Visibility.Collapsed;
+            MiddleScreenPopupGrid.Children.Clear();
+            MiddleScreenPopupGrid.Children.Add(loginForm);
+        }
+
+        public void HideLoginForm()
+        {
+            MiddleScreenPopupGrid.Children.Clear();
+            MenuGrid.Visibility = Visibility.Visible;
+            ContentGrid.Visibility = Visibility.Visible;
         }
 
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int index = listViewMenu.SelectedIndex;
             transitioningContentSlide.OnApplyTemplate();
-            //transitioningMenuSlide.tran
-            menuPointer.Margin = new Thickness(0, 100 + (60 * index), 0, 0);
+            menuPointer.Margin = new Thickness(0, 110 + (60 * index), 0, 0);
         }
 
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
             if (menuExtended)
             {
-                menuGrid.Width = 60;
+                MenuGrid.Width = 60;
                 menuExtended = false;
             }
             else
             {
-                menuGrid.Width = 250;
+                MenuGrid.Width = 250;
                 menuExtended = true;
+            }
+        }
+
+        private void closeButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
+
+        private void MinimizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void MaximizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == System.Windows.WindowState.Normal)
+            {
+                this.WindowState = System.Windows.WindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = System.Windows.WindowState.Normal;
+            }
+        }
+
+        private void MenuButton_MouseEnter(object sender, MouseEventArgs e)
+        {
+            MenuButtonColor.Background = new SolidColorBrush(Color.FromArgb(252, 75, 75, 75));
+        }
+
+        private void MenuButton_MouseLeave(object sender, MouseEventArgs e)
+        {
+            MenuButtonColor.Background = null;
+        }
+
+        private void MainWindowBar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                DragMove();
+            }
+            catch
+            {
+
             }
         }
     }
