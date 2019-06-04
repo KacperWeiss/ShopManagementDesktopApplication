@@ -70,22 +70,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BackEnd\GraphicsCardsAccessor.cs" />
-    <Compile Include="BackEnd\ProcessorsAccessor.cs" />
-    <Compile Include="BackEnd\RamMemoriesAccessor.cs" />
-    <Compile Include="BackEnd\ServicesAccessor.cs" />
-    <Compile Include="BackEnd\MotherBoardsAcessor.cs" />
-    <Compile Include="BackEnd\UserAccessor.cs" />
-    <Compile Include="BackEnd\WarehouseOrderAccessor.cs" />
-    <Compile Include="BackEnd\WholesalersAccessor.cs" />
+    <Compile Include="BackEnd\Accessor\GraphicsCardsAccessor.cs" />
+    <Compile Include="BackEnd\Accessor\ProcessorsAccessor.cs" />
+    <Compile Include="BackEnd\Accessor\RamMemoriesAccessor.cs" />
+    <Compile Include="BackEnd\Accessor\ServicesAccessor.cs" />
+    <Compile Include="BackEnd\Accessor\MotherBoardsAcessor.cs" />
+    <Compile Include="BackEnd\Accessor\UserAccessor.cs" />
+    <Compile Include="BackEnd\Accessor\WarehouseOrderAccessor.cs" />
+    <Compile Include="BackEnd\Accessor\WholesalersAccessor.cs" />
+    <Compile Include="BackEnd\Logics\ClientOrderManagement.cs" />
     <Compile Include="cases.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
-    <Compile Include="BackEnd\CasesAccessor.cs" />
+    <Compile Include="BackEnd\Accessor\CasesAccessor.cs" />
     <Compile Include="clients.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
-    <Compile Include="BackEnd\ClientsAccessor.cs" />
+    <Compile Include="BackEnd\Accessor\ClientsAccessor.cs" />
     <Compile Include="client_order_sets.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
@@ -113,7 +114,7 @@
     <Compile Include="Registration.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
-    <Compile Include="BackEnd\RegistrationAccess.cs" />
+    <Compile Include="BackEnd\Accessor\RegistrationAccess.cs" />
     <Compile Include="services.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
