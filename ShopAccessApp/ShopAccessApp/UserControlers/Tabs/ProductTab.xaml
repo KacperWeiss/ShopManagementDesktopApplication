@@ -5,8 +5,77 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:ShopAccessApp.UserControlers.Tabs"
+             xmlns:productEntries="clr-namespace:ShopAccessApp.UserControlers.ProductEntries"
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="1200">
+    <UserControl.Resources>
+        <Style x:Key="ListViewProductStyle" TargetType="{x:Type ListView}">
+            <Setter Property="Background" Value="{DynamicResource MaterialDesignPaper}"/>
+            <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignTextBoxBorder}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Binding Path="View" RelativeSource="{RelativeSource Self}">
+                        <Binding.Converter>
+                            <materialDesign:ListViewGridViewConverter>
+                                <materialDesign:ListViewGridViewConverter.DefaultValue>
+                                    <Style TargetType="{x:Type ListBoxItem}">
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}"/>
+                                        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ItemsControl}}}"/>
+                                        <Setter Property="Padding" Value="8"/>
+                                        <Setter Property="SnapsToDevicePixels" Value="True"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" ClipToBounds="{TemplateBinding ClipToBounds}" Margin="{TemplateBinding Margin}">
+                                                        <Grid>
+                                                            <materialDesign:Ripple ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Focusable="False" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
+                                                                
+                                                            </materialDesign:Ripple>
+                                                        </Grid>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </materialDesign:ListViewGridViewConverter.DefaultValue>
+                                <materialDesign:ListViewGridViewConverter.ViewValue>
+                                    <Style TargetType="{x:Type ListViewItem}">
+                                        <Setter Property="SnapsToDevicePixels" Value="True"/>
+                                        <Setter Property="OverridesDefaultStyle" Value="True"/>
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Setter Property="BorderBrush" Value="Transparent"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                                    <Border x:Name="Border" BorderBrush="{DynamicResource MaterialDesignDivider}" BorderThickness="0,0,0,1" Background="{TemplateBinding Background}" Padding="{Binding (materialDesign:ListViewAssist.ListViewItemPadding), RelativeSource={RelativeSource Self}}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                                                        <GridViewRowPresenter Columns="{TemplateBinding GridView.ColumnCollection}" Content="{TemplateBinding Content}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </materialDesign:ListViewGridViewConverter.ViewValue>
+                            </materialDesign:ListViewGridViewConverter>
+                        </Binding.Converter>
+                    </Binding>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="False"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Background="LightGray">
@@ -19,6 +88,16 @@
                 <Button Uid="6" Content="Koszyk" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
             </StackPanel>
             <Grid x:Name="TabPointer" Width="150" Height="5" HorizontalAlignment="Left" Background="{DynamicResource PrimaryHueMidBrush}" Margin="10 0"/>
+            <Grid Background="White" HorizontalAlignment="Center">
+                <ListView x:Name="MotherboardListView" ItemsSource="{Binding MotherboardList}" Style="{DynamicResource ListViewProductStyle}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate DataType="motherboards">
+                            <productEntries:MotherboardEntry/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </Grid>
         </StackPanel>
     </Grid>
 </UserControl>

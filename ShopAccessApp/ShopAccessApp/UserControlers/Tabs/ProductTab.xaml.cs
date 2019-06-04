@@ -1,6 +1,9 @@
-﻿using System;
+﻿using ShopAccessApp.BackEnd;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,12 +21,37 @@ namespace ShopAccessApp.UserControlers.Tabs
     /// <summary>
     /// Interaction logic for ProductTab.xaml
     /// </summary>
-    public partial class ProductTab : UserControl
+    public partial class ProductTab : UserControl, INotifyPropertyChanged
     {
         Button previousButton;
         public ProductTab()
         {
             InitializeComponent();
+            DataContext = this;
+        }
+
+        private List<motherboards> motherboardList = MotherBoardsAcessor.GetAll();
+
+        public List<motherboards> MotherboardList
+        {
+            get
+            {
+                return motherboardList;
+            }
+            set
+            {
+                if (motherboardList != value)
+                {
+                    motherboardList = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private void ButtonTab_Click(object sender, RoutedEventArgs e)

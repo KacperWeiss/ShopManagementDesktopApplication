@@ -20,7 +20,7 @@
     </WindowChrome.WindowChrome>
 
     <Grid x:Name="MainGrid">
-        <Grid x:Name="MainWindowBar" Background="#FC353535" VerticalAlignment="Top" Height="30" MouseDown="MainWindowBar_MouseDown">
+        <Grid x:Name="MainWindowBar" Background="#FC353535" VerticalAlignment="Top" Height="40" MouseDown="MainWindowBar_MouseDown">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button x:Name="settingsButton" Margin="0 0 30 0" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
                     <materialDesign:PackIcon Kind="Settings" Height="25" Width="25"/>
@@ -36,8 +36,8 @@
                 </Button>
             </StackPanel>
         </Grid>
-        <Grid x:Name="ContentGrid" Margin="60 30 0 0">
-            <tabs:OrderTab/>
+        <Grid x:Name="ContentGrid" Margin="60 40 0 0">
+            <tabs:ProductTab/>
         </Grid>
         <Grid x:Name="MenuGrid" HorizontalAlignment="Left" Width="250" Background="#FC353535">
             <materialDesign:TransitioningContent x:Name="transitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
