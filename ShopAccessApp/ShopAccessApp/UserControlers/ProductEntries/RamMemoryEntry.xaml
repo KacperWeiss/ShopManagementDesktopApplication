@@ -78,9 +78,10 @@
                     <Label Content="Na magazynie" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <Label Content="Przychodzące" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <TextBlock x:Name="StorageCountTextBlock" Text="{Binding amount}" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="StorageOrderCountTextBlock" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="StorageOrderCountTextBlock" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Loaded="StorageOrderCountTextBlock_Loaded"/>
                 </Grid>
             </StackPanel>
+            <TextBlock x:Name="IDHolderHack" Text="{Binding id}" Visibility="Collapsed"/>
         </Grid>
     </materialDesign:Card>
 </UserControl>

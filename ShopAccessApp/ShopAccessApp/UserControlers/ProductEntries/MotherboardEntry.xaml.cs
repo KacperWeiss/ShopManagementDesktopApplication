@@ -58,7 +58,7 @@ namespace ShopAccessApp.UserControlers.ProductEntries
 
         private void StorageOrderCountTextBlock_Loaded(object sender, RoutedEventArgs e)
         {
-            var id = Convert.ToInt32(MotherboardIDHolderHack.Text);
+            var id = Convert.ToInt32(IDHolderHack.Text);
 
 
             using (var db = new StudiaProjektBazyDanychEntities())

@@ -85,7 +85,7 @@
                     <TextBlock x:Name="StorageOrderCountTextBlock" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Loaded="StorageOrderCountTextBlock_Loaded"/>
                 </Grid>
             </StackPanel>
-            <TextBlock x:Name="MotherboardIDHolderHack" Text="{Binding id}" Visibility="Collapsed"/>
+            <TextBlock x:Name="IDHolderHack" Text="{Binding id}" Visibility="Collapsed"/>
         </Grid>
     </materialDesign:Card>
 </UserControl>
