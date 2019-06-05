@@ -218,7 +218,14 @@ namespace ShopAccessApp.UserControlers.Tabs
                     break;
 
                 case 6:
+                    MotherboardListView.Visibility = Visibility.Collapsed;
+                    ProcessorListView.Visibility = Visibility.Collapsed;
+                    GraphicsCardListView.Visibility = Visibility.Collapsed;
+                    RamMemoryListView.Visibility = Visibility.Collapsed;
+                    CaseListView.Visibility = Visibility.Collapsed;
+                    ServiceListView.Visibility = Visibility.Collapsed;
 
+                    
                     break;
 
                 default:

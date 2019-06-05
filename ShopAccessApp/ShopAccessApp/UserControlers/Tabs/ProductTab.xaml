@@ -6,6 +6,7 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:ShopAccessApp.UserControlers.Tabs"
              xmlns:productEntries="clr-namespace:ShopAccessApp.UserControlers.ProductEntries"
+             xmlns:tabs="clr-namespace:ShopAccessApp.UserControlers.Tabs"
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="1200">
     <UserControl.Resources>
@@ -143,8 +144,10 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
             </Grid>
         </ScrollViewer>
+        <Grid x:Name="OrderTab" Margin="0 50 0 0" Visibility="Collapsed">
+        <tabs:OrderTab/>
+        </Grid>
     </Grid>
 </UserControl>

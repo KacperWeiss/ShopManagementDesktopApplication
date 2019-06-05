@@ -56,6 +56,24 @@ namespace ShopAccessApp
             int index = listViewMenu.SelectedIndex;
             transitioningContentSlide.OnApplyTemplate();
             menuPointer.Margin = new Thickness(0, 112 + (60 * index), 0, 0);
+
+            switch (index)
+            {
+                case 0:
+
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+                    ShowLoginForm();
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void MenuButton_Click(object sender, RoutedEventArgs e)
