@@ -35,6 +35,11 @@ namespace ShopAccessApp.UserControlers.Tabs
         }
 
         private List<motherboards> motherboardList = MotherBoardsAcessor.GetAll();
+        private List<processors> processorList = ProcessorsAccessor.GetAll();
+        private List<graphics_cards> graphicsCardList = GraphicsCardsAccessor.GetAll();
+        private List<ram_memories> ramMemoryList = RamMemoriesAccessor.GetAll();
+        private List<cases> caseList = CasesAccessor.GetAll();
+        private List<services> serviceList = ServicesAccessor.GetAll();
 
         public List<motherboards> MotherboardList
         {
@@ -47,6 +52,86 @@ namespace ShopAccessApp.UserControlers.Tabs
                 if (motherboardList != value)
                 {
                     motherboardList = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public List<processors> ProcessorList
+        {
+            get
+            {
+                return processorList;
+            }
+            set
+            {
+                if (processorList != value)
+                {
+                    processorList = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public List<graphics_cards> GraphicsCardList
+        {
+            get
+            {
+                return graphicsCardList;
+            }
+            set
+            {
+                if (graphicsCardList != value)
+                {
+                    graphicsCardList = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public List<ram_memories> RamMemoryList
+        {
+            get
+            {
+                return ramMemoryList;
+            }
+            set
+            {
+                if (ramMemoryList != value)
+                {
+                    ramMemoryList = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public List<cases> CaseList
+        {
+            get
+            {
+                return caseList;
+            }
+            set
+            {
+                if (caseList != value)
+                {
+                    caseList = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public List<services> ServiceList
+        {
+            get
+            {
+                return serviceList;
+            }
+            set
+            {
+                if (serviceList != value)
+                {
+                    serviceList = value;
                     OnPropertyChanged();
                 }
             }
@@ -79,24 +164,61 @@ namespace ShopAccessApp.UserControlers.Tabs
             switch (index)
             {
                 case 0:
+                    MotherboardListView.Visibility = Visibility.Visible;
+                    ProcessorListView.Visibility = Visibility.Collapsed;
+                    GraphicsCardListView.Visibility = Visibility.Collapsed;
+                    RamMemoryListView.Visibility = Visibility.Collapsed;
+                    CaseListView.Visibility = Visibility.Collapsed;
+                    ServiceListView.Visibility = Visibility.Collapsed;
                     break;
 
                 case 1:
+                    MotherboardListView.Visibility = Visibility.Collapsed;
+                    ProcessorListView.Visibility = Visibility.Visible;
+                    GraphicsCardListView.Visibility = Visibility.Collapsed;
+                    RamMemoryListView.Visibility = Visibility.Collapsed;
+                    CaseListView.Visibility = Visibility.Collapsed;
+                    ServiceListView.Visibility = Visibility.Collapsed;
                     break;
 
                 case 2:
+                    MotherboardListView.Visibility = Visibility.Collapsed;
+                    ProcessorListView.Visibility = Visibility.Collapsed;
+                    GraphicsCardListView.Visibility = Visibility.Visible;
+                    RamMemoryListView.Visibility = Visibility.Collapsed;
+                    CaseListView.Visibility = Visibility.Collapsed;
+                    ServiceListView.Visibility = Visibility.Collapsed;
                     break;
 
                 case 3:
+                    MotherboardListView.Visibility = Visibility.Collapsed;
+                    ProcessorListView.Visibility = Visibility.Collapsed;
+                    GraphicsCardListView.Visibility = Visibility.Collapsed;
+                    RamMemoryListView.Visibility = Visibility.Visible;
+                    CaseListView.Visibility = Visibility.Collapsed;
+                    ServiceListView.Visibility = Visibility.Collapsed;
                     break;
 
                 case 4:
+                    MotherboardListView.Visibility = Visibility.Collapsed;
+                    ProcessorListView.Visibility = Visibility.Collapsed;
+                    GraphicsCardListView.Visibility = Visibility.Collapsed;
+                    RamMemoryListView.Visibility = Visibility.Collapsed;
+                    CaseListView.Visibility = Visibility.Visible;
+                    ServiceListView.Visibility = Visibility.Collapsed;
                     break;
 
                 case 5:
+                    MotherboardListView.Visibility = Visibility.Collapsed;
+                    ProcessorListView.Visibility = Visibility.Collapsed;
+                    GraphicsCardListView.Visibility = Visibility.Collapsed;
+                    RamMemoryListView.Visibility = Visibility.Collapsed;
+                    CaseListView.Visibility = Visibility.Collapsed;
+                    ServiceListView.Visibility = Visibility.Visible;
                     break;
 
                 case 6:
+
                     break;
 
                 default:

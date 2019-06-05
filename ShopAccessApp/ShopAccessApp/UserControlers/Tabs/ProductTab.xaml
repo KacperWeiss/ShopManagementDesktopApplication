@@ -104,6 +104,46 @@
                     </ListView.ItemTemplate>
                 </ListView>
 
+                <ListView x:Name="ProcessorListView" Visibility="Collapsed" ItemsSource="{Binding ProcessorList}" Style="{DynamicResource ListViewProductStyle}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate DataType="processors">
+                            <productEntries:ProcessorEntry/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <ListView x:Name="GraphicsCardListView" Visibility="Collapsed" ItemsSource="{Binding GraphicsCardList}" Style="{DynamicResource ListViewProductStyle}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate DataType="graphics_cards">
+                            <productEntries:GraphicCardEntry/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <ListView x:Name="RamMemoryListView" Visibility="Collapsed" ItemsSource="{Binding RamMemoryList}" Style="{DynamicResource ListViewProductStyle}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate DataType="ram_memories">
+                            <productEntries:RamMemoryEntry/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <ListView x:Name="CaseListView" Visibility="Collapsed" ItemsSource="{Binding CaseList}" Style="{DynamicResource ListViewProductStyle}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate DataType="cases">
+                            <productEntries:CaseEntry/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <ListView x:Name="ServiceListView" Visibility="Collapsed" ItemsSource="{Binding ServiceList}" Style="{DynamicResource ListViewProductStyle}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate DataType="services">
+                            <productEntries:ServiceEntry/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
             </Grid>
         </ScrollViewer>
     </Grid>

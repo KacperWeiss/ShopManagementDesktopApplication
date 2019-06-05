@@ -9,6 +9,9 @@
              mc:Ignorable="d" 
              TextElement.FontSize="14"
              d:DesignHeight="250" d:DesignWidth="1150">
+    <UserControl.Resources>
+        <BitmapImage x:Key="DefaultProductImage" UriSource="default_product_image.png" />
+    </UserControl.Resources>
     <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth2" VerticalAlignment="Stretch" Padding="10" Height="250">
         <Grid Margin="0 10">
             <Grid.ColumnDefinitions>
@@ -16,12 +19,12 @@
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="230"/>
             </Grid.ColumnDefinitions>
-            <Image Source="default_product_image.png" Grid.Column="0" Height="200" Width="200"/>
+            <Image Source="{Binding image_source, FallbackValue={StaticResource DefaultProductImage}, TargetNullValue={StaticResource DefaultProductImage}}" Grid.Column="0" Height="200" Width="200"/>
             <Grid Grid.Column="1">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="520"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -41,11 +44,11 @@
                     <Label Content="Opis słowny" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <Label Content="Typ pamięci RAM" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <Label Content="Pojemność pamięci" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="ModelTextBlock" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="PriceTextBlock" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="DescriptionTextBlock" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" TextWrapping="Wrap" />
-                    <TextBlock x:Name="RamMemoryTypeTextBlock" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="RamMemoryTextBlock" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="ModelTextBlock" Text="{Binding model}" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="PriceTextBlock" Text="{Binding price}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="DescriptionTextBlock" Text="{Binding description}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" TextWrapping="Wrap" />
+                    <TextBlock x:Name="RamMemoryTypeTextBlock" Text="{Binding type}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="RamMemoryTextBlock" Text="{Binding capacity_gb}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Grid>
             </Grid>
             <StackPanel Grid.Column="2" Margin="10 0" VerticalAlignment="Center">
@@ -74,7 +77,7 @@
                     <Border Grid.RowSpan="2" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
                     <Label Content="Na magazynie" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <Label Content="Przychodzące" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="StorageCountTextBlock" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="StorageCountTextBlock" Text="{Binding amount}" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <TextBlock x:Name="StorageOrderCountTextBlock" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </Grid>
             </StackPanel>

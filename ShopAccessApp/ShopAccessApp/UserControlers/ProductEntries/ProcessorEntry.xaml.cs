@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,11 +20,51 @@ namespace ShopAccessApp.UserControlers.ProductEntries
     /// <summary>
     /// Interaction logic for ProcessorEntry.xaml
     /// </summary>
-    public partial class ProcessorEntry : UserControl
+    public partial class ProcessorEntry : UserControl, INotifyPropertyChanged
     {
         public ProcessorEntry()
         {
             InitializeComponent();
+        }
+
+        private int incoming = 0;
+        public int Incoming
+        {
+            get
+            {
+                return incoming;
+            }
+            set
+            {
+                if (incoming != value)
+                {
+                    incoming = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void StorageOrderCountTextBlock_Loaded(object sender, RoutedEventArgs e)
+        {
+            var id = Convert.ToInt32(ProcessorIDHolderHack.Text);
+
+
+            using (var db = new StudiaProjektBazyDanychEntities())
+            {
+                var total = db.warehouse_orders.Where(t => t.processors.id == id).ToList();
+                foreach (var item in total)
+                {
+                    Incoming += (int)item.processor_amount;
+                }
+            }
+            StorageOrderCountTextBlock.Text = Incoming.ToString();
+
         }
     }
 }

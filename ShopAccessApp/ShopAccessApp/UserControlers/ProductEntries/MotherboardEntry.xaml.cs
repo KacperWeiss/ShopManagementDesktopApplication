@@ -22,6 +22,17 @@ namespace ShopAccessApp.UserControlers.ProductEntries
     /// </summary>
     public partial class MotherboardEntry : UserControl, INotifyPropertyChanged
     {
+        public MotherboardEntry()
+        {
+            InitializeComponent();
+            
+        }
+
+        private void AddToCartButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private int incoming = 0;
         public int Incoming
         {
@@ -37,17 +48,6 @@ namespace ShopAccessApp.UserControlers.ProductEntries
                     OnPropertyChanged();
                 }
             }
-        }
-
-        public MotherboardEntry()
-        {
-            InitializeComponent();
-            
-        }
-
-        private void AddToCartButton_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
