@@ -21,7 +21,7 @@
 
     <Grid x:Name="MainGrid">
         <Grid x:Name="MainWindowBar" Background="#FC353535" VerticalAlignment="Top" Height="40" MouseDown="MainWindowBar_MouseDown">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 3 7 0">
                 <Button x:Name="settingsButton" Margin="0 0 30 0" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray">
                     <materialDesign:PackIcon Kind="Settings" Height="25" Width="25"/>
                 </Button>
@@ -45,7 +45,7 @@
             </materialDesign:TransitioningContent>
             <StackPanel VerticalAlignment="Top">
 
-                <Button x:Name="MenuButton" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Margin="0 0 0 0" Width="250" Height="50" Click="MenuButton_Click" MouseEnter="MenuButton_MouseEnter" MouseLeave="MenuButton_MouseLeave">
+                <Button x:Name="MenuButton" HorizontalAlignment="Left" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Margin="0 2 0 0" Width="250" Height="50" Click="MenuButton_Click" MouseEnter="MenuButton_MouseEnter" MouseLeave="MenuButton_MouseLeave">
                     <Grid x:Name="MenuButtonColor" Width="250" Height="50" Background="{x:Null}">
                         <StackPanel Orientation="Horizontal" Margin="15 0 0 0">
                             <materialDesign:PackIcon Kind="Menu" Width="30" Height="30" Foreground="LightGray" VerticalAlignment="Center"/>

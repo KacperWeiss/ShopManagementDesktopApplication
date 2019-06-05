@@ -24,7 +24,7 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="*" MaxWidth="800"/>
+                        <ColumnDefinition Width="520"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -49,7 +49,7 @@
                     <Label Content="Ilość gniazd pamięci" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <TextBlock x:Name="ModelTextBlock" Text="{Binding model}" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <TextBlock x:Name="PriceTextBlock" Text="{Binding price}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="DescriptionTextBlock" Text="{Binding description}" Width="600" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="DescriptionTextBlock" Text="{Binding description}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" TextWrapping="Wrap"/>
                     <TextBlock x:Name="SocketTextBlock" Text="{Binding cpu_socket}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <TextBlock x:Name="RamMemoryTypeTextBlock" Text="{Binding ram_memory_type}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <TextBlock x:Name="RamMemorySlotsTextBlock" Text="{Binding ram_memory_slots}" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
