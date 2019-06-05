@@ -39,7 +39,7 @@
         <Grid x:Name="ContentGrid" Margin="60 40 0 0">
             <tabs:ProductTab/>
         </Grid>
-        <Grid x:Name="MenuGrid" HorizontalAlignment="Left" Width="250" Background="#FC353535">
+        <Grid x:Name="MenuGrid" HorizontalAlignment="Left" Width="250" Background="#F2353535">
             <materialDesign:TransitioningContent x:Name="transitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
                 <Grid x:Name="menuPointer" Width="10" HorizontalAlignment="Left" Background="{DynamicResource PrimaryHueMidBrush}" Height="60" VerticalAlignment="Top" Margin="0 110 0 0"/>
             </materialDesign:TransitioningContent>

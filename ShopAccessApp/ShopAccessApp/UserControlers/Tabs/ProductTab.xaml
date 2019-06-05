@@ -89,14 +89,16 @@
             </StackPanel>
             <Grid x:Name="TabPointer" Width="150" Height="5" HorizontalAlignment="Left" Background="{DynamicResource PrimaryHueMidBrush}" Margin="10 0"/>
             <Grid Background="White" HorizontalAlignment="Center">
-                <ListView x:Name="MotherboardListView" ItemsSource="{Binding MotherboardList}" Style="{DynamicResource ListViewProductStyle}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate DataType="motherboards">
-                            <productEntries:MotherboardEntry/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
+                <ScrollViewer x:Name="ProductScrollViewer">
+                    <ListView x:Name="MotherboardListView" ItemsSource="{Binding MotherboardList}" Style="{DynamicResource ListViewProductStyle}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate DataType="motherboards">
+                                <productEntries:MotherboardEntry/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
 
-                </ListView>
+                    </ListView>
+                </ScrollViewer>
             </Grid>
         </StackPanel>
     </Grid>

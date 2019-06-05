@@ -24,10 +24,14 @@ namespace ShopAccessApp.UserControlers.Tabs
     public partial class ProductTab : UserControl, INotifyPropertyChanged
     {
         Button previousButton;
+        public int cosik = 2;
+
         public ProductTab()
         {
             InitializeComponent();
             DataContext = this;
+
+            
         }
 
         private List<motherboards> motherboardList = MotherBoardsAcessor.GetAll();

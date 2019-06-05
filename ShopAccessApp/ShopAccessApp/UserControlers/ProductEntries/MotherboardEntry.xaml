@@ -49,7 +49,7 @@
                     <Label Content="Ilość gniazd pamięci" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <TextBlock x:Name="ModelTextBlock" Text="{Binding model}" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <TextBlock x:Name="PriceTextBlock" Text="{Binding price}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="DescriptionTextBlock" Text="{Binding description}" MaxWidth="600" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="DescriptionTextBlock" Text="{Binding description}" Width="600" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" TextWrapping="Wrap"/>
                     <TextBlock x:Name="SocketTextBlock" Text="{Binding cpu_socket}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <TextBlock x:Name="RamMemoryTypeTextBlock" Text="{Binding ram_memory_type}" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <TextBlock x:Name="RamMemorySlotsTextBlock" Text="{Binding ram_memory_slots}" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -64,7 +64,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <userControlers:TemplateNumericUpDown Grid.Column="0" Height="30" Width="150" Margin="0 0 10 0"/>
-                        <Button Grid.Column="1" Content="Ok"/>
+                        <Button x:Name="AddToCartButton" Grid.Column="1" Content="Ok" Click="AddToCartButton_Click"/>
                     </Grid>
                 </StackPanel>
                 <Grid Margin="0 30 10 0">
@@ -81,10 +81,11 @@
                     <Border Grid.RowSpan="2" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
                     <Label Content="Na magazynie" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     <Label Content="Przychodzące" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="StorageCountTextBlock" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    <TextBlock x:Name="StorageOrderCountTextBlock" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="StorageCountTextBlock" Text="{Binding amount}" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="StorageOrderCountTextBlock" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Loaded="StorageOrderCountTextBlock_Loaded"/>
                 </Grid>
             </StackPanel>
+            <TextBlock x:Name="MotherboardIDHolderHack" Text="{Binding id}" Visibility="Collapsed"/>
         </Grid>
     </materialDesign:Card>
 </UserControl>
