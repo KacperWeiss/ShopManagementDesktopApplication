@@ -36,8 +36,7 @@
                 </Button>
             </StackPanel>
         </Grid>
-        <Grid x:Name="ContentGrid" Margin="60 40 0 0">
-            <tabs:ProductTab/>
+        <Grid x:Name="ContentGrid" Margin="60 40 0 5">
         </Grid>
         <Grid x:Name="MenuGrid" HorizontalAlignment="Left" Width="250" Background="#F2353535">
             <materialDesign:TransitioningContent x:Name="transitioningContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
@@ -54,7 +53,7 @@
                     </Grid>
                 </Button>
 
-                <ListView x:Name="listViewMenu" Margin="10 60 0 0" Foreground="LightGray" SelectionChanged="ListViewMenu_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListView x:Name="SellerListViewMenu" Margin="10 60 0 0" Visibility="Visible" Foreground="LightGray" SelectionChanged="SellerListViewMenu_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Plus" Width="30" Height="30"/>
@@ -69,8 +68,23 @@
                     </ListViewItem>
                     <ListViewItem Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Briefcase" Width="30" Height="30"/>
-                            <TextBlock Text="??????" VerticalAlignment="Center" FontSize="20" Margin="15 0"/>
+                            <materialDesign:PackIcon Kind="Power" Width="30" Height="30"/>
+                            <TextBlock Text="Wyloguj" VerticalAlignment="Center" FontSize="20" Margin="15 0"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+
+                <ListView x:Name="StorekeeperListViewMenu" Margin="10 60 0 0" Visibility="Collapsed" Foreground="LightGray" SelectionChanged="StorekeeperListViewMenu_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="FolderPlus" Width="30" Height="30"/>
+                            <TextBlock Text="Produkty" VerticalAlignment="Center" FontSize="20" Margin="15 0"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Receipt" Width="30" Height="30"/>
+                            <TextBlock Text="Zamówienia" VerticalAlignment="Center" FontSize="20" Margin="15 0"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem Height="60">
@@ -80,6 +94,56 @@
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
+
+                <ListView x:Name="TechnicianListViewMenu" Margin="10 60 0 0" Visibility="Collapsed" Foreground="LightGray" SelectionChanged="TechnicianListViewMenu_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="FormatListNumbered" Width="30" Height="30"/>
+                            <TextBlock Text="Lista zamówień" VerticalAlignment="Center" FontSize="20" Margin="15 0"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Receipt" Width="30" Height="30"/>
+                            <TextBlock Text="Obecne zamówienie" VerticalAlignment="Center" FontSize="20" Margin="15 0"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Power" Width="30" Height="30"/>
+                            <TextBlock Text="Wyloguj" VerticalAlignment="Center" FontSize="20" Margin="15 0"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+
+                <ListView x:Name="AdministratorListViewMenu" Margin="10 60 0 0" Visibility="Collapsed" Foreground="LightGray" SelectionChanged="AdministratorListViewMenu_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="User" Width="30" Height="30"/>
+                            <TextBlock Text="Zarządzaj kontami" VerticalAlignment="Center" FontSize="20" Margin="15 0"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="BorderColor" Width="30" Height="30"/>
+                            <TextBlock Text="Edytuj zamówienia" VerticalAlignment="Center" FontSize="20" Margin="15 0"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Plus" Width="30" Height="30"/>
+                            <TextBlock Text="Dodaj produkt" VerticalAlignment="Center" FontSize="20" Margin="15 0"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Power" Width="30" Height="30"/>
+                            <TextBlock Text="Wyloguj" VerticalAlignment="Center" FontSize="20" Margin="15 0"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+
+
             </StackPanel>
         </Grid>
         <Grid x:Name="MiddleScreenPopupGrid" HorizontalAlignment="Center" VerticalAlignment="Center"/>

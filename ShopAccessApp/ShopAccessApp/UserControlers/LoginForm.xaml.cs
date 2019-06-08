@@ -34,7 +34,18 @@ namespace ShopAccessApp.UserControlers
                 if (window.GetType() == typeof(MainWindow))
                 {
                     MainWindow parentWindow = (window as MainWindow);
-                    parentWindow.HideLoginForm();
+                    MainWindow.AccountType accountType = MainWindow.AccountType.Seller;
+
+                    if (LoginTextBox.Text == "s")
+                        accountType = MainWindow.AccountType.Seller;
+                    if (LoginTextBox.Text == "m")
+                        accountType = MainWindow.AccountType.Storagekeeper;
+                    if (LoginTextBox.Text == "t")
+                        accountType = MainWindow.AccountType.Technician;
+                    if (LoginTextBox.Text == "a")
+                        accountType = MainWindow.AccountType.Administrator;
+
+                    parentWindow.LogIn(accountType);
                 }
             }
             

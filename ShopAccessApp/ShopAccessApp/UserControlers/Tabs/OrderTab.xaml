@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              TextElement.FontSize="16"
              d:DesignHeight="650" d:DesignWidth="1200">
-    <Grid>
+    <Grid Height="630">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>

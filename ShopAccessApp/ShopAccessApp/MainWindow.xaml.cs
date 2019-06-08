@@ -1,4 +1,5 @@
 ﻿using ShopAccessApp.UserControlers;
+using ShopAccessApp.UserControlers.Tabs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,8 +23,9 @@ namespace ShopAccessApp
     public partial class MainWindow : Window
     {
         LoginForm loginForm = new LoginForm();
-
+        int menuPointerOffset = 112;
         bool menuExtended = true;
+        public enum AccountType { Seller, Storagekeeper, Technician, Administrator};
         public MainWindow()
         {
             InitializeComponent();
@@ -44,31 +46,60 @@ namespace ShopAccessApp
             MiddleScreenPopupGrid.Children.Add(loginForm);
         }
 
-        public void HideLoginForm()
+        public void LogIn(AccountType accountType)
         {
+            SellerListViewMenu.Visibility = Visibility.Collapsed;
+            StorekeeperListViewMenu.Visibility = Visibility.Collapsed;
+            TechnicianListViewMenu.Visibility = Visibility.Collapsed;
+            AdministratorListViewMenu.Visibility = Visibility.Collapsed;
+            ContentGrid.Children.Clear();
+
+            switch (accountType)
+            {
+                case AccountType.Seller:
+                    SellerListViewMenu.Visibility = Visibility.Visible;
+                    SellerListViewMenu.SelectedValue = 0;
+                    break;
+                case AccountType.Storagekeeper:
+                    StorekeeperListViewMenu.Visibility = Visibility.Visible;
+                    StorekeeperListViewMenu.SelectedValue = 0;
+                    break;
+                case AccountType.Technician:
+                    TechnicianListViewMenu.Visibility = Visibility.Visible;
+                    TechnicianListViewMenu.SelectedValue = 0;
+                    break;
+                case AccountType.Administrator:
+                    AdministratorListViewMenu.Visibility = Visibility.Visible;
+                    AdministratorListViewMenu.SelectedValue = 0;
+                    break;
+                default:
+                    break;
+            }
+
             MiddleScreenPopupGrid.Children.Clear();
             MenuGrid.Visibility = Visibility.Visible;
             ContentGrid.Visibility = Visibility.Visible;
+            menuPointer.Margin = new Thickness(0, menuPointerOffset, 0, 0);
         }
 
-        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void SellerListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            int index = listViewMenu.SelectedIndex;
+            int index = SellerListViewMenu.SelectedIndex;
             transitioningContentSlide.OnApplyTemplate();
-            menuPointer.Margin = new Thickness(0, 112 + (60 * index), 0, 0);
+            menuPointer.Margin = new Thickness(0, menuPointerOffset + (60 * index), 0, 0);
 
             switch (index)
             {
                 case 0:
-
+                    var productTab = new ProductTab();
+                    ContentGrid.Children.Clear();
+                    ContentGrid.Children.Add(productTab);
                     break;
                 case 1:
-
+                    ContentGrid.Children.Clear();
                     break;
                 case 2:
-
-                    break;
-                case 3:
+                    ContentGrid.Children.Clear();
                     ShowLoginForm();
                     break;
                 default:
@@ -131,6 +162,78 @@ namespace ShopAccessApp
             catch
             {
 
+            }
+        }
+
+        private void StorekeeperListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int index = StorekeeperListViewMenu.SelectedIndex;
+            transitioningContentSlide.OnApplyTemplate();
+            menuPointer.Margin = new Thickness(0, menuPointerOffset + (60 * index), 0, 0);
+
+            switch (index)
+            {
+                case 0:
+                    ContentGrid.Children.Clear();
+                    break;
+                case 1:
+                    ContentGrid.Children.Clear();
+                    break;
+                case 2:
+                    ContentGrid.Children.Clear();
+                    ShowLoginForm();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void TechnicianListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int index = TechnicianListViewMenu.SelectedIndex;
+            transitioningContentSlide.OnApplyTemplate();
+            menuPointer.Margin = new Thickness(0, menuPointerOffset + (60 * index), 0, 0);
+
+            switch (index)
+            {
+                case 0:
+                    ContentGrid.Children.Clear();
+                    break;
+                case 1:
+                    ContentGrid.Children.Clear();
+                    break;
+                case 2:
+                    ContentGrid.Children.Clear();
+                    ShowLoginForm();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void AdministratorListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int index = AdministratorListViewMenu.SelectedIndex;
+            transitioningContentSlide.OnApplyTemplate();
+            menuPointer.Margin = new Thickness(0, menuPointerOffset + (60 * index), 0, 0);
+
+            switch (index)
+            {
+                case 0:
+                    ContentGrid.Children.Clear();
+                    break;
+                case 1:
+                    ContentGrid.Children.Clear();
+                    break;
+                case 2:
+                    ContentGrid.Children.Clear();
+                    break;
+                case 3:
+                    ContentGrid.Children.Clear();
+                    ShowLoginForm();
+                    break;
+                default:
+                    break;
             }
         }
     }

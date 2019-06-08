@@ -170,6 +170,8 @@ namespace ShopAccessApp.UserControlers.Tabs
                     RamMemoryListView.Visibility = Visibility.Collapsed;
                     CaseListView.Visibility = Visibility.Collapsed;
                     ServiceListView.Visibility = Visibility.Collapsed;
+                    OrderTab.Visibility = Visibility.Collapsed;
+                    ProductScrollViewer.Visibility = Visibility.Visible;
                     break;
 
                 case 1:
@@ -179,6 +181,8 @@ namespace ShopAccessApp.UserControlers.Tabs
                     RamMemoryListView.Visibility = Visibility.Collapsed;
                     CaseListView.Visibility = Visibility.Collapsed;
                     ServiceListView.Visibility = Visibility.Collapsed;
+                    OrderTab.Visibility = Visibility.Collapsed;
+                    ProductScrollViewer.Visibility = Visibility.Visible;
                     break;
 
                 case 2:
@@ -188,6 +192,8 @@ namespace ShopAccessApp.UserControlers.Tabs
                     RamMemoryListView.Visibility = Visibility.Collapsed;
                     CaseListView.Visibility = Visibility.Collapsed;
                     ServiceListView.Visibility = Visibility.Collapsed;
+                    OrderTab.Visibility = Visibility.Collapsed;
+                    ProductScrollViewer.Visibility = Visibility.Visible;
                     break;
 
                 case 3:
@@ -197,6 +203,8 @@ namespace ShopAccessApp.UserControlers.Tabs
                     RamMemoryListView.Visibility = Visibility.Visible;
                     CaseListView.Visibility = Visibility.Collapsed;
                     ServiceListView.Visibility = Visibility.Collapsed;
+                    OrderTab.Visibility = Visibility.Collapsed;
+                    ProductScrollViewer.Visibility = Visibility.Visible;
                     break;
 
                 case 4:
@@ -206,6 +214,8 @@ namespace ShopAccessApp.UserControlers.Tabs
                     RamMemoryListView.Visibility = Visibility.Collapsed;
                     CaseListView.Visibility = Visibility.Visible;
                     ServiceListView.Visibility = Visibility.Collapsed;
+                    OrderTab.Visibility = Visibility.Collapsed;
+                    ProductScrollViewer.Visibility = Visibility.Visible;
                     break;
 
                 case 5:
@@ -215,6 +225,8 @@ namespace ShopAccessApp.UserControlers.Tabs
                     RamMemoryListView.Visibility = Visibility.Collapsed;
                     CaseListView.Visibility = Visibility.Collapsed;
                     ServiceListView.Visibility = Visibility.Visible;
+                    OrderTab.Visibility = Visibility.Collapsed;
+                    ProductScrollViewer.Visibility = Visibility.Visible;
                     break;
 
                 case 6:
@@ -224,8 +236,8 @@ namespace ShopAccessApp.UserControlers.Tabs
                     RamMemoryListView.Visibility = Visibility.Collapsed;
                     CaseListView.Visibility = Visibility.Collapsed;
                     ServiceListView.Visibility = Visibility.Collapsed;
-
-                    
+                    OrderTab.Visibility = Visibility.Visible;
+                    ProductScrollViewer.Visibility = Visibility.Collapsed;
                     break;
 
                 default:
