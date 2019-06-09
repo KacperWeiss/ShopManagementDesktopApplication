@@ -78,7 +78,9 @@
     <Compile Include="BackEnd\Accessor\UserAccessor.cs" />
     <Compile Include="BackEnd\Accessor\WarehouseOrderAccessor.cs" />
     <Compile Include="BackEnd\Accessor\WholesalersAccessor.cs" />
+    <Compile Include="BackEnd\Enums\UserType.cs" />
     <Compile Include="BackEnd\Logics\ClientOrderManagement.cs" />
+    <Compile Include="BackEnd\Logics\UserManagement.cs" />
     <Compile Include="cases.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
@@ -114,7 +116,7 @@
     <Compile Include="Registration.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
-    <Compile Include="BackEnd\Accessor\RegistrationAccess.cs" />
+    <Compile Include="BackEnd\Accessor\RegistrationAccessor.cs" />
     <Compile Include="services.cs">
       <DependentUpon>StudiaProjektBazdyDanych.tt</DependentUpon>
     </Compile>
