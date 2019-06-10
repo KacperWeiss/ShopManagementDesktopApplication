@@ -140,7 +140,13 @@ namespace ShopAccessApp.BackEnd.Logics
                 LocalOrder.order_date = DateTime.Now;
                 db.warehouse_orders.Add(LocalOrder);
                 db.SaveChanges();
+                ResetOrder();
             }
+        }
+
+        static public void ResetOrder()
+        {
+            LocalOrder = new warehouse_orders() { status = (short)WarehouseOrderStatus.ReadyToOrder };
         }
         #endregion
     }

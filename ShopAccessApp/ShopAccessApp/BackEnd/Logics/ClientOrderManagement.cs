@@ -269,7 +269,13 @@ namespace ShopAccessApp.BackEnd.Logics
 
                 db.client_order_sets.Add(LocalOrder);
                 db.SaveChanges();
+                ResetOrder()
             }
+        }
+
+        static public void ResetOrder()
+        {
+            LocalOrder = new client_order_sets() { status = (short)WarehouseOrderStatus.ReadyToOrder };
         }
 
         static private decimal CalculatePrice()
