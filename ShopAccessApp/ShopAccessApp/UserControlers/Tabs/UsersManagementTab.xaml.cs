@@ -25,6 +25,7 @@ namespace ShopAccessApp.UserControlers.Tabs
     public partial class UsersManagementTab : UserControl, INotifyPropertyChanged
     {
         private string key = "";
+        private BackEnd.Enums.UserType userType;
         private List<users> userList = UserAccessor.GetAll();
         public List<users> UserList
         {
@@ -70,6 +71,33 @@ namespace ShopAccessApp.UserControlers.Tabs
         private void CopyKeyButton_Click(object sender, RoutedEventArgs e)
         {
             Clipboard.SetText(key);
+        }
+
+        private void SaveKeyButton_Click(object sender, RoutedEventArgs e)
+        {
+            var index = AccessLevelChoiceComboBox.SelectedIndex;
+            if (index != -1)
+            {
+                switch (index)
+                {
+                    case 0:
+                        userType = BackEnd.Enums.UserType.Seller;
+                        break;
+                    case 1:
+                        userType = BackEnd.Enums.UserType.WarehouseKeeper; 
+                        break;
+                    case 2:
+                        userType = BackEnd.Enums.UserType.Technician;
+                        break;
+                    case 3:
+                        userType = BackEnd.Enums.UserType.Admin;
+                        break;
+                    default:
+                        break;
+                }
+
+                RegistrationKeyGeneration.SaveToDatabase(key, userType);
+            }
         }
     }
 }

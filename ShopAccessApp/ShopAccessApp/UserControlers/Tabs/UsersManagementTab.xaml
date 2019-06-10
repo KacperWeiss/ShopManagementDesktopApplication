@@ -60,7 +60,14 @@
                             <ComboBoxItem Content="Technik"/>
                             <ComboBoxItem Content="Administrator"/>
                         </ComboBox>
-                        <Button x:Name="GenerateKeyButton" Content="Generuj" Width="100" Margin="0 10" Click="GenerateKeyButton_Click"/>
+                        <Grid Width="250">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="GenerateKeyButton" Content="Generuj" Grid.Column="0" Width="100" Margin="0 10" Click="GenerateKeyButton_Click"/>
+                            <Button x:Name="SaveKeyButton" Content="Zapisz" Grid.Column="1" Width="100" Margin="0 10" Click="SaveKeyButton_Click"/>
+                        </Grid>
                         <TextBox x:Name="KeyTextBox" Margin="50 80 50 0" IsReadOnly="True"/>
                         <Button x:Name="CopyKeyButton" Content="Kopiuj" Width="100" Margin="0 10" Click="CopyKeyButton_Click"/>
                     </StackPanel>
