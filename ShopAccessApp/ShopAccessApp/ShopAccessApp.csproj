@@ -159,6 +159,9 @@
     <Compile Include="UserControlers\ProductEntries\ServiceEntry.xaml.cs">
       <DependentUpon>ServiceEntry.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlers\Tabs\ComplaintTab.xaml.cs">
+      <DependentUpon>ComplaintTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlers\Tabs\OrderTab.xaml.cs">
       <DependentUpon>OrderTab.xaml</DependentUpon>
     </Compile>
@@ -227,6 +230,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlers\ProductEntries\ServiceEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlers\Tabs\ComplaintTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
