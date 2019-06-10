@@ -8,6 +8,9 @@
              mc:Ignorable="d" 
              TextElement.FontSize="11"
              d:DesignHeight="550" d:DesignWidth="700">
+    <UserControl.Resources>
+        <BitmapImage x:Key="EmptyProductImage" UriSource="empty_product_image.png" />
+    </UserControl.Resources>
     <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth2" VerticalAlignment="Stretch" Padding="10" Width="700" Height="550">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -21,11 +24,12 @@
                 <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Column="0" Grid.Row="0">
-                <materialDesign:PackIcon Kind="FileImage" Height="200" Width="200" Margin="0 10 0 10" HorizontalAlignment="Center"/> <!--Do zmiany na image pobierany z lokalizacji obrazu-->
+                <Image x:Name="ProductImage" Source="{StaticResource EmptyProductImage}" Height="200" Width="200" Margin="0 10 0 10" HorizontalAlignment="Center"/>
+                <materialDesign:PackIcon Kind="FileImage" Height="200" Width="200" Margin="0 10 0 10" HorizontalAlignment="Center" Visibility="Collapsed"/> <!--Do zmiany na image pobierany z lokalizacji obrazu-->
                 <Label Content="Opis Słowny:"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="0">
-                <ComboBox x:Name="ProductTypeSelectionComboBox" Margin="10 0 10 0" SelectedIndex="0" Loaded="ProductTypeSelectionComboBox_Loaded">
+                <ComboBox x:Name="ProductTypeSelectionComboBox" Margin="10 0 10 0" Loaded="ProductTypeSelectionComboBox_Loaded" SelectionChanged="ProductTypeSelectionComboBox_SelectionChanged">
                     <ComboBoxItem Content="Płyta główna"/>
                     <ComboBoxItem Content="Processor"/>
                     <ComboBoxItem Content="Pamięć RAM"/>
@@ -33,29 +37,39 @@
                     <ComboBoxItem Content="Obudowa"/>
                 </ComboBox>
                 <Label Content="Lokalizacja obrazu:" Margin="6 0 6 0"/>
-                <TextBox x:Name="LinkToImageTextBox" Margin="10 0 10 0"/>
-                <Label Content="Brand:" Margin="6 0 6 0"/>
-                <TextBox x:Name="BrandNameTextBox" Margin="10 0 10 0"/>
+                <TextBox x:Name="LinkToImageTextBox" Margin="10 0 10 0" LostFocus="LinkToImageTextBox_LostFocus"/>
+                <StackPanel x:Name="BrandField">
+                    <Label Content="Brand:" Margin="6 0 6 0"/>
+                    <TextBox x:Name="BrandNameTextBox" Margin="10 0 10 0"/>
+                </StackPanel>
                 <Label Content="Model:" Margin="6 0 6 0"/>
                 <TextBox x:Name="ModelNameTextBox" Margin="10 0 10 0"/>
                 <Label Content="Cena:" Margin="6 0 6 0"/>
-                <TextBox x:Name="PriceTextBox" Margin="10 0 10 0"/>
+                <TextBox x:Name="PriceTextBox" Margin="10 0 10 0" PreviewTextInput="PriceTextBox_PreviewTextInput"/>
             </StackPanel>
             <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
                 <Label Content="Opis słowny:" Margin="6 0 6 0"/>
                 <TextBox x:Name="DescriptionTextBox" TextWrapping="Wrap" Margin="10 0 10 0" MaxLength="500"/>
             </StackPanel>
             <StackPanel Grid.Column="0" Grid.Row="2">
-                <Label Content="Gniazdo processora:" Margin="6 0 6 0"/>
-                <TextBox x:Name="SoccetProcessorTypeTextBox" Margin="10 0 10 0"/>
-                <Label Content="Typ pamięci RAM:" Margin="6 0 6 0"/>
-                <TextBox x:Name="RamMemoryTypeDataTextBox" Margin="10 0 10 0"/>
+                <StackPanel x:Name="ProcessorSocketTypeField">
+                    <Label Content="Gniazdo processora:" Margin="6 0 6 0"/>
+                    <TextBox x:Name="ProcessorSocketTypeTextBox" Margin="10 0 10 0"/>
+                </StackPanel>
+                <StackPanel x:Name="RamMemoryTypeField">
+                    <Label Content="Typ pamięci RAM:" Margin="6 0 6 0"/>
+                    <TextBox x:Name="RamMemoryTypeTextBox" Margin="10 0 10 0"/>
+                </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="2">
-                <Label Content="Pojemność RAM:" Margin="6 0 6 0"/>
-                <TextBox x:Name="RAMCapasityTextBox" Margin="10 0 10 0"/>
-                <Label Content="Ilość gniazd pamięci:" Margin="6 0 6 0"/>
-                <TextBox x:Name="RamMemorySocketsQuantityTextBox" Margin="10 0 10 0"/>
+                <StackPanel x:Name="RamMemoryCapacityField">
+                    <Label Content="Pojemność RAM:" Margin="6 0 6 0"/>
+                    <TextBox x:Name="RamMemoryCapacityTextBox" Margin="10 0 10 0" PreviewTextInput="RamMemoryCapacityTextBox_PreviewTextInput"/>
+                </StackPanel>
+                <StackPanel x:Name="RamMemorySlotsField">
+                    <Label Content="Ilość gniazd pamięci:" Margin="6 0 6 0"/>
+                    <TextBox x:Name="RamMemorySlotsTextBox" Margin="10 0 10 0" PreviewTextInput="RamMemorySlotsTextBox_PreviewTextInput"/>
+                </StackPanel>
             </StackPanel>
             <Button x:Name="AddProductButton" Content="Dodaj" Grid.ColumnSpan="2" Grid.Row="3" Width="100" Margin="0 30 0 0" Click="AddProductButton_Click"/>
         </Grid>

@@ -308,6 +308,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="default_product_image.png" />
+    <Resource Include="empty_product_image.png" />
     <Content Include="StudiaProjektBazdyDanych.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>StudiaProjektBazdyDanych.edmx</DependentUpon>
