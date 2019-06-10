@@ -47,7 +47,7 @@ namespace ShopAccessApp.UserControlers.Tabs
 
         private void PriceSummaryTextBlock_Loaded(object sender, RoutedEventArgs e)
         {
-            PriceSummaryTextBlock.Text = ClientOrderManagement.CalculatePrice().ToString();
+            //PriceSummaryTextBlock.Text = ClientOrderManagement.CalculatePrice().ToString();
         }
     }
 }
