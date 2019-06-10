@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopAccessApp.BackEnd.Logics;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -65,6 +66,14 @@ namespace ShopAccessApp.UserControlers.ProductEntries
             }
             StorageOrderCountTextBlock.Text = Incoming.ToString();
 
+        }
+
+        private void AddToCartButton_Click(object sender, RoutedEventArgs e)
+        {
+            int amount = AmountPicker.NumValue;
+            var graphicsCard = (graphics_cards)DataContext;
+
+            ClientOrderManagement.AddGraphicsCardToOrder(graphicsCard, amount);
         }
     }
 }

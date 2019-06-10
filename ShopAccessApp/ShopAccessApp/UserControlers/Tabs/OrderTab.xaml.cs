@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopAccessApp.BackEnd.Logics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,30 @@ namespace ShopAccessApp.UserControlers.Tabs
         public OrderTab()
         {
             InitializeComponent();
+        }
+
+        private void OrderAcceptButton_Click(object sender, RoutedEventArgs e)
+        {
+            string additionalInformation = AdditionalInformationTextBox.Text;
+            clients OrderClient = new clients()
+            {
+                name = NameTextBox.Text,
+                surname = SurnameTextBox.Text,
+                city = CityTextBox.Text,
+                street = StreetTextBox.Text,
+                building_number = BuildingNumberTextBox.Text,
+                apartment_number = ApartmentNumberTextBox.Text,
+                post_code = PostcodeTextBox.Text,
+                phone_number = PhoneNumberTextBox.Text,
+                email = EmailTextBox.Text
+            };
+
+            ClientOrderManagement.FinalizeOrder(OrderClient, additionalInformation);
+        }
+
+        private void PriceSummaryTextBlock_Loaded(object sender, RoutedEventArgs e)
+        {
+            PriceSummaryTextBlock.Text = ClientOrderManagement.CalculatePrice().ToString();
         }
     }
 }

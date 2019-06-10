@@ -190,7 +190,7 @@ namespace ShopAccessApp.BackEnd.Logics
         #endregion
 
         #region Services
-        static public void AddServiceToOrder(services temporaryService, int amount)
+        static public void AddServiceToOrder(services temporaryService)
         {
             LocalOrder.services = new services()
             {
@@ -278,7 +278,7 @@ namespace ShopAccessApp.BackEnd.Logics
             LocalOrder = new client_order_sets() { status = (short)WarehouseOrderStatus.ReadyToOrder };
         }
 
-        static private decimal CalculatePrice()
+        static public decimal CalculatePrice()
         {
             decimal totalPrice = 0m;
             if (LocalOrder.cases != null)

@@ -125,10 +125,10 @@
         <StackPanel  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 20 20">
             <StackPanel Orientation="Horizontal">
                 <Label Content="Cena: " FontSize="24"/>
-                <TextBlock x:Name="PriceSummaryTextBlock" Text="0" VerticalAlignment="Center" FontSize="24"/>
+                <TextBlock x:Name="PriceSummaryTextBlock" Text="0" VerticalAlignment="Center" FontSize="24" Loaded="PriceSummaryTextBlock_Loaded"/>
                 <TextBlock Text=" zł" VerticalAlignment="Center" FontSize="24"/>
             </StackPanel>
-            <Button x:Name="OrderAcceptButton" Content="Zamów" FontSize="18" Height="40"/>
+            <Button x:Name="OrderAcceptButton" Content="Zamów" FontSize="18" Height="40" Click="OrderAcceptButton_Click"/>
         </StackPanel>
     </Grid>
 </UserControl>

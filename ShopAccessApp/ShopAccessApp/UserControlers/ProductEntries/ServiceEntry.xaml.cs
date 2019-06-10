@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopAccessApp.BackEnd.Logics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace ShopAccessApp.UserControlers.ProductEntries
         public ServiceEntry()
         {
             InitializeComponent();
+        }
+
+        private void AddToCartButton_Click(object sender, RoutedEventArgs e)
+        {
+            var service = (services)DataContext;
+
+            ClientOrderManagement.AddServiceToOrder(service);
         }
     }
 }
