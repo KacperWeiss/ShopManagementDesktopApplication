@@ -1,4 +1,5 @@
 ﻿using ShopAccessApp.UserControlers;
+using ShopAccessApp.UserControlers.ProductEntries;
 using ShopAccessApp.UserControlers.Tabs;
 using System;
 using System.Collections.Generic;
@@ -230,7 +231,9 @@ namespace ShopAccessApp
                     ContentGrid.Children.Clear();
                     break;
                 case 2:
+                    var newProductEntry = new NewProductEntry();
                     ContentGrid.Children.Clear();
+                    ContentGrid.Children.Add(newProductEntry);
                     break;
                 case 3:
                     ContentGrid.Children.Clear();
