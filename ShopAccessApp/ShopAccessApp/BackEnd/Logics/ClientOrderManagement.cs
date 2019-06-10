@@ -7,16 +7,12 @@ using System.Threading.Tasks;
 
 namespace ShopAccessApp.BackEnd.Logics
 {
-    public class ClientOrderManagement
+    static public class ClientOrderManagement
     {
-        public client_order_sets LocalOrder { get; set; }
+        static public client_order_sets LocalOrder { get; set; } = new client_order_sets();
 
-        public ClientOrderManagement()
-        {
-            LocalOrder = new client_order_sets();
-        }
         #region Motherboards
-        public void AddMotherboardToOrder(motherboards temporaryMotherboard, int amount)
+        static public void AddMotherboardToOrder(motherboards temporaryMotherboard, int amount)
         {
             LocalOrder.motherboards = new motherboards()
             {
@@ -39,7 +35,7 @@ namespace ShopAccessApp.BackEnd.Logics
             }
         }
 
-        public void RemoveMotherboardFromOrder()
+        static public void RemoveMotherboardFromOrder()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -53,7 +49,7 @@ namespace ShopAccessApp.BackEnd.Logics
         #endregion
 
         #region Processors
-        public void AddProcessorToOrder(processors temporaryProcessor, int amount)
+        static public void AddProcessorToOrder(processors temporaryProcessor, int amount)
         {
             LocalOrder.processors = new processors()
             {
@@ -75,7 +71,7 @@ namespace ShopAccessApp.BackEnd.Logics
             }
         }
 
-        public void RemoveProcessorFromOrder()
+        static public void RemoveProcessorFromOrder()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -89,7 +85,7 @@ namespace ShopAccessApp.BackEnd.Logics
         #endregion
 
         #region RamMemories
-        public void AddRamMemoryToOrder(ram_memories temporaryRamMemory, int amount)
+        static public void AddRamMemoryToOrder(ram_memories temporaryRamMemory, int amount)
         {
             LocalOrder.ram_memories = new ram_memories()
             {
@@ -111,7 +107,7 @@ namespace ShopAccessApp.BackEnd.Logics
             }
         }
 
-        public void RemoveRamMemoryFromOrder()
+        static public void RemoveRamMemoryFromOrder()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -125,7 +121,7 @@ namespace ShopAccessApp.BackEnd.Logics
         #endregion
 
         #region GraphicsCards
-        public void AddGraphicsCardToOrder(graphics_cards temporaryGraphicsCard, int amount)
+        static public void AddGraphicsCardToOrder(graphics_cards temporaryGraphicsCard, int amount)
         {
             LocalOrder.graphics_cards = new graphics_cards()
             {
@@ -146,7 +142,7 @@ namespace ShopAccessApp.BackEnd.Logics
             }
         }
 
-        public void RemoveGraphicsCardFromOrder()
+        static public void RemoveGraphicsCardFromOrder()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -160,7 +156,7 @@ namespace ShopAccessApp.BackEnd.Logics
         #endregion
 
         #region Cases
-        public void AddCaseToOrder(cases temporaryCase, int amount)
+        static public void AddCaseToOrder(cases temporaryCase, int amount)
         {
             LocalOrder.cases = new cases()
             {
@@ -180,7 +176,7 @@ namespace ShopAccessApp.BackEnd.Logics
             }
         }
 
-        public void RemoveCaseFromOrder()
+        static public void RemoveCaseFromOrder()
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -194,7 +190,7 @@ namespace ShopAccessApp.BackEnd.Logics
         #endregion
 
         #region Services
-        public void AddServiceToOrder(services temporaryService, int amount)
+        static public void AddServiceToOrder(services temporaryService, int amount)
         {
             LocalOrder.services = new services()
             {
@@ -203,14 +199,14 @@ namespace ShopAccessApp.BackEnd.Logics
             };
         }
 
-        public void RemoveServiceFromOrder()
+        static public void RemoveServiceFromOrder()
         {
             LocalOrder.graphics_cards = null;
         }
         #endregion
 
         #region Finalization
-        public void FinalizeOrder(clients temporaryClient, string additionalInformation)
+        static public void FinalizeOrder(clients temporaryClient, string additionalInformation)
         {
             clients OrderClient = new clients()
             {
@@ -276,7 +272,7 @@ namespace ShopAccessApp.BackEnd.Logics
             }
         }
 
-        private decimal CalculatePrice()
+        static private decimal CalculatePrice()
         {
             decimal totalPrice = 0m;
             if (LocalOrder.cases != null)
