@@ -1,4 +1,5 @@
 ﻿using ShopAccessApp.BackEnd;
+using ShopAccessApp.BackEnd.Logics;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,7 @@ namespace ShopAccessApp.UserControlers.Tabs
     /// </summary>
     public partial class UsersManagementTab : UserControl, INotifyPropertyChanged
     {
+        private string key = "";
         private List<users> userList = UserAccessor.GetAll();
         public List<users> UserList
         {
@@ -50,6 +52,24 @@ namespace ShopAccessApp.UserControlers.Tabs
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void UsersScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            ScrollViewer scv = (ScrollViewer)sender;
+            scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta / 2);
+            e.Handled = true;
+        }
+
+        private void GenerateKeyButton_Click(object sender, RoutedEventArgs e)
+        {
+            key = RegistrationKeyGeneration.GetRandomKey();
+            KeyTextBox.Text = key;
+        }
+
+        private void CopyKeyButton_Click(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(key);
         }
     }
 }

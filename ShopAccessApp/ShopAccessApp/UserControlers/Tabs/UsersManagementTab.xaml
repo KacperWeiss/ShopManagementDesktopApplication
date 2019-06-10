@@ -26,7 +26,7 @@
                 <TextBlock Text="Access level" Grid.Column="1" Margin="10 0" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
                 <TextBlock Text="Akcja" Grid.Column="2" Margin="10 0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Grid>
-            <ScrollViewer Grid.Column="0" Margin="0 25 0 0">
+            <ScrollViewer x:Name="UsersScrollViewer" Grid.Column="0" Margin="0 25 0 0" PreviewMouseWheel="UsersScrollViewer_PreviewMouseWheel">
                 <ListView x:Name="UsersListView" ItemsSource="{Binding UserList}">
                     <ListView.ItemTemplate>
                         <DataTemplate DataType="users">
@@ -54,15 +54,15 @@
             <Grid Grid.Column="1">
                 <GroupBox Header="Stwórz klucz rejestracyjny" Margin="30 0 20 50" MaxWidth="420" Height="450" VerticalAlignment="Bottom">
                     <StackPanel>
-                        <ComboBox Margin="50 30 50 0">
+                        <ComboBox x:Name="AccessLevelChoiceComboBox" Margin="50 30 50 0">
                             <ComboBoxItem Content="Sprzedawca"/>
                             <ComboBoxItem Content="Magazynier"/>
                             <ComboBoxItem Content="Technik"/>
                             <ComboBoxItem Content="Administrator"/>
                         </ComboBox>
-                        <Button Content="Generuj" Width="100" Margin="0 10"/>
-                        <TextBox Margin="50 80 50 0" IsReadOnly="True"/>
-                        <Button Content="Kopiuj" Width="100" Margin="0 10"/>
+                        <Button x:Name="GenerateKeyButton" Content="Generuj" Width="100" Margin="0 10" Click="GenerateKeyButton_Click"/>
+                        <TextBox x:Name="KeyTextBox" Margin="50 80 50 0" IsReadOnly="True"/>
+                        <Button x:Name="CopyKeyButton" Content="Kopiuj" Width="100" Margin="0 10" Click="CopyKeyButton_Click"/>
                     </StackPanel>
                 </GroupBox>
             </Grid>
