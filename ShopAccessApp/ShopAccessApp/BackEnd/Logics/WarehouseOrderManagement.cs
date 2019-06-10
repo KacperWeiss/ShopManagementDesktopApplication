@@ -143,6 +143,7 @@ namespace ShopAccessApp.BackEnd.Logics
                 LocalOrder.wholesalers = DBWholesaler;
                 LocalOrder.additional_information = additionalInformation;
                 LocalOrder.status = (int)WarehouseOrderStatus.Ordered;
+                LocalOrder.order_date = DateTime.Now;
                 db.warehouse_orders.Add(LocalOrder);
                 db.SaveChanges();
             }
