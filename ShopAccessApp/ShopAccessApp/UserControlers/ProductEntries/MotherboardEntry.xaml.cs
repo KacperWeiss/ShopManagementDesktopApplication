@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopAccessApp.BackEnd.Logics;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -25,12 +26,15 @@ namespace ShopAccessApp.UserControlers.ProductEntries
         public MotherboardEntry()
         {
             InitializeComponent();
-            
+
         }
 
         private void AddToCartButton_Click(object sender, RoutedEventArgs e)
         {
+            int amount = AmountPicker.NumValue;
+            var motherboard = (motherboards)DataContext;
 
+            ClientOrderManagement.AddMotherboardToOrder(motherboard, amount);
         }
 
         private int incoming = 0;
