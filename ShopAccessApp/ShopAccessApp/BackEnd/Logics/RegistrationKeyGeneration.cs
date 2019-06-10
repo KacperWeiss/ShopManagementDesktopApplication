@@ -23,8 +23,8 @@ namespace ShopAccessApp.BackEnd.Logics
                     stringChars[i*7 + j] = chars[random.Next(chars.Length)];
                 }
             }
-            stringChars[7] = '-';
-            stringChars[14] = '-';
+            stringChars[6] = '-';
+            stringChars[13] = '-';
 
             return new String(stringChars);
         }
