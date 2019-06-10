@@ -24,5 +24,20 @@ namespace ShopAccessApp.UserControlers.ProductEntries
         {
             InitializeComponent();
         }
+
+        private void AddProductButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddMotherboard()
+        {
+
+        }
+
+        private void AddProcessor()
+        {
+
+        }
     }
 }

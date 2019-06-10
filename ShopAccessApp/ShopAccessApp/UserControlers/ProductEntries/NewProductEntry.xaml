@@ -55,7 +55,7 @@
                 <Label Content="Ilość gniazd pamięci:" Margin="6 0 6 0"/>
                 <TextBox x:Name="RamMemorySocketsQuantityTextBox" Margin="10 0 10 0"/>
             </StackPanel>
-            <Button x:Name="AddProductButton" Content="Dodaj" Grid.ColumnSpan="2" Grid.Row="3" Width="100" Margin="0 30 0 0"/>
+            <Button x:Name="AddProductButton" Content="Dodaj" Grid.ColumnSpan="2" Grid.Row="3" Width="100" Margin="0 30 0 0" Click="AddProductButton_Click"/>
         </Grid>
     </materialDesign:Card>
 </UserControl>
