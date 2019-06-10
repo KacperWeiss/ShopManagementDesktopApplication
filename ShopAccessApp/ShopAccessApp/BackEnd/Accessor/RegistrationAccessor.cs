@@ -6,16 +6,8 @@ using System.Threading.Tasks;
 
 namespace ShopAccessApp.BackEnd
 {
-    static public class RegistrationAccess
+    static public class RegistrationAccessor
     {
-        static public List<Registration> GetAll()
-        {
-            using (var db = new StudiaProjektBazyDanychEntities())
-            {
-                return db.Registration.ToList<Registration>();
-            }
-        }
-
         static public Registration GetByActivationCode(string activationCode)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
