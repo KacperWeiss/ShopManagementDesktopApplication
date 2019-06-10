@@ -48,6 +48,37 @@ namespace ShopAccessApp.UserControlers.Tabs
         private void PriceSummaryTextBlock_Loaded(object sender, RoutedEventArgs e)
         {
             //PriceSummaryTextBlock.Text = ClientOrderManagement.CalculatePrice().ToString();
+
+            if(ClientOrderManagement.LocalOrder.motherboards != null)
+            {
+                MotherboardNameTextBlock.Text = ClientOrderManagement.LocalOrder.motherboards.model;
+                MotherboardPriceTextBlock.Text = ClientOrderManagement.LocalOrder.motherboards.price.ToString();
+                MotherboardCountTextBlock.Text = ClientOrderManagement.LocalOrder.motherboards.amount.ToString();
+            }
+            if (ClientOrderManagement.LocalOrder.processors != null)
+            {
+                MotherboardNameTextBlock.Text = ClientOrderManagement.LocalOrder.processors.model;
+                MotherboardPriceTextBlock.Text = ClientOrderManagement.LocalOrder.processors.price.ToString();
+                MotherboardCountTextBlock.Text = ClientOrderManagement.LocalOrder.processors.amount.ToString();
+            }
+            if (ClientOrderManagement.LocalOrder.graphics_cards != null)
+            {
+                MotherboardNameTextBlock.Text = ClientOrderManagement.LocalOrder.graphics_cards.model;
+                MotherboardPriceTextBlock.Text = ClientOrderManagement.LocalOrder.graphics_cards.price.ToString();
+                MotherboardCountTextBlock.Text = ClientOrderManagement.LocalOrder.graphics_cards.amount.ToString();
+            }
+            if (ClientOrderManagement.LocalOrder.ram_memories != null)
+            {
+                MotherboardNameTextBlock.Text = ClientOrderManagement.LocalOrder.ram_memories.model;
+                MotherboardPriceTextBlock.Text = ClientOrderManagement.LocalOrder.ram_memories.price.ToString();
+                MotherboardCountTextBlock.Text = ClientOrderManagement.LocalOrder.ram_memories.amount.ToString();
+            }
+            if (ClientOrderManagement.LocalOrder.cases != null)
+            {
+                MotherboardNameTextBlock.Text = ClientOrderManagement.LocalOrder.cases.model;
+                MotherboardPriceTextBlock.Text = ClientOrderManagement.LocalOrder.cases.price.ToString();
+                MotherboardCountTextBlock.Text = ClientOrderManagement.LocalOrder.cases.amount.ToString();
+            }
         }
     }
 }

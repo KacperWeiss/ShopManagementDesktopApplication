@@ -25,7 +25,7 @@
                 <Label Content="Opis Słowny:"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Grid.Row="0">
-                <ComboBox Margin="10 0 10 0">
+                <ComboBox x:Name="ProductTypeSelectionComboBox" Margin="10 0 10 0" SelectedIndex="0" Loaded="ProductTypeSelectionComboBox_Loaded">
                     <ComboBoxItem Content="Płyta główna"/>
                     <ComboBoxItem Content="Processor"/>
                     <ComboBoxItem Content="Pamięć RAM"/>
@@ -34,6 +34,8 @@
                 </ComboBox>
                 <Label Content="Lokalizacja obrazu:" Margin="6 0 6 0"/>
                 <TextBox x:Name="LinkToImageTextBox" Margin="10 0 10 0"/>
+                <Label Content="Brand:" Margin="6 0 6 0"/>
+                <TextBox x:Name="BrandNameTextBox" Margin="10 0 10 0"/>
                 <Label Content="Model:" Margin="6 0 6 0"/>
                 <TextBox x:Name="ModelNameTextBox" Margin="10 0 10 0"/>
                 <Label Content="Cena:" Margin="6 0 6 0"/>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopAccessApp.BackEnd;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,10 +33,38 @@ namespace ShopAccessApp.UserControlers.ProductEntries
 
         private void AddMotherboard()
         {
-
+            
         }
 
         private void AddProcessor()
+        {
+
+        }
+
+        private void AddGraphicsCard()
+        {
+            graphics_cards graphicsCard = new graphics_cards()
+            {
+                model = ModelNameTextBox.Text,
+                brand = ,
+                price = temporaryGraphicsCard.price,
+                amount = amount,
+                image_source = temporaryGraphicsCard.image_source,
+                description = temporaryGraphicsCard.description
+            };
+        }
+
+        private void AddRamMemory()
+        {
+
+        }
+
+        private void AddCase()
+        {
+
+        }
+
+        private void ProductTypeSelectionComboBox_Loaded(object sender, RoutedEventArgs e)
         {
 
         }
