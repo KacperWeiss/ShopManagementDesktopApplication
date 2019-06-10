@@ -269,7 +269,7 @@ namespace ShopAccessApp.BackEnd.Logics
 
                 db.client_order_sets.Add(LocalOrder);
                 db.SaveChanges();
-                ResetOrder()
+                ResetOrder();
             }
         }
 
