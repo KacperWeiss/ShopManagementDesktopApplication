@@ -82,33 +82,6 @@ namespace ShopAccessApp
             menuPointer.Margin = new Thickness(0, menuPointerOffset, 0, 0);
         }
 
-        private void SellerListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            int index = SellerListViewMenu.SelectedIndex;
-            transitioningContentSlide.OnApplyTemplate();
-            menuPointer.Margin = new Thickness(0, menuPointerOffset + (60 * index), 0, 0);
-
-            switch (index)
-            {
-                case 0:
-                    var productTab = new ProductTab();
-                    ContentGrid.Children.Clear();
-                    ContentGrid.Children.Add(productTab);
-                    break;
-                case 1:
-                    var complaintTab = new ComplaintTab();
-                    ContentGrid.Children.Clear();
-                    ContentGrid.Children.Add(complaintTab);
-                    break;
-                case 2:
-                    ContentGrid.Children.Clear();
-                    ShowLoginForm();
-                    break;
-                default:
-                    break;
-            }
-        }
-
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
             if (menuExtended)
@@ -167,6 +140,33 @@ namespace ShopAccessApp
             }
         }
 
+        private void SellerListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int index = SellerListViewMenu.SelectedIndex;
+            transitioningContentSlide.OnApplyTemplate();
+            menuPointer.Margin = new Thickness(0, menuPointerOffset + (60 * index), 0, 0);
+
+            switch (index)
+            {
+                case 0:
+                    var productTab = new ProductTab();
+                    ContentGrid.Children.Clear();
+                    ContentGrid.Children.Add(productTab);
+                    break;
+                case 1:
+                    var complaintTab = new ComplaintTab();
+                    ContentGrid.Children.Clear();
+                    ContentGrid.Children.Add(complaintTab);
+                    break;
+                case 2:
+                    ContentGrid.Children.Clear();
+                    ShowLoginForm();
+                    break;
+                default:
+                    break;
+            }
+        }
+
         private void StorekeeperListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int index = StorekeeperListViewMenu.SelectedIndex;
@@ -222,7 +222,9 @@ namespace ShopAccessApp
             switch (index)
             {
                 case 0:
+                    var userManagementTab = new UsersManagementTab();
                     ContentGrid.Children.Clear();
+                    ContentGrid.Children.Add(userManagementTab);
                     break;
                 case 1:
                     ContentGrid.Children.Clear();
