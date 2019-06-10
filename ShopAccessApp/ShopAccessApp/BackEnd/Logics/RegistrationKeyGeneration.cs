@@ -12,18 +12,19 @@ namespace ShopAccessApp.BackEnd.Logics
     {
         static public string GetRandomKey()
         {
-            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var stringChars = new char[20];
             var random = new Random();
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
-                for (int j = 0; j < 6; j++)
+                for (int j = 0; j < 4; j++)
                 {
-                    stringChars[i*7 + j] = chars[random.Next(chars.Length)];
+                    stringChars[i*5 + j] = chars[random.Next(chars.Length)];
                 }
             }
-            stringChars[6] = '-';
+            stringChars[4] = '-';
+            stringChars[9] = '-';
             stringChars[13] = '-';
 
             return new String(stringChars);
