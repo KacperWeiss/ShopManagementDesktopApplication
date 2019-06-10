@@ -268,6 +268,7 @@ namespace ShopAccessApp.BackEnd.Logics
                 LocalOrder.additional_information = additionalInformation;
                 LocalOrder.status = 2;
                 LocalOrder.order_price = CalculatePrice();
+                LocalOrder.order_date = DateTime.Now;
 
                 db.client_order_sets.Add(LocalOrder);
                 db.SaveChanges();
