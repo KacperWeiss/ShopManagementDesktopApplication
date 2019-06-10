@@ -7,18 +7,12 @@ using System.Threading.Tasks;
 
 namespace ShopAccessApp.BackEnd.Logics
 {
-    public class WarehouseOrderManagement
+    static public class WarehouseOrderManagement
     {
-        public warehouse_orders LocalOrder { get; set; }
-
-        public WarehouseOrderManagement(warehouse_orders localOrder)
-        {
-            LocalOrder = new warehouse_orders();
-            LocalOrder.status = (int)WarehouseOrderStatus.ReadyToOrder;
-        }
+        static public warehouse_orders LocalOrder { get; set; } = new warehouse_orders() { status = (short)WarehouseOrderStatus.ReadyToOrder };
 
         #region Motherboards
-        public void AddMotherboardToOrder(motherboards temporaryMotherboard, int amount)
+        static public void AddMotherboardToOrder(motherboards temporaryMotherboard, int amount)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -28,7 +22,7 @@ namespace ShopAccessApp.BackEnd.Logics
             }
         }
 
-        public void RemoveMotherboardFromOrder()
+        static public void RemoveMotherboardFromOrder()
         {
             LocalOrder.motherboards = null;
             LocalOrder.motherboard_amount = 0;
@@ -36,7 +30,7 @@ namespace ShopAccessApp.BackEnd.Logics
         #endregion
 
         #region Processors
-        public void AddProcessorToOrder(processors temporaryProcessor, int amount)
+        static public void AddProcessorToOrder(processors temporaryProcessor, int amount)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -46,7 +40,7 @@ namespace ShopAccessApp.BackEnd.Logics
             }
         }
 
-        public void RemoveProcessorFromOrder()
+        static public void RemoveProcessorFromOrder()
         {
             LocalOrder.processors = null;
             LocalOrder.processor_amount = 0;
@@ -54,7 +48,7 @@ namespace ShopAccessApp.BackEnd.Logics
         #endregion
 
         #region RamMemories
-        public void AddRamMemoryToOrder(ram_memories temporaryRamMemory, int amount)
+        static public void AddRamMemoryToOrder(ram_memories temporaryRamMemory, int amount)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -64,7 +58,7 @@ namespace ShopAccessApp.BackEnd.Logics
             }
         }
 
-        public void RemoveRamMemoryFromOrder()
+        static public void RemoveRamMemoryFromOrder()
         {
             LocalOrder.ram_memories = null;
             LocalOrder.ram_memory_amount = 0;
@@ -72,7 +66,7 @@ namespace ShopAccessApp.BackEnd.Logics
         #endregion
 
         #region GraphicCards
-        public void AddGraphicsCardToOrder(graphics_cards temporaryGraphicsCard, int amount)
+        static public void AddGraphicsCardToOrder(graphics_cards temporaryGraphicsCard, int amount)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -82,7 +76,7 @@ namespace ShopAccessApp.BackEnd.Logics
             }
         }
 
-        public void RemoveGraphicsCardFromOrder()
+        static public void RemoveGraphicsCardFromOrder()
         {
             LocalOrder.graphics_cards = null;
             LocalOrder.graphics_card_amount = 0;
@@ -90,7 +84,7 @@ namespace ShopAccessApp.BackEnd.Logics
         #endregion
 
         #region Cases
-        public void AddCaseToOrder(cases temporaryCase, int amount)
+        static public void AddCaseToOrder(cases temporaryCase, int amount)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -100,7 +94,7 @@ namespace ShopAccessApp.BackEnd.Logics
             }
         }
 
-        public void RemoveCaseFromOrder()
+        static public void RemoveCaseFromOrder()
         {
             LocalOrder.cases = null;
             LocalOrder.case_amount = 0;
@@ -108,7 +102,7 @@ namespace ShopAccessApp.BackEnd.Logics
         #endregion
 
         #region Finalization
-        public void FinalizeOrder(wholesalers localWholesaler, string additionalInformation)
+        static public void FinalizeOrder(wholesalers localWholesaler, string additionalInformation)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
