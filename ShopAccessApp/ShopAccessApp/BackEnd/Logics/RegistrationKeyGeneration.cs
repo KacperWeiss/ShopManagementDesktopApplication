@@ -16,15 +16,14 @@ namespace ShopAccessApp.BackEnd.Logics
             var stringChars = new char[20];
             var random = new Random();
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 3; i++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < 6; j++)
                 {
-                    stringChars[i*5 + j] = chars[random.Next(chars.Length)];
+                    stringChars[i*7 + j] = chars[random.Next(chars.Length)];
                 }
             }
-            stringChars[4] = '-';
-            stringChars[9] = '-';
+            stringChars[6] = '-';
             stringChars[13] = '-';
 
             return new String(stringChars);
