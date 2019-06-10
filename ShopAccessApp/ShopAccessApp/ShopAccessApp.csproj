@@ -82,6 +82,7 @@
     <Compile Include="BackEnd\Enums\UserType.cs" />
     <Compile Include="BackEnd\Enums\WarehouseOrderStatus.cs" />
     <Compile Include="BackEnd\Logics\ClientOrderManagement.cs" />
+    <Compile Include="BackEnd\Logics\RegistrationKeyGeneration.cs" />
     <Compile Include="BackEnd\Logics\UserManagement.cs" />
     <Compile Include="BackEnd\Logics\WarehouseOrderManagement.cs" />
     <Compile Include="cases.cs">
