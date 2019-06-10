@@ -96,7 +96,9 @@ namespace ShopAccessApp
                     ContentGrid.Children.Add(productTab);
                     break;
                 case 1:
+                    var complaintTab = new ComplaintTab();
                     ContentGrid.Children.Clear();
+                    ContentGrid.Children.Add(complaintTab);
                     break;
                 case 2:
                     ContentGrid.Children.Clear();
