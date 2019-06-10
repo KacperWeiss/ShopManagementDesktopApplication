@@ -8,7 +8,9 @@
              TextElement.FontSize="16"
              d:DesignHeight="650" d:DesignWidth="1200">
     <Grid Background="White">
-        <ListView x:Name="MotherboardListView" ItemsSource="{Binding ClientOrderSetsList}">
+        <TextBlock x:Name="testingTextBlock" Text="Complaint tab:"/>
+        <Button x:Name="testingButton" Content="Oh click me!!!" Width="150" VerticalAlignment="Top" Click="TestingButton_Click"/>
+        <ListView x:Name="ClientOrderSetsListView" Margin="0 40" ItemsSource="{Binding ClientOrderSetsList}" SelectionChanged="ClientOrderSetsListView_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate DataType="client_order_sets">
                     <Grid Margin="10 15">
@@ -19,17 +21,26 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
+                            <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding order_date}" Grid.Column="0" TextWrapping="Wrap"/>
-                        <TextBlock Text="{Binding motherboards.model}" Grid.Column="1" TextWrapping="Wrap"/>
-                        <TextBlock Text="processor" Grid.Column="2" TextWrapping="Wrap"/>
-                        <TextBlock Text="graphics_card" Grid.Column="3" TextWrapping="Wrap"/>
-                        <TextBlock Text="ram_memory" Grid.Column="4" TextWrapping="Wrap"/>
-                        <TextBlock Text="case" Grid.Column="5" TextWrapping="Wrap"/>
+                        <Border Grid.Column="0" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
+                        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
+                        <Border Grid.Column="2" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
+                        <Border Grid.Column="3" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
+                        <Border Grid.Column="4" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
+                        <Border Grid.Column="5" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
+                        <TextBlock Text="{Binding order_date}" Grid.Column="0" Margin="10 0" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding id_motherboard}" Grid.Column="1" Margin="10 0" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding id_processor}" Grid.Column="2" Margin="10 0" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding id_graphics_card}" Grid.Column="3" Margin="10 0" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding id_ram_memory}" Grid.Column="4" Margin="10 0" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding id_case}" Grid.Column="5" Margin="10 0" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding status}" Grid.Column="6" Margin="10 0" TextWrapping="Wrap" Background="LightGray"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
+
+        <Button Content="Reklamuj" VerticalAlignment="Bottom" Width="100" Margin="0 0 0 10"/>
     </Grid>
 </UserControl>
