@@ -71,6 +71,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BackEnd\Accessor\ClientOrdersAccessor.cs" />
+    <Compile Include="BackEnd\Accessor\ClientOrderViewAccessor.cs" />
     <Compile Include="BackEnd\Accessor\GraphicsCardsAccessor.cs" />
     <Compile Include="BackEnd\Accessor\ProcessorsAccessor.cs" />
     <Compile Include="BackEnd\Accessor\RamMemoriesAccessor.cs" />
