@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopAccessApp.BackEnd.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -266,7 +267,7 @@ namespace ShopAccessApp.BackEnd.Logics
                     db.services.Add(LocalOrder.services);
                 }
                 LocalOrder.additional_information = additionalInformation;
-                LocalOrder.status = 2;
+                LocalOrder.status = (short)ClientOrderStatus.Ordered;
                 LocalOrder.order_price = CalculatePrice();
                 LocalOrder.order_date = DateTime.Now;
 
