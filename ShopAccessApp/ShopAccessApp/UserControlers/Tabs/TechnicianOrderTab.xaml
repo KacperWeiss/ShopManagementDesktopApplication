@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="1200">
     <Grid Background="White">
-        <ListView Grid.Column="0" x:Name="ClientOrderSetsListView" Margin="0 40" ItemsSource="{Binding ClientOrderSetsList}" SelectionChanged="ClientOrderSetsListView_SelectionChanged">
+        <ListView Grid.Column="0" x:Name="ClientOrderSetsListView" Margin="0 40" ItemsSource="{Binding ClientOrderSetsList}">
             <ListView.ItemTemplate>
                 <DataTemplate DataType="OrderDataForUI">
                     <Grid Margin="10 15">
