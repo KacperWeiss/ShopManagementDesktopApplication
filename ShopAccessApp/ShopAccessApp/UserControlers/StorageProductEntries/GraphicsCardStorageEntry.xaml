@@ -44,7 +44,7 @@
                 </Grid>
             </Grid>
             <StackPanel Grid.Column="2" Margin="10 0" VerticalAlignment="Center">
-                <Label Content="Dodaj do koszyka" FontSize="20" HorizontalAlignment="Center"/>
+                <Label Content="Zamów na magazyn" FontSize="20" HorizontalAlignment="Center"/>
                 <StackPanel Orientation="Horizontal">
                     <Grid>
                         <Grid.ColumnDefinitions>

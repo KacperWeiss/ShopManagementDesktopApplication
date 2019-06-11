@@ -28,6 +28,7 @@ namespace ShopAccessApp.UserControlers.Tabs
         public ProductStorageTab()
         {
             InitializeComponent();
+            DataContext = this;
         }
 
         private List<motherboards> motherboardList = MotherBoardsAcessor.GetAll();

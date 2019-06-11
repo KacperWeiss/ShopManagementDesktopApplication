@@ -177,7 +177,9 @@ namespace ShopAccessApp
             switch (index)
             {
                 case 0:
+                    var productStorageTab = new ProductStorageTab();
                     ContentGrid.Children.Clear();
+                    ContentGrid.Children.Add(productStorageTab);
                     break;
                 case 1:
                     ContentGrid.Children.Clear();
