@@ -23,8 +23,8 @@ namespace ShopAccessApp.UserControlers.Tabs
     /// </summary>
     public partial class ComplaintTab : UserControl, INotifyPropertyChanged
     {
-        private List<client_order_sets> clientOrderSetsList = ClientOrdersAccessor.GetAll();
-        public List<client_order_sets> ClientOrderSetsList
+        private List<OrderDataForUI> clientOrderSetsList = OrderDataForUIAccessor.GetAll();
+        public List<OrderDataForUI> ClientOrderSetsList
         {
             get
             {
@@ -59,7 +59,12 @@ namespace ShopAccessApp.UserControlers.Tabs
 
         private void TestingButton_Click(object sender, RoutedEventArgs e)
         {
-            testingTextBlock.Text = "Complaint tab:  " + clientOrderSetsList.FirstOrDefault().motherboards.model;
+            //testingTextBlock.Text = "Complaint tab:  " + clientOrderSetsList.FirstOrDefault().motherboards.model;
+        }
+
+        private void SubmitComplaintButton_Click(object sender, RoutedEventArgs e)
+        {
+            //clientOrderSetsList[ClientOrderSetsListView.SelectedIndex].OrderId;
         }
     }
 }
