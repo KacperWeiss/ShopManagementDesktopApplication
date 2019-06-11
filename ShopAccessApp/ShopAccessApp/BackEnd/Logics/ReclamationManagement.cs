@@ -90,7 +90,7 @@ namespace ShopAccessApp.BackEnd.Logics
             client.client_order_sets.Add(LocalOrder);
             LocalOrder.clients = client;
             LocalOrder.id_client = client.id;
-            LocalOrder.status = (short)ClientOrderStatus.Ordered;
+            LocalOrder.status = (short)ClientOrderStatus.Reclamated;
             LocalOrder.order_price = 0;
 
             using (var db = new StudiaProjektBazyDanychEntities())

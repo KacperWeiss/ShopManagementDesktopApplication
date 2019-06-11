@@ -153,19 +153,19 @@ namespace ShopAccessApp.BackEnd.Logics
             }
             if (LocalOrder.graphics_cards != null)
             {
-                totalPrice += (decimal)LocalOrder.graphics_cards.price * (decimal)LocalOrder.graphics_cards.amount;
+                totalPrice += (decimal)LocalOrder.graphics_cards.price * (decimal)LocalOrder.graphics_card_amount;
             }
             if (LocalOrder.processors != null)
             {
-                totalPrice += (decimal)LocalOrder.processors.price * (decimal)LocalOrder.processors.amount;
+                totalPrice += (decimal)LocalOrder.processors.price * (decimal)LocalOrder.processor_amount;
             }
             if (LocalOrder.ram_memories != null)
             {
-                totalPrice += (decimal)LocalOrder.ram_memories.price * (decimal)LocalOrder.ram_memories.amount;
+                totalPrice += (decimal)LocalOrder.ram_memories.price * (decimal)LocalOrder.ram_memory_amount;
             }
             if (LocalOrder.motherboards != null)
             {
-                totalPrice += (decimal)LocalOrder.motherboards.price * (decimal)LocalOrder.motherboards.amount;
+                totalPrice += (decimal)LocalOrder.motherboards.price * (decimal)LocalOrder.motherboard_amount;
             }
 
             return totalPrice;
