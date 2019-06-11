@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="ShopAccessApp.UserControlers.Tabs.ProductTab"
+﻿<UserControl x:Class="ShopAccessApp.UserControlers.Tabs.ProductStorageTab"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ShopAccessApp.UserControlers.Tabs"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:productEntries="clr-namespace:ShopAccessApp.UserControlers.ProductEntries"
+             xmlns:productEntries="clr-namespace:ShopAccessApp.UserControlers.StorageProductEntries"
              xmlns:tabs="clr-namespace:ShopAccessApp.UserControlers.Tabs"
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="1200">
@@ -89,8 +89,7 @@
                 <Button Uid="2" Content="Karta graficzna" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
                 <Button Uid="3" Content="Pamięć ram" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
                 <Button Uid="4" Content="Obudowa" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
-                <Button Uid="5" Content="Usługi" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
-                <Button Uid="6" Content="Koszyk" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
+                <Button Uid="6" Content="Zamówienie" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
             </StackPanel>
             <Grid x:Name="TabPointer" Width="150" Height="5" HorizontalAlignment="Left" Background="{DynamicResource PrimaryHueMidBrush}" Margin="10 0"/>
         </StackPanel>
@@ -100,7 +99,7 @@
                 <ListView x:Name="MotherboardListView" ItemsSource="{Binding MotherboardList}" Style="{DynamicResource ListViewProductStyle}">
                     <ListView.ItemTemplate>
                         <DataTemplate DataType="motherboards">
-                            <productEntries:MotherboardEntry/>
+                            <productEntries:MotherboardStorageEntry/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
@@ -108,7 +107,7 @@
                 <ListView x:Name="ProcessorListView" Visibility="Collapsed" ItemsSource="{Binding ProcessorList}" Style="{DynamicResource ListViewProductStyle}">
                     <ListView.ItemTemplate>
                         <DataTemplate DataType="processors">
-                            <productEntries:ProcessorEntry/>
+                            <productEntries:ProcessorStorageEntry/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
@@ -116,7 +115,7 @@
                 <ListView x:Name="GraphicsCardListView" Visibility="Collapsed" ItemsSource="{Binding GraphicsCardList}" Style="{DynamicResource ListViewProductStyle}">
                     <ListView.ItemTemplate>
                         <DataTemplate DataType="graphics_cards">
-                            <productEntries:GraphicCardEntry/>
+                            <productEntries:GraphicsCardStorageEntry/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
@@ -124,7 +123,7 @@
                 <ListView x:Name="RamMemoryListView" Visibility="Collapsed" ItemsSource="{Binding RamMemoryList}" Style="{DynamicResource ListViewProductStyle}">
                     <ListView.ItemTemplate>
                         <DataTemplate DataType="ram_memories">
-                            <productEntries:RamMemoryEntry/>
+                            <productEntries:RamMemoryStorageEntry/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
@@ -132,22 +131,14 @@
                 <ListView x:Name="CaseListView" Visibility="Collapsed" ItemsSource="{Binding CaseList}" Style="{DynamicResource ListViewProductStyle}">
                     <ListView.ItemTemplate>
                         <DataTemplate DataType="cases">
-                            <productEntries:CaseEntry/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-
-                <ListView x:Name="ServiceListView" Visibility="Collapsed" ItemsSource="{Binding ServiceList}" Style="{DynamicResource ListViewProductStyle}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate DataType="services">
-                            <productEntries:ServiceEntry/>
+                            <productEntries:CaseStorageEntry/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
             </Grid>
         </ScrollViewer>
         <Grid x:Name="OrderTab" Margin="0 50 0 0" Visibility="Collapsed">
-        <tabs:OrderTab/>
+            <tabs:OrderTab/>
         </Grid>
     </Grid>
 </UserControl>

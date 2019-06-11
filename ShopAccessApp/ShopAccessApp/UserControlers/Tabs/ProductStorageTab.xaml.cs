@@ -19,18 +19,15 @@ using System.Windows.Shapes;
 namespace ShopAccessApp.UserControlers.Tabs
 {
     /// <summary>
-    /// Interaction logic for ProductTab.xaml
+    /// Interaction logic for ProductStorageTab.xaml
     /// </summary>
-    public partial class ProductTab : UserControl, INotifyPropertyChanged
+    public partial class ProductStorageTab : UserControl
     {
         Button previousButton;
 
-        public ProductTab()
+        public ProductStorageTab()
         {
             InitializeComponent();
-            DataContext = this;
-
-            
         }
 
         private List<motherboards> motherboardList = MotherBoardsAcessor.GetAll();
@@ -38,7 +35,6 @@ namespace ShopAccessApp.UserControlers.Tabs
         private List<graphics_cards> graphicsCardList = GraphicsCardsAccessor.GetAll();
         private List<ram_memories> ramMemoryList = RamMemoriesAccessor.GetAll();
         private List<cases> caseList = CasesAccessor.GetAll();
-        private List<services> serviceList = ServicesAccessor.GetAll();
 
         public List<motherboards> MotherboardList
         {
@@ -120,22 +116,6 @@ namespace ShopAccessApp.UserControlers.Tabs
             }
         }
 
-        public List<services> ServiceList
-        {
-            get
-            {
-                return serviceList;
-            }
-            set
-            {
-                if (serviceList != value)
-                {
-                    serviceList = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
@@ -151,7 +131,7 @@ namespace ShopAccessApp.UserControlers.Tabs
         {
             var currentButton = (Button)e.Source;
             int index = int.Parse(currentButton.Uid);
-            TabPointer.Margin = new Thickness(10 + (index * 170),0,0,0);
+            TabPointer.Margin = new Thickness(10 + (index * 170), 0, 0, 0);
             currentButton.Background = Brushes.White;
 
             if (previousButton != null && previousButton != currentButton)
@@ -223,17 +203,6 @@ namespace ShopAccessApp.UserControlers.Tabs
                     GraphicsCardListView.Visibility = Visibility.Collapsed;
                     RamMemoryListView.Visibility = Visibility.Collapsed;
                     CaseListView.Visibility = Visibility.Collapsed;
-                    ServiceListView.Visibility = Visibility.Visible;
-                    OrderTab.Visibility = Visibility.Collapsed;
-                    ProductScrollViewer.Visibility = Visibility.Visible;
-                    break;
-
-                case 6:
-                    MotherboardListView.Visibility = Visibility.Collapsed;
-                    ProcessorListView.Visibility = Visibility.Collapsed;
-                    GraphicsCardListView.Visibility = Visibility.Collapsed;
-                    RamMemoryListView.Visibility = Visibility.Collapsed;
-                    CaseListView.Visibility = Visibility.Collapsed;
                     ServiceListView.Visibility = Visibility.Collapsed;
                     OrderTab.Visibility = Visibility.Visible;
                     ProductScrollViewer.Visibility = Visibility.Collapsed;
@@ -250,5 +219,6 @@ namespace ShopAccessApp.UserControlers.Tabs
             scv.ScrollToVerticalOffset(scv.VerticalOffset - e.Delta / 2);
             e.Handled = true;
         }
+
     }
 }
