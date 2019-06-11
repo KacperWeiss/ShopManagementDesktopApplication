@@ -16,6 +16,14 @@ namespace ShopAccessApp.BackEnd
             }
         }
 
+        static public users GetById(int id)
+        {
+            using (var db = new StudiaProjektBazyDanychEntities())
+            {
+                return db.users.SingleOrDefault(t => t.id == id);
+            }
+        }
+
         static public users GetByUsername(string username)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
