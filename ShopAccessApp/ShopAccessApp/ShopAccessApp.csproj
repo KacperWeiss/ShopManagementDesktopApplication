@@ -166,6 +166,21 @@
     <Compile Include="UserControlers\ProductEntries\ServiceEntry.xaml.cs">
       <DependentUpon>ServiceEntry.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlers\StorageProductEntries\CaseStorageEntry.xaml.cs">
+      <DependentUpon>CaseStorageEntry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlers\StorageProductEntries\GraphicsCardStorageEntry.xaml.cs">
+      <DependentUpon>GraphicsCardStorageEntry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlers\StorageProductEntries\MotherboardStorageEntry.xaml.cs">
+      <DependentUpon>MotherboardStorageEntry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlers\StorageProductEntries\ProcessorStorageEntry.xaml.cs">
+      <DependentUpon>ProcessorStorageEntry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlers\StorageProductEntries\RamMemoryStorageEntry.xaml.cs">
+      <DependentUpon>RamMemoryStorageEntry.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlers\Tabs\ComplaintTab.xaml.cs">
       <DependentUpon>ComplaintTab.xaml</DependentUpon>
     </Compile>
@@ -240,6 +255,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlers\ProductEntries\ServiceEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlers\StorageProductEntries\CaseStorageEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlers\StorageProductEntries\GraphicsCardStorageEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlers\StorageProductEntries\MotherboardStorageEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlers\StorageProductEntries\ProcessorStorageEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlers\StorageProductEntries\RamMemoryStorageEntry.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
