@@ -57,27 +57,27 @@ namespace ShopAccessApp.UserControlers.Tabs
             }
             if (ClientOrderManagement.LocalOrder.processors != null)
             {
-                MotherboardNameTextBlock.Text = ClientOrderManagement.LocalOrder.processors.model;
-                MotherboardPriceTextBlock.Text = ClientOrderManagement.LocalOrder.processors.price.ToString();
-                MotherboardCountTextBlock.Text = ClientOrderManagement.LocalOrder.processors.amount.ToString();
+                ProcessorNameTextBlock.Text = ClientOrderManagement.LocalOrder.processors.model;
+                ProcessorPriceTextBlock.Text = ClientOrderManagement.LocalOrder.processors.price.ToString();
+                ProcessorCountTextBlock.Text = ClientOrderManagement.LocalOrder.processors.amount.ToString();
             }
             if (ClientOrderManagement.LocalOrder.graphics_cards != null)
             {
-                MotherboardNameTextBlock.Text = ClientOrderManagement.LocalOrder.graphics_cards.model;
-                MotherboardPriceTextBlock.Text = ClientOrderManagement.LocalOrder.graphics_cards.price.ToString();
-                MotherboardCountTextBlock.Text = ClientOrderManagement.LocalOrder.graphics_cards.amount.ToString();
+                GraphicsCardNameTextBlock.Text = ClientOrderManagement.LocalOrder.graphics_cards.model;
+                GraphicsCardPriceTextBlock.Text = ClientOrderManagement.LocalOrder.graphics_cards.price.ToString();
+                GraphicsCardCountTextBlock.Text = ClientOrderManagement.LocalOrder.graphics_cards.amount.ToString();
             }
             if (ClientOrderManagement.LocalOrder.ram_memories != null)
             {
-                MotherboardNameTextBlock.Text = ClientOrderManagement.LocalOrder.ram_memories.model;
-                MotherboardPriceTextBlock.Text = ClientOrderManagement.LocalOrder.ram_memories.price.ToString();
-                MotherboardCountTextBlock.Text = ClientOrderManagement.LocalOrder.ram_memories.amount.ToString();
+                RamMemoryNameTextBlock.Text = ClientOrderManagement.LocalOrder.ram_memories.model;
+                RamMemoryPriceTextBlock.Text = ClientOrderManagement.LocalOrder.ram_memories.price.ToString();
+                RamMemoryCountTextBlock.Text = ClientOrderManagement.LocalOrder.ram_memories.amount.ToString();
             }
             if (ClientOrderManagement.LocalOrder.cases != null)
             {
-                MotherboardNameTextBlock.Text = ClientOrderManagement.LocalOrder.cases.model;
-                MotherboardPriceTextBlock.Text = ClientOrderManagement.LocalOrder.cases.price.ToString();
-                MotherboardCountTextBlock.Text = ClientOrderManagement.LocalOrder.cases.amount.ToString();
+                CaseNameTextBlock.Text = ClientOrderManagement.LocalOrder.cases.model;
+                CasePriceTextBlock.Text = ClientOrderManagement.LocalOrder.cases.price.ToString();
+                CaseCountTextBlock.Text = ClientOrderManagement.LocalOrder.cases.amount.ToString();
             }
         }
     }
