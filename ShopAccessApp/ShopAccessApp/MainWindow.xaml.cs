@@ -182,7 +182,9 @@ namespace ShopAccessApp
                     ContentGrid.Children.Add(productStorageTab);
                     break;
                 case 1:
+                    var warehouseKeeperOrdersTab = new WarehouseKeeperOrdersTab();
                     ContentGrid.Children.Clear();
+                    ContentGrid.Children.Add(warehouseKeeperOrdersTab);
                     break;
                 case 2:
                     ContentGrid.Children.Clear();
@@ -202,10 +204,14 @@ namespace ShopAccessApp
             switch (index)
             {
                 case 0:
+                    var technicianOrderListTab = new TechnicianOrderListTab();
                     ContentGrid.Children.Clear();
+                    ContentGrid.Children.Add(technicianOrderListTab);
                     break;
                 case 1:
+                    var technicianCurrentOrderTab = new TechnicianCurrentOrderTab();
                     ContentGrid.Children.Clear();
+                    ContentGrid.Children.Add(technicianCurrentOrderTab);
                     break;
                 case 2:
                     ContentGrid.Children.Clear();
