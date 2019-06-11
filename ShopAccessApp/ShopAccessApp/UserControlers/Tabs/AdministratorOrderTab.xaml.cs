@@ -23,7 +23,7 @@ namespace ShopAccessApp.UserControlers.Tabs
     /// <summary>
     /// Interaction logic for AdministratorOrderTab.xaml
     /// </summary>
-    public partial class AdministratorOrderTab : UserControl
+    public partial class AdministratorOrderTab : UserControl, INotifyPropertyChanged
     {
         private List<OrderDataForUI> clientOrderSetsList = OrderDataForUIAccessor.GetAll();
         public List<OrderDataForUI> ClientOrderSetsList
