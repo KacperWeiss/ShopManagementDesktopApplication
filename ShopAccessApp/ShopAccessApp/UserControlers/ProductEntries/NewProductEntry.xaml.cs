@@ -214,7 +214,6 @@ namespace ShopAccessApp.UserControlers.ProductEntries
 
         private void LinkToImageTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("LOST FOCUS!!!!!!!");
             if (!string.IsNullOrEmpty(LinkToImageTextBox.Text))
             {
                 try
@@ -225,7 +224,7 @@ namespace ShopAccessApp.UserControlers.ProductEntries
                 }
                 catch
                 {
-                    Console.WriteLine("EXCEPTION IMAGE!!!!!");
+                    
                 }
             }
         }
