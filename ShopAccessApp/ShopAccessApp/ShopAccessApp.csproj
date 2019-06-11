@@ -202,9 +202,6 @@
     <Compile Include="UserControlers\Tabs\TechnicianOrderListTab.xaml.cs">
       <DependentUpon>TechnicianOrderListTab.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlers\Tabs\TechnicianOrderTab.xaml.cs">
-      <DependentUpon>TechnicianOrderTab.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControlers\Tabs\UsersManagementTab.xaml.cs">
       <DependentUpon>UsersManagementTab.xaml</DependentUpon>
     </Compile>
@@ -318,10 +315,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlers\Tabs\TechnicianOrderListTab.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControlers\Tabs\TechnicianOrderTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

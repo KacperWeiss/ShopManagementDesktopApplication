@@ -8,6 +8,29 @@
              TextElement.FontSize="16"
              d:DesignHeight="650" d:DesignWidth="1200">
     <Grid Background="White">
-            
+        <ListView x:Name="ClientOrderSetsListView" Margin="0 40" ItemsSource="{Binding ClientOrderSetsList}">
+            <ListView.ItemTemplate>
+                <DataTemplate DataType="OrderDataForUI">
+                    <Grid Margin="10 15">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
+                        <Border Grid.Column="1" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
+                        <Border Grid.Column="2" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
+                        <TextBlock Text="{Binding OrderDate}" Grid.Column="0" Margin="10 0" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding ClientName}" Grid.Column="1" Margin="10 0" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding ClientSurname}" Grid.Column="2" Margin="10 0" TextWrapping="Wrap"/>
+                        <TextBlock Text="{Binding OrderStatus}" Grid.Column="6" Margin="10 0" TextWrapping="Wrap" Background="LightGray"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </UserControl>

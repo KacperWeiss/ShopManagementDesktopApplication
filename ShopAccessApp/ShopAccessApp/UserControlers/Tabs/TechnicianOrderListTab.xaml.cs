@@ -1,6 +1,9 @@
-﻿using System;
+﻿using ShopAccessApp.BackEnd.Accessor;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,11 +21,35 @@ namespace ShopAccessApp.UserControlers.Tabs
     /// <summary>
     /// Interaction logic for TechnicianOrderListTab.xaml
     /// </summary>
-    public partial class TechnicianOrderListTab : UserControl
+    public partial class TechnicianOrderListTab : UserControl, INotifyPropertyChanged
     {
+        private List<OrderDataForUI> clientOrderSetsList = OrderDataForUIAccessor.GetAll();
+        public List<OrderDataForUI> ClientOrderSetsList
+        {
+            get
+            {
+                return clientOrderSetsList;
+            }
+            set
+            {
+                if (clientOrderSetsList != value)
+                {
+                    clientOrderSetsList = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
         public TechnicianOrderListTab()
         {
             InitializeComponent();
+            DataContext = this;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
