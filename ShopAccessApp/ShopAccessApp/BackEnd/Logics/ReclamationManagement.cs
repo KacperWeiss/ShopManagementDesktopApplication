@@ -87,6 +87,7 @@ namespace ShopAccessApp.BackEnd.Logics
 
         static public void FinalizeReclamation(clients client)
         {
+            client.client_order_sets.Add(LocalOrder);
             LocalOrder.clients = client;
             LocalOrder.id_client = client.id;
             LocalOrder.status = (short)ClientOrderStatus.Ordered;
