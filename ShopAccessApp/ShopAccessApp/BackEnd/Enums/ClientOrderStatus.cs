@@ -11,6 +11,7 @@ namespace ShopAccessApp.BackEnd.Enums
         ReadyToOrder = 0,
         Ordered,
         ServiceCompleted,
-        Delivered
+        Delivered,
+        Reclamated
     }
 }

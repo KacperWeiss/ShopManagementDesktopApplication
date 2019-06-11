@@ -13,7 +13,7 @@ namespace ShopAccessApp.BackEnd.Logics
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                return db.client_order_sets.Where(t => t.services != null).ToList();
+                return db.client_order_sets.Where(t => t.services != null && (t.status == (short)ClientOrderStatus.Ordered || t.status == (short)ClientOrderStatus.Reclamated)).ToList();
             }
         }
 

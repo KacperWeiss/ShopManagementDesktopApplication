@@ -1,4 +1,5 @@
 ﻿using ShopAccessApp.BackEnd.Accessor;
+using ShopAccessApp.BackEnd.Enums;
 using ShopAccessApp.BackEnd.Logics;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace ShopAccessApp.UserControlers.Tabs
     /// </summary>
     public partial class ComplaintTab : UserControl, INotifyPropertyChanged
     {
-        private List<OrderDataForUI> clientOrderSetsList = OrderDataForUIAccessor.GetAll();
+        private List<OrderDataForUI> clientOrderSetsList = OrderDataForUIAccessor.GetAll().Where(t => t.OrderStatus != (short)ClientOrderStatus.Reclamated).ToList();
         public List<OrderDataForUI> ClientOrderSetsList
         {
             get
