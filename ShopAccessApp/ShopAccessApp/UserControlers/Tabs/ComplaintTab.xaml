@@ -8,9 +8,7 @@
              TextElement.FontSize="16"
              d:DesignHeight="650" d:DesignWidth="1200">
     <Grid Background="White">
-        <TextBlock x:Name="testingTextBlock" Text="Complaint tab:"/>
-        <Button x:Name="testingButton" Content="Oh click me!!!" Width="150" VerticalAlignment="Top" Click="TestingButton_Click"/>
-        <ListView x:Name="ClientOrderSetsListView" Margin="0 40" ItemsSource="{Binding ClientOrderSetsList}" SelectionChanged="ClientOrderSetsListView_SelectionChanged">
+        <ListView x:Name="ClientOrderSetsListView" Margin="0 0" ItemsSource="{Binding ClientOrderSetsList}" SelectionChanged="ClientOrderSetsListView_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate DataType="OrderDataForUI">
                     <Grid Margin="10 15">

@@ -230,7 +230,9 @@ namespace ShopAccessApp
                     ContentGrid.Children.Add(userManagementTab);
                     break;
                 case 1:
+                    var administratorOrderTab = new AdministratorOrderTab();
                     ContentGrid.Children.Clear();
+                    ContentGrid.Children.Add(administratorOrderTab);
                     break;
                 case 2:
                     var newProductEntry = new NewProductEntry();

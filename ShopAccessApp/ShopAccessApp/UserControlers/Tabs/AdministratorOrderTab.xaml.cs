@@ -1,4 +1,5 @@
-﻿using ShopAccessApp.BackEnd.Accessor;
+﻿using ShopAccessApp.BackEnd;
+using ShopAccessApp.BackEnd.Accessor;
 using ShopAccessApp.BackEnd.Logics;
 using System;
 using System.Collections.Generic;
@@ -79,13 +80,19 @@ namespace ShopAccessApp.UserControlers.Tabs
             //testingTextBlock.Text = "Complaint tab:  " + clientOrderSetsList.FirstOrDefault().motherboards.model;
         }
 
-        private void SubmitComplaintButton_Click(object sender, RoutedEventArgs e)
+        private void ClientOrderDeleteButton_Click(object sender, RoutedEventArgs e)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                var localOrder = db.client_order_sets.SingleOrDefault(t => t.id == clientOrderSetsList[ClientOrderSetsListView.SelectedIndex].OrderId);
-                ReclamationManagement.AddWholeOrderToReclamation(localOrder);
-                ReclamationManagement.FinalizeReclamation(localOrder.clients);
+                ClientOrdersAccessor.DeleteById(clientOrderSetsList[ClientOrderSetsListView.SelectedIndex].OrderId);
+            }
+        }
+
+        private void WarehouseOrderDeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            using (var db = new StudiaProjektBazyDanychEntities())
+            {
+                WarehouseOrderAccessor.DeleteByID(warehouseOrderSetsList[WarehouseOrderSetsListView.SelectedIndex].OrderId);
             }
         }
     }
