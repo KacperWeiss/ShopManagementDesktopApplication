@@ -1,7 +1,10 @@
-﻿using ShopAccessApp.BackEnd.Logics;
+﻿using ShopAccessApp.BackEnd;
+using ShopAccessApp.BackEnd.Logics;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,21 +22,60 @@ namespace ShopAccessApp.UserControlers.Tabs
     /// <summary>
     /// Interaction logic for WarehouseOrderTab.xaml
     /// </summary>
-    public partial class WarehouseOrderTab : UserControl
+    public partial class WarehouseOrderTab : UserControl, INotifyPropertyChanged
     {
+        private List<wholesalers> wholesalerList = WholesalersAccessor.GetAll();
+        private int selectedWholesalerID;
+
+        public List<wholesalers> WholesalerList
+        {
+            get
+            {
+                return wholesalerList;
+            }
+            set
+            {
+                if (wholesalerList != value)
+                {
+                    wholesalerList = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public int SelectedWholesalerID
+        {
+            get
+            {
+                return selectedWholesalerID;
+            }
+            set
+            {
+                if (selectedWholesalerID != value)
+                {
+                    selectedWholesalerID = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
         public WarehouseOrderTab()
         {
             InitializeComponent();
+            DataContext = this;
         }
 
         private void OrderAcceptButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            string additionalInformation = AdditionalInformationTextBox.Text;
+
+            var selectedWholesaler = (wholesalers)WholeSalerSelectionComboBox.SelectedItem;
+            WarehouseOrderManagement.FinalizeOrder(selectedWholesaler, additionalInformation);
         }
 
         private void PriceSummaryTextBlock_Loaded(object sender, RoutedEventArgs e)
         {
-            //PriceSummaryTextBlock.Text = WarehouseOrderManagement.CalculatePrice().ToString();
+            PriceSummaryTextBlock.Text = WarehouseOrderManagement.CalculatePrice().ToString();
 
             if (WarehouseOrderManagement.LocalOrder.motherboards != null)
             {
@@ -66,7 +108,23 @@ namespace ShopAccessApp.UserControlers.Tabs
                 CaseCountTextBlock.Text = WarehouseOrderManagement.LocalOrder.cases.amount.ToString();
             }
 
-            
+
+        }
+
+        private void WholeSalerSelectionComboBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            wholesalerList = WholesalersAccessor.GetAll();
+            //var wholesalers = WholesalersAccessor.GetAll();
+            //foreach (var item in wholesalers)
+            //{
+            //    WholeSalerSelectionComboBox.Items.Add(item.company);
+            //}
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
