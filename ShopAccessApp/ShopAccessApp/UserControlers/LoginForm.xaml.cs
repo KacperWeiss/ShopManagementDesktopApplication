@@ -36,6 +36,26 @@ namespace ShopAccessApp.UserControlers
                 if (window.GetType() == typeof(MainWindow))
                 {
                     MainWindow parentWindow = (window as MainWindow);
+                    // Obejście na czas testów
+                    switch (LoginTextBox.Text)
+                    {
+                        case "s":
+                            parentWindow.LogIn(UserType.Seller);
+                            break;
+                        case "m":
+                            parentWindow.LogIn(UserType.WarehouseKeeper);
+                            break;
+                        case "t":
+                            parentWindow.LogIn(UserType.Technician);
+                            break;
+                        case "a":
+                            parentWindow.LogIn(UserType.Admin);
+                            break;
+
+                        default:
+                            break;
+                    }
+
                     if (!String.IsNullOrEmpty(LoginTextBox.Text) && !String.IsNullOrEmpty(PasswordTextBox.Password))
                     {
                         UserType accountType = UserManagement.LoginAs(LoginTextBox.Text, PasswordTextBox.Password);
