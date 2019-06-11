@@ -106,25 +106,10 @@ namespace ShopAccessApp.BackEnd.Logics
                 image_source = temporaryCase.image_source,
                 description = temporaryCase.description
             };
-
-            using (var db = new StudiaProjektBazyDanychEntities())
-            {
-                var DBCase = db.cases
-                                    .SingleOrDefault(t => t.model == temporaryCase.model && t.client_order_sets.Count == 0);
-                DBCase.amount -= amount;
-                db.SaveChanges();
-            }
         }
 
         static public void RemoveCaseFromOrder()
         {
-            using (var db = new StudiaProjektBazyDanychEntities())
-            {
-                var DBCase = db.cases
-                                    .SingleOrDefault(t => t.model == LocalOrder.cases.model && t.client_order_sets.Count == 0);
-                DBCase.amount += LocalOrder.cases.amount;
-                db.SaveChanges();
-            }
             LocalOrder.graphics_cards = null;
         }
         #endregion
