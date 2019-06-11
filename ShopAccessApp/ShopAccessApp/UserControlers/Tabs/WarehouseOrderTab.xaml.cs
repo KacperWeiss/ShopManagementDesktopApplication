@@ -81,31 +81,31 @@ namespace ShopAccessApp.UserControlers.Tabs
             {
                 MotherboardNameTextBlock.Text = WarehouseOrderManagement.LocalOrder.motherboards.model;
                 MotherboardPriceTextBlock.Text = WarehouseOrderManagement.LocalOrder.motherboards.price.ToString();
-                MotherboardCountTextBlock.Text = WarehouseOrderManagement.LocalOrder.motherboards.amount.ToString();
+                MotherboardCountTextBlock.Text = WarehouseOrderManagement.LocalOrder.motherboard_amount.ToString();
             }
             if (WarehouseOrderManagement.LocalOrder.processors != null)
             {
                 ProcessorNameTextBlock.Text = WarehouseOrderManagement.LocalOrder.processors.model;
                 ProcessorPriceTextBlock.Text = WarehouseOrderManagement.LocalOrder.processors.price.ToString();
-                ProcessorCountTextBlock.Text = WarehouseOrderManagement.LocalOrder.processors.amount.ToString();
+                ProcessorCountTextBlock.Text = WarehouseOrderManagement.LocalOrder.processor_amount.ToString();
             }
             if (WarehouseOrderManagement.LocalOrder.graphics_cards != null)
             {
                 GraphicsCardNameTextBlock.Text = WarehouseOrderManagement.LocalOrder.graphics_cards.model;
                 GraphicsCardPriceTextBlock.Text = WarehouseOrderManagement.LocalOrder.graphics_cards.price.ToString();
-                GraphicsCardCountTextBlock.Text = WarehouseOrderManagement.LocalOrder.graphics_cards.amount.ToString();
+                GraphicsCardCountTextBlock.Text = WarehouseOrderManagement.LocalOrder.graphics_card_amount.ToString();
             }
             if (WarehouseOrderManagement.LocalOrder.ram_memories != null)
             {
                 RamMemoryNameTextBlock.Text = WarehouseOrderManagement.LocalOrder.ram_memories.model;
                 RamMemoryPriceTextBlock.Text = WarehouseOrderManagement.LocalOrder.ram_memories.price.ToString();
-                RamMemoryCountTextBlock.Text = WarehouseOrderManagement.LocalOrder.ram_memories.amount.ToString();
+                RamMemoryCountTextBlock.Text = WarehouseOrderManagement.LocalOrder.ram_memory_amount.ToString();
             }
             if (WarehouseOrderManagement.LocalOrder.cases != null)
             {
                 CaseNameTextBlock.Text = WarehouseOrderManagement.LocalOrder.cases.model;
                 CasePriceTextBlock.Text = WarehouseOrderManagement.LocalOrder.cases.price.ToString();
-                CaseCountTextBlock.Text = WarehouseOrderManagement.LocalOrder.cases.amount.ToString();
+                CaseCountTextBlock.Text = WarehouseOrderManagement.LocalOrder.case_amount.ToString();
             }
 
 

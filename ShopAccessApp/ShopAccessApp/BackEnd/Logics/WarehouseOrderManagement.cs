@@ -111,27 +111,27 @@ namespace ShopAccessApp.BackEnd.Logics
                 if (LocalOrder.cases != null)
                 {
                     LocalOrder.id_case = LocalOrder.cases.id;
-                    db.cases.SingleOrDefault(t => t.id == LocalOrder.id_case).warehouse_orders.Add(LocalOrder);
+                    //db.cases.SingleOrDefault(t => t.id == LocalOrder.id_case).warehouse_orders.Add(LocalOrder);
                 }
                 if (LocalOrder.graphics_cards != null)
                 {
                     LocalOrder.id_graphics_card = LocalOrder.graphics_cards.id;
-                    db.graphics_cards.SingleOrDefault(t => t.id == LocalOrder.id_graphics_card).warehouse_orders.Add(LocalOrder);
+                    //db.graphics_cards.SingleOrDefault(t => t.id == LocalOrder.id_graphics_card).warehouse_orders.Add(LocalOrder);
                 }
                 if (LocalOrder.motherboards != null)
                 {
                     LocalOrder.id_motherboard = LocalOrder.motherboards.id;
-                    db.motherboards.SingleOrDefault(t => t.id == LocalOrder.id_motherboard).warehouse_orders.Add(LocalOrder);
+                    //db.motherboards.SingleOrDefault(t => t.id == LocalOrder.id_motherboard).warehouse_orders.Add(LocalOrder);
                 }
                 if (LocalOrder.processors != null)
                 {
                     LocalOrder.id_processor = LocalOrder.processors.id;
-                    db.processors.SingleOrDefault(t => t.id == LocalOrder.id_processor).warehouse_orders.Add(LocalOrder);
+                    //db.processors.SingleOrDefault(t => t.id == LocalOrder.id_processor).warehouse_orders.Add(LocalOrder);
                 }
                 if (LocalOrder.ram_memories != null)
                 {
                     LocalOrder.id_ram_memory = LocalOrder.ram_memories.id;
-                    db.ram_memories.SingleOrDefault(t => t.id == LocalOrder.id_ram_memory).warehouse_orders.Add(LocalOrder);
+                    //db.ram_memories.SingleOrDefault(t => t.id == LocalOrder.id_ram_memory).warehouse_orders.Add(LocalOrder);
                 }
                 LocalOrder.id_wholesaler = DBWholesaler.id;
                 LocalOrder.wholesalers = DBWholesaler;
