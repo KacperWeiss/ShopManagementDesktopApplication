@@ -8,7 +8,7 @@
              d:DesignHeight="650" d:DesignWidth="1200">
     <Grid Background="White">
         <Label>Zamówienia na magazyn:</Label>
-        <ListView x:Name="WarehouseOrderSetsListView" Margin="0 40" ItemsSource="{Binding WarehouseOrderSetsList}" SelectionChanged="ClientOrderSetsListView_SelectionChanged">
+        <ListView x:Name="WarehouseOrderSetsListView" Margin="0 40" ItemsSource="{Binding WarehouseOrderSetsList}">
             <ListView.ItemTemplate>
                 <DataTemplate DataType="WarehouseOrderForUI">
                     <Grid Margin="10 15">
