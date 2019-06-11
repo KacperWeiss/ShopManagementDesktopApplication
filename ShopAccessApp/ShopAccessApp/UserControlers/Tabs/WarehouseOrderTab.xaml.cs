@@ -24,5 +24,15 @@ namespace ShopAccessApp.UserControlers.Tabs
         {
             InitializeComponent();
         }
+
+        private void OrderAcceptButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void PriceSummaryTextBlock_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

@@ -138,7 +138,7 @@
             </Grid>
         </ScrollViewer>
         <Grid x:Name="OrderTab" Margin="0 50 0 0" Visibility="Collapsed">
-            <tabs:OrderTab/>
+            <tabs:WarehouseOrderTab/>
         </Grid>
     </Grid>
 </UserControl>

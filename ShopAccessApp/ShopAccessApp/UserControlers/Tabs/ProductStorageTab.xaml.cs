@@ -148,7 +148,6 @@ namespace ShopAccessApp.UserControlers.Tabs
                     GraphicsCardListView.Visibility = Visibility.Collapsed;
                     RamMemoryListView.Visibility = Visibility.Collapsed;
                     CaseListView.Visibility = Visibility.Collapsed;
-                    ServiceListView.Visibility = Visibility.Collapsed;
                     OrderTab.Visibility = Visibility.Collapsed;
                     ProductScrollViewer.Visibility = Visibility.Visible;
                     break;
@@ -159,7 +158,6 @@ namespace ShopAccessApp.UserControlers.Tabs
                     GraphicsCardListView.Visibility = Visibility.Collapsed;
                     RamMemoryListView.Visibility = Visibility.Collapsed;
                     CaseListView.Visibility = Visibility.Collapsed;
-                    ServiceListView.Visibility = Visibility.Collapsed;
                     OrderTab.Visibility = Visibility.Collapsed;
                     ProductScrollViewer.Visibility = Visibility.Visible;
                     break;
@@ -170,7 +168,6 @@ namespace ShopAccessApp.UserControlers.Tabs
                     GraphicsCardListView.Visibility = Visibility.Visible;
                     RamMemoryListView.Visibility = Visibility.Collapsed;
                     CaseListView.Visibility = Visibility.Collapsed;
-                    ServiceListView.Visibility = Visibility.Collapsed;
                     OrderTab.Visibility = Visibility.Collapsed;
                     ProductScrollViewer.Visibility = Visibility.Visible;
                     break;
@@ -181,7 +178,6 @@ namespace ShopAccessApp.UserControlers.Tabs
                     GraphicsCardListView.Visibility = Visibility.Collapsed;
                     RamMemoryListView.Visibility = Visibility.Visible;
                     CaseListView.Visibility = Visibility.Collapsed;
-                    ServiceListView.Visibility = Visibility.Collapsed;
                     OrderTab.Visibility = Visibility.Collapsed;
                     ProductScrollViewer.Visibility = Visibility.Visible;
                     break;
@@ -192,7 +188,6 @@ namespace ShopAccessApp.UserControlers.Tabs
                     GraphicsCardListView.Visibility = Visibility.Collapsed;
                     RamMemoryListView.Visibility = Visibility.Collapsed;
                     CaseListView.Visibility = Visibility.Visible;
-                    ServiceListView.Visibility = Visibility.Collapsed;
                     OrderTab.Visibility = Visibility.Collapsed;
                     ProductScrollViewer.Visibility = Visibility.Visible;
                     break;
@@ -203,7 +198,6 @@ namespace ShopAccessApp.UserControlers.Tabs
                     GraphicsCardListView.Visibility = Visibility.Collapsed;
                     RamMemoryListView.Visibility = Visibility.Collapsed;
                     CaseListView.Visibility = Visibility.Collapsed;
-                    ServiceListView.Visibility = Visibility.Collapsed;
                     OrderTab.Visibility = Visibility.Visible;
                     ProductScrollViewer.Visibility = Visibility.Collapsed;
                     break;
