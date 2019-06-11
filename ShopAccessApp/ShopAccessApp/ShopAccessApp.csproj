@@ -73,6 +73,7 @@
     <Compile Include="BackEnd\Accessor\ClientOrdersAccessor.cs" />
     <Compile Include="BackEnd\Accessor\ClientOrderViewAccessor.cs" />
     <Compile Include="BackEnd\Accessor\GraphicsCardsAccessor.cs" />
+    <Compile Include="BackEnd\Accessor\OrderDataForUIAccessor.cs" />
     <Compile Include="BackEnd\Accessor\ProcessorsAccessor.cs" />
     <Compile Include="BackEnd\Accessor\RamMemoriesAccessor.cs" />
     <Compile Include="BackEnd\Accessor\ServicesAccessor.cs" />

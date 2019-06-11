@@ -234,6 +234,8 @@ namespace ShopAccessApp.BackEnd.Logics
 
                 db.client_order_sets.Add(LocalOrder);
                 db.SaveChanges();
+                LocalOrder.id_client = LocalOrder.clients.id;
+                db.SaveChanges();
                 ResetOrder();
             }
         }
