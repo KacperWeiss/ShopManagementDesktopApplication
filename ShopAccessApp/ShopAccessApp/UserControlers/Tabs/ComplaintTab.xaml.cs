@@ -67,7 +67,9 @@ namespace ShopAccessApp.UserControlers.Tabs
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                ReclamationManagement.AddWholeOrderToReclamation(db.client_order_sets.SingleOrDefault(t => t.id == clientOrderSetsList[ClientOrderSetsListView.SelectedIndex].OrderId));
+                var localOrder = db.client_order_sets.SingleOrDefault(t => t.id == clientOrderSetsList[ClientOrderSetsListView.SelectedIndex].OrderId);
+                ReclamationManagement.AddWholeOrderToReclamation(localOrder);
+                ReclamationManagement.FinalizeReclamation(localOrder.clients);
             }
         }
     }
