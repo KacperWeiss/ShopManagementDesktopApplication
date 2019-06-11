@@ -144,6 +144,33 @@ namespace ShopAccessApp.BackEnd.Logics
             }
         }
 
+        static public decimal CalculatePrice()
+        {
+            decimal totalPrice = 0m;
+            if (LocalOrder.cases != null)
+            {
+                totalPrice += (decimal)LocalOrder.cases.price * (decimal)LocalOrder.cases.amount;
+            }
+            if (LocalOrder.graphics_cards != null)
+            {
+                totalPrice += (decimal)LocalOrder.graphics_cards.price * (decimal)LocalOrder.graphics_cards.amount;
+            }
+            if (LocalOrder.processors != null)
+            {
+                totalPrice += (decimal)LocalOrder.processors.price * (decimal)LocalOrder.processors.amount;
+            }
+            if (LocalOrder.ram_memories != null)
+            {
+                totalPrice += (decimal)LocalOrder.ram_memories.price * (decimal)LocalOrder.ram_memories.amount;
+            }
+            if (LocalOrder.motherboards != null)
+            {
+                totalPrice += (decimal)LocalOrder.motherboards.price * (decimal)LocalOrder.motherboards.amount;
+            }
+
+            return totalPrice;
+        }
+
         static public void ResetOrder()
         {
             LocalOrder = new warehouse_orders() { status = (short)WarehouseOrderStatus.ReadyToOrder };
