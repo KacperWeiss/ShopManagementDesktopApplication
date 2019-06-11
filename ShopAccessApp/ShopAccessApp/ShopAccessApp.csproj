@@ -202,6 +202,9 @@
     <Compile Include="UserControlers\Tabs\UsersManagementTab.xaml.cs">
       <DependentUpon>UsersManagementTab.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlers\Tabs\WarehouseOrderTab.xaml.cs">
+      <DependentUpon>WarehouseOrderTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlers\TemplateNumericUpDown.xaml.cs">
       <DependentUpon>TemplateNumericUpDown.xaml</DependentUpon>
     </Compile>
@@ -306,6 +309,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlers\Tabs\UsersManagementTab.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlers\Tabs\WarehouseOrderTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
