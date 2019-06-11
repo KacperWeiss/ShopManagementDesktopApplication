@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ShopAccessApp.BackEnd.Enums;
+using ShopAccessApp.BackEnd.Logics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,18 +36,16 @@ namespace ShopAccessApp.UserControlers
                 if (window.GetType() == typeof(MainWindow))
                 {
                     MainWindow parentWindow = (window as MainWindow);
-                    MainWindow.AccountType accountType = MainWindow.AccountType.Seller;
+                    if (!String.IsNullOrEmpty(LoginTextBox.Text) && !String.IsNullOrEmpty(PasswordTextBox.Password))
+                    {
+                        UserType accountType = UserManagement.LoginAs(LoginTextBox.Text, PasswordTextBox.Password);
 
-                    if (LoginTextBox.Text == "s")
-                        accountType = MainWindow.AccountType.Seller;
-                    if (LoginTextBox.Text == "m")
-                        accountType = MainWindow.AccountType.Storagekeeper;
-                    if (LoginTextBox.Text == "t")
-                        accountType = MainWindow.AccountType.Technician;
-                    if (LoginTextBox.Text == "a")
-                        accountType = MainWindow.AccountType.Administrator;
-
-                    parentWindow.LogIn(accountType);
+                        parentWindow.LogIn(accountType);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Aby się zalogować należy podać login i hasło");
+                    }
                 }
             }
             
