@@ -66,11 +66,13 @@ namespace ShopAccessApp.BackEnd.Logics
             LocalOrder.clients = client;
             LocalOrder.id_client = client.id;
             LocalOrder.status = (short)ClientOrderStatus.Ordered;
+            LocalOrder.order_price = 0;
 
             using (var db = new StudiaProjektBazyDanychEntities())
             {
                 LocalOrder.services = db.services.SingleOrDefault(t => t.service == "Reclamation service");
                 db.client_order_sets.Add(LocalOrder);
+                db.SaveChanges();
             }
         }
     }
