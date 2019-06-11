@@ -89,7 +89,7 @@
                 <Button Uid="2" Content="Karta graficzna" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
                 <Button Uid="3" Content="Pamięć ram" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
                 <Button Uid="4" Content="Obudowa" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
-                <Button Uid="6" Content="Zamówienie" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
+                <Button Uid="5" Content="Zamówienie" Width="150" Height="40" FontSize="16" Margin="10 0" Foreground="Black" Background="{x:Null}" BorderBrush="{x:Null}" Click="Tab_Click"/>
             </StackPanel>
             <Grid x:Name="TabPointer" Width="150" Height="5" HorizontalAlignment="Left" Background="{DynamicResource PrimaryHueMidBrush}" Margin="10 0"/>
         </StackPanel>
