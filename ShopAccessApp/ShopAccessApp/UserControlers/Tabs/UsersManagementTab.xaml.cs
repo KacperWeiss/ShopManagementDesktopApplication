@@ -108,7 +108,7 @@ namespace ShopAccessApp.UserControlers.Tabs
         private void EditAccessLevelButton_Click(object sender, RoutedEventArgs e)
         {
             var userID = UserList[UsersListView.SelectedIndex].id;
-            BackEnd.Enums.UserType newUserType;
+            BackEnd.Enums.UserType newUserType = BackEnd.Enums.UserType.Seller;
             var index = AccessLevelChoiceComboBox.SelectedIndex;
             if (index != -1)
             {
@@ -136,7 +136,7 @@ namespace ShopAccessApp.UserControlers.Tabs
         private void DeleteUserButton_Click(object sender, RoutedEventArgs e)
         {
             var userID = UserList[UsersListView.SelectedIndex].id;
-            UserAccessor.DeleteByID(userID);
+            UserAccessor.DeleteById(userID);
         }
     }
 }
