@@ -41,7 +41,7 @@ namespace ShopAccessApp.BackEnd.Logics
             }
         }
 
-        static public void AddGraphicCardsToReclamation(processors temporaryGraphicCard, int amount)
+        static public void AddGraphicCardsToReclamation(graphics_cards temporaryGraphicCard, int amount)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
@@ -51,13 +51,37 @@ namespace ShopAccessApp.BackEnd.Logics
             }
         }
 
-        static public void AddCasesToReclamation(processors temporaryCase, int amount)
+        static public void AddCasesToReclamation(cases temporaryCase, int amount)
         {
             using (var db = new StudiaProjektBazyDanychEntities())
             {
                 LocalOrder.cases = db.cases.SingleOrDefault(t => t.id == temporaryCase.id);
                 LocalOrder.id_case = LocalOrder.cases.id;
                 LocalOrder.case_amount = amount;
+            }
+        }
+
+        static public void AddWholeOrderToReclamation(client_order_sets tempOrder)
+        {
+            if (tempOrder.cases != null)
+            {
+                AddCasesToReclamation(tempOrder.cases, (int)tempOrder.case_amount);
+            }
+            if (tempOrder.graphics_cards != null)
+            {
+                AddGraphicCardsToReclamation(tempOrder.graphics_cards, (int)tempOrder.graphics_card_amount);
+            }
+            if (tempOrder.motherboards != null)
+            {
+                AddMotherboardToReclamation(tempOrder.motherboards, (int)tempOrder.motherboard_amount);
+            }
+            if (tempOrder.processors != null)
+            {
+                AddProcessorToReclamation(tempOrder.processors, (int)tempOrder.processor_amount);
+            }
+            if (tempOrder.ram_memories != null)
+            {
+                AddRamMemoriesToReclamation(tempOrder.ram_memories, (int)tempOrder.ram_memory_amount);
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using ShopAccessApp.BackEnd.Accessor;
+using ShopAccessApp.BackEnd.Logics;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,7 +65,10 @@ namespace ShopAccessApp.UserControlers.Tabs
 
         private void SubmitComplaintButton_Click(object sender, RoutedEventArgs e)
         {
-            //clientOrderSetsList[ClientOrderSetsListView.SelectedIndex].OrderId;
+            using (var db = new StudiaProjektBazyDanychEntities())
+            {
+                ReclamationManagement.AddWholeOrderToReclamation(db.client_order_sets.SingleOrDefault(t => t.id == clientOrderSetsList[ClientOrderSetsListView.SelectedIndex].OrderId));
+            }
         }
     }
 }
