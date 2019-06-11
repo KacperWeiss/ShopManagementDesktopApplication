@@ -41,26 +41,31 @@ namespace ShopAccessApp.UserControlers
                     {
                         case "s":
                             parentWindow.LogIn(UserType.Seller);
-                            break;
+                            return;
                         case "m":
                             parentWindow.LogIn(UserType.WarehouseKeeper);
-                            break;
+                            return;
                         case "t":
                             parentWindow.LogIn(UserType.Technician);
-                            break;
+                            return;
                         case "a":
                             parentWindow.LogIn(UserType.Admin);
-                            break;
-
-                        default:
-                            break;
+                            return;
+                            
                     }
 
                     if (!String.IsNullOrEmpty(LoginTextBox.Text) && !String.IsNullOrEmpty(PasswordTextBox.Password))
                     {
-                        UserType accountType = UserManagement.LoginAs(LoginTextBox.Text, PasswordTextBox.Password);
+                        try
+                        {
+                            UserType accountType = UserManagement.LoginAs(LoginTextBox.Text, PasswordTextBox.Password);
 
-                        parentWindow.LogIn(accountType);
+                            parentWindow.LogIn(accountType);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
                     else
                     {

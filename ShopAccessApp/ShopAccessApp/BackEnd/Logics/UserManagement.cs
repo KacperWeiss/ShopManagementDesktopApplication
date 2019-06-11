@@ -12,6 +12,10 @@ namespace ShopAccessApp.BackEnd.Logics
         static public UserType LoginAs(string login, string password)
         {
             users localUser = UserAccessor.GetByUsername(login);
+            if (localUser == null)
+            {
+                throw new Exception("Wrong login!");
+            }
             if (localUser.password == password)
             {
                 return (UserType)localUser.access_level;
