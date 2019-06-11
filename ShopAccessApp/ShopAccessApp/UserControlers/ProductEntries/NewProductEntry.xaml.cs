@@ -120,7 +120,7 @@ namespace ShopAccessApp.UserControlers.ProductEntries
                 model = ModelNameTextBox.Text,
                 type = RamMemoryTypeTextBox.Text,
                 capacity_gb = Int32.Parse(RamMemoryCapacityTextBox.Text),
-                price = Int32.Parse(PriceTextBox.Text),
+                price = Decimal.Parse(PriceTextBox.Text),
                 amount = 0,
                 image_source = LinkToImageTextBox.Text,
                 description = DescriptionTextBox.Text
@@ -196,7 +196,7 @@ namespace ShopAccessApp.UserControlers.ProductEntries
 
         private void PriceTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^0-9]+");
+            Regex regex = new Regex("[^0-9,]+");
             e.Handled = regex.IsMatch(e.Text);
         }
 
