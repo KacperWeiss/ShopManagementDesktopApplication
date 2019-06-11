@@ -99,5 +99,20 @@ namespace ShopAccessApp.UserControlers.Tabs
                 RegistrationKeyGeneration.SaveToDatabase(key, userType);
             }
         }
+
+        private void ResetPasswordButton_Click(object sender, RoutedEventArgs e)
+        {
+            var userID = UserList[UsersListView.SelectedIndex].id;
+        }
+
+        private void EditAccessLevelButton_Click(object sender, RoutedEventArgs e)
+        {
+            var userID = UserList[UsersListView.SelectedIndex].id;
+        }
+
+        private void DeleteUserButton_Click(object sender, RoutedEventArgs e)
+        {
+            var userID = UserList[UsersListView.SelectedIndex].id;
+        }
     }
 }
