@@ -75,5 +75,17 @@ namespace ShopAccessApp.UserControlers
             }
             
         }
+
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                UserManagement.RegisterAs(LoginTextBox.Text, PasswordTextBox.Password, RegisterKeyTextBox.Text);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
