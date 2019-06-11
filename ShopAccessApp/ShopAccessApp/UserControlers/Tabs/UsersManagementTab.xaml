@@ -18,15 +18,12 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="190"/>
                     <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="400"/>
                 </Grid.ColumnDefinitions>
                 <Border Grid.Column="0" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
-                <Border Grid.Column="1" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
                 <TextBlock Text="Username" Grid.Column="0" Margin="10 0" VerticalAlignment="Center" TextWrapping="Wrap"/>
                 <TextBlock Text="Access level" Grid.Column="1" Margin="10 0" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
-                <TextBlock Text="Akcja" Grid.Column="2" Margin="10 0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Grid>
-            <ScrollViewer x:Name="UsersScrollViewer" Grid.Column="0" Margin="0 25 0 0" PreviewMouseWheel="UsersScrollViewer_PreviewMouseWheel">
+            <ScrollViewer x:Name="UsersScrollViewer" Grid.Column="0" Margin="0 25 0 60" PreviewMouseWheel="UsersScrollViewer_PreviewMouseWheel">
                 <ListView x:Name="UsersListView" ItemsSource="{Binding UserList}">
                     <ListView.ItemTemplate>
                         <DataTemplate DataType="users">
@@ -34,24 +31,29 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="190"/>
                                     <ColumnDefinition Width="100"/>
-                                    <ColumnDefinition Width="400"/>
                                 </Grid.ColumnDefinitions>
                                 <Border Grid.Column="0" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
-                                <Border Grid.Column="1" BorderBrush="Black" BorderThickness="0 0 1 0" Background="{x:Null}" />
                                 <TextBlock Text="{Binding username}" Grid.Column="0" Margin="10 0" VerticalAlignment="Center" TextWrapping="Wrap"/>
                                 <TextBlock Text="{Binding access_level}" Grid.Column="1" Margin="10 0" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
-                                <StackPanel Grid.Column="2" Orientation="Horizontal">
-                                    <Button Content="Resetuj Hasło" Margin="8 0"/>
-                                    <Button Content="Edytuj uprawnienia" Margin="8 0"/>
-                                    <Button Content="Usuń" Margin="8 0 0 0"/>
-                                </StackPanel>
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
             </ScrollViewer>
-            
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 20">
+                <Button x:Name="ResetPasswordButton" Content="Resetuj Hasło" Margin="8 0" Click="ResetPasswordButton_Click"/>
+                <Button x:Name="EditAccessLevelButton" Content="Edytuj uprawnienia" Margin="8 0" Click="EditAccessLevelButton_Click"/>
+                <Button x:Name="DeleteUserButton" Content="Usuń" Margin="8 0 0 0" Click="DeleteUserButton_Click"/>
+            </StackPanel>
+
             <Grid Grid.Column="1">
+                <StackPanel>
+                    <TextBlock Text="LEGENDA" FontWeight="Bold" Margin="10 0 0 0"/>
+                    <TextBlock Text="1 - administrator" Margin="10 0 0 0"/>
+                    <TextBlock Text="2 - sprzedawca" Margin="10 0 0 0"/>
+                    <TextBlock Text="3 - magazynier" Margin="10 0 0 0"/>
+                    <TextBlock Text="4 - technik" Margin="10 0 0 0"/>
+                </StackPanel>
                 <GroupBox Header="Stwórz klucz rejestracyjny" Margin="30 0 20 50" MaxWidth="420" Height="450" VerticalAlignment="Bottom">
                     <StackPanel>
                         <ComboBox x:Name="AccessLevelChoiceComboBox" Margin="50 30 50 0">
