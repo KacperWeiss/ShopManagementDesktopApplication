@@ -84,7 +84,7 @@ namespace ShopAccessApp.UserControlers.Tabs
                         userType = BackEnd.Enums.UserType.Seller;
                         break;
                     case 1:
-                        userType = BackEnd.Enums.UserType.WarehouseKeeper; 
+                        userType = BackEnd.Enums.UserType.WarehouseKeeper;
                         break;
                     case 2:
                         userType = BackEnd.Enums.UserType.Technician;
@@ -108,11 +108,35 @@ namespace ShopAccessApp.UserControlers.Tabs
         private void EditAccessLevelButton_Click(object sender, RoutedEventArgs e)
         {
             var userID = UserList[UsersListView.SelectedIndex].id;
+            BackEnd.Enums.UserType newUserType;
+            var index = AccessLevelChoiceComboBox.SelectedIndex;
+            if (index != -1)
+            {
+                switch (index)
+                {
+                    case 0:
+                        newUserType = BackEnd.Enums.UserType.Seller;
+                        break;
+                    case 1:
+                        newUserType = BackEnd.Enums.UserType.WarehouseKeeper;
+                        break;
+                    case 2:
+                        newUserType = BackEnd.Enums.UserType.Technician;
+                        break;
+                    case 3:
+                        newUserType = BackEnd.Enums.UserType.Admin;
+                        break;
+                    default:
+                        break;
+                }
+                UserManagement.ChangeAccessLevel(userID,newUserType);
+            }
         }
 
         private void DeleteUserButton_Click(object sender, RoutedEventArgs e)
         {
             var userID = UserList[UsersListView.SelectedIndex].id;
+            UserAccessor.DeleteByID(userID);
         }
     }
 }
