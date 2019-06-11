@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ShopAccessApp.BackEnd.Enums;
+using ShopAccessApp.BackEnd.Logics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,18 +36,36 @@ namespace ShopAccessApp.UserControlers
                 if (window.GetType() == typeof(MainWindow))
                 {
                     MainWindow parentWindow = (window as MainWindow);
-                    MainWindow.AccountType accountType = MainWindow.AccountType.Seller;
+                    // Obejście na czas testów
+                    switch (LoginTextBox.Text)
+                    {
+                        case "s":
+                            parentWindow.LogIn(UserType.Seller);
+                            break;
+                        case "m":
+                            parentWindow.LogIn(UserType.WarehouseKeeper);
+                            break;
+                        case "t":
+                            parentWindow.LogIn(UserType.Technician);
+                            break;
+                        case "a":
+                            parentWindow.LogIn(UserType.Admin);
+                            break;
 
-                    if (LoginTextBox.Text == "s")
-                        accountType = MainWindow.AccountType.Seller;
-                    if (LoginTextBox.Text == "m")
-                        accountType = MainWindow.AccountType.Storagekeeper;
-                    if (LoginTextBox.Text == "t")
-                        accountType = MainWindow.AccountType.Technician;
-                    if (LoginTextBox.Text == "a")
-                        accountType = MainWindow.AccountType.Administrator;
+                        default:
+                            break;
+                    }
 
-                    parentWindow.LogIn(accountType);
+                    if (!String.IsNullOrEmpty(LoginTextBox.Text) && !String.IsNullOrEmpty(PasswordTextBox.Password))
+                    {
+                        UserType accountType = UserManagement.LoginAs(LoginTextBox.Text, PasswordTextBox.Password);
+
+                        parentWindow.LogIn(accountType);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Aby się zalogować należy podać login i hasło");
+                    }
                 }
             }
             

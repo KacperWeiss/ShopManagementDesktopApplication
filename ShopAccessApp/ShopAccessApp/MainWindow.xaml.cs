@@ -1,4 +1,5 @@
-﻿using ShopAccessApp.UserControlers;
+﻿using ShopAccessApp.BackEnd.Enums;
+using ShopAccessApp.UserControlers;
 using ShopAccessApp.UserControlers.ProductEntries;
 using ShopAccessApp.UserControlers.Tabs;
 using System;
@@ -26,7 +27,6 @@ namespace ShopAccessApp
         LoginForm loginForm = new LoginForm();
         int menuPointerOffset = 112;
         bool menuExtended = true;
-        public enum AccountType { Seller, Storagekeeper, Technician, Administrator};
         public MainWindow()
         {
             InitializeComponent();
@@ -47,7 +47,7 @@ namespace ShopAccessApp
             MiddleScreenPopupGrid.Children.Add(loginForm);
         }
 
-        public void LogIn(AccountType accountType)
+        public void LogIn(UserType accountType)
         {
             SellerListViewMenu.Visibility = Visibility.Collapsed;
             StorekeeperListViewMenu.Visibility = Visibility.Collapsed;
@@ -57,19 +57,19 @@ namespace ShopAccessApp
 
             switch (accountType)
             {
-                case AccountType.Seller:
+                case UserType.Seller:
                     SellerListViewMenu.Visibility = Visibility.Visible;
                     SellerListViewMenu.SelectedValue = 0;
                     break;
-                case AccountType.Storagekeeper:
+                case UserType.WarehouseKeeper:
                     StorekeeperListViewMenu.Visibility = Visibility.Visible;
                     StorekeeperListViewMenu.SelectedValue = 0;
                     break;
-                case AccountType.Technician:
+                case UserType.Technician:
                     TechnicianListViewMenu.Visibility = Visibility.Visible;
                     TechnicianListViewMenu.SelectedValue = 0;
                     break;
-                case AccountType.Administrator:
+                case UserType.Admin:
                     AdministratorListViewMenu.Visibility = Visibility.Visible;
                     AdministratorListViewMenu.SelectedValue = 0;
                     break;

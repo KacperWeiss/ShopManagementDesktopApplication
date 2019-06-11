@@ -8,7 +8,7 @@ namespace ShopAccessApp.BackEnd.Enums
 {
     public enum UserType
     {
-        Admin = 0,
+        Admin = 1,
         Seller,
         WarehouseKeeper,
         Technician
