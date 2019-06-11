@@ -95,7 +95,7 @@ namespace ShopAccessApp.BackEnd.Logics
 
             using (var db = new StudiaProjektBazyDanychEntities())
             {
-                LocalOrder.services = db.services.SingleOrDefault(t => t.service == "Reclamation service");
+                LocalOrder.services = db.services.SingleOrDefault(t => t.service == "Reklamacja");
                 db.client_order_sets.Add(LocalOrder);
                 db.SaveChanges();
             }
