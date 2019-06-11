@@ -25,25 +25,10 @@ namespace ShopAccessApp.BackEnd.Logics
                 image_source = temporaryMotherboard.image_source,
                 description = temporaryMotherboard.description
             };
-
-            using(var db = new StudiaProjektBazyDanychEntities())
-            {
-                var DBmotherboard = db.motherboards
-                                      .SingleOrDefault(t => t.model == temporaryMotherboard.model && t.client_order_sets.Count == 0);
-                DBmotherboard.amount -= amount;
-                db.SaveChanges();
-            }
         }
 
         static public void RemoveMotherboardFromOrder()
         {
-            using (var db = new StudiaProjektBazyDanychEntities())
-            {
-                var DBmotherboard = db.motherboards
-                                      .SingleOrDefault(t => t.model == LocalOrder.motherboards.model && t.client_order_sets.Count == 0);
-                DBmotherboard.amount += LocalOrder.motherboards.amount;
-                db.SaveChanges();
-            }
             LocalOrder.motherboards = null;
         }
         #endregion
@@ -61,25 +46,10 @@ namespace ShopAccessApp.BackEnd.Logics
                 image_source = temporaryProcessor.image_source,
                 description = temporaryProcessor.description
             };
-
-            using (var db = new StudiaProjektBazyDanychEntities())
-            {
-                var DBprocessor = db.processors
-                                    .SingleOrDefault(t => t.model == temporaryProcessor.model && t.client_order_sets.Count == 0);
-                DBprocessor.amount -= amount;
-                db.SaveChanges();
-            }
         }
 
         static public void RemoveProcessorFromOrder()
         {
-            using (var db = new StudiaProjektBazyDanychEntities())
-            {
-                var DBprocessor = db.processors
-                                     .SingleOrDefault(t => t.model == LocalOrder.processors.model && t.client_order_sets.Count == 0);
-                DBprocessor.amount += LocalOrder.processors.amount;
-                db.SaveChanges();
-            }
             LocalOrder.processors = null;
         }
         #endregion
@@ -97,25 +67,10 @@ namespace ShopAccessApp.BackEnd.Logics
                 image_source = temporaryRamMemory.image_source,
                 description = temporaryRamMemory.description
             };
-
-            using (var db = new StudiaProjektBazyDanychEntities())
-            {
-                var DBRamMemory = db.ram_memories
-                                    .SingleOrDefault(t => t.model == temporaryRamMemory.model && t.client_order_sets.Count == 0);
-                DBRamMemory.amount -= amount;
-                db.SaveChanges();
-            }
         }
 
         static public void RemoveRamMemoryFromOrder()
         {
-            using (var db = new StudiaProjektBazyDanychEntities())
-            {
-                var DBRamMemory = db.ram_memories
-                                    .SingleOrDefault(t => t.model == LocalOrder.ram_memories.model && t.client_order_sets.Count == 0);
-                DBRamMemory.amount += LocalOrder.ram_memories.amount;
-                db.SaveChanges();
-            }
             LocalOrder.ram_memories = null;
         }
         #endregion
@@ -132,25 +87,10 @@ namespace ShopAccessApp.BackEnd.Logics
                 image_source = temporaryGraphicsCard.image_source,
                 description = temporaryGraphicsCard.description
             };
-
-            using (var db = new StudiaProjektBazyDanychEntities())
-            {
-                var DBGraphicsCard = db.graphics_cards
-                                    .SingleOrDefault(t => t.model == temporaryGraphicsCard.model && t.client_order_sets.Count == 0);
-                DBGraphicsCard.amount -= amount;
-                db.SaveChanges();
-            }
         }
 
         static public void RemoveGraphicsCardFromOrder()
         {
-            using (var db = new StudiaProjektBazyDanychEntities())
-            {
-                var DBGraphicsCard = db.graphics_cards
-                                    .SingleOrDefault(t => t.model == LocalOrder.graphics_cards.model && t.client_order_sets.Count == 0);
-                DBGraphicsCard.amount += LocalOrder.graphics_cards.amount;
-                db.SaveChanges();
-            }
             LocalOrder.graphics_cards = null;
         }
         #endregion
@@ -231,30 +171,55 @@ namespace ShopAccessApp.BackEnd.Logics
                 {
                     LocalOrder.cases.client_order_sets.Add(LocalOrder);
                     LocalOrder.case_amount = LocalOrder.cases.amount;
+
+                    var DBCase = db.cases
+                                        .SingleOrDefault(t => t.model == LocalOrder.cases.model && t.client_order_sets.Count == 0);
+                    DBCase.amount -= LocalOrder.case_amount;
+
                     db.cases.Add(LocalOrder.cases);
                 }
                 if (LocalOrder.graphics_cards != null)
                 {
                     LocalOrder.graphics_cards.client_order_sets.Add(LocalOrder);
                     LocalOrder.graphics_card_amount = LocalOrder.graphics_cards.amount;
+
+                    var DBGraphicsCard = db.graphics_cards
+                                        .SingleOrDefault(t => t.model == LocalOrder.graphics_cards.model && t.client_order_sets.Count == 0);
+                    DBGraphicsCard.amount -= LocalOrder.graphics_card_amount;
+
                     db.graphics_cards.Add(LocalOrder.graphics_cards);
                 }
                 if (LocalOrder.processors != null)
                 {
                     LocalOrder.processors.client_order_sets.Add(LocalOrder);
                     LocalOrder.processor_amount = LocalOrder.processors.amount;
+
+                    var DBprocessor = db.processors
+                                    .SingleOrDefault(t => t.model == LocalOrder.processors.model && t.client_order_sets.Count == 0);
+                    DBprocessor.amount -= LocalOrder.processor_amount;
+
                     db.processors.Add(LocalOrder.processors);
                 }
                 if (LocalOrder.ram_memories != null)
                 {
                     LocalOrder.ram_memories.client_order_sets.Add(LocalOrder);
                     LocalOrder.ram_memory_amount = LocalOrder.ram_memories.amount;
+
+                    var DBRamMemory = db.ram_memories
+                                    .SingleOrDefault(t => t.model == LocalOrder.ram_memories.model && t.client_order_sets.Count == 0);
+                    DBRamMemory.amount -= LocalOrder.ram_memory_amount;
+
                     db.ram_memories.Add(LocalOrder.ram_memories);
                 }
                 if (LocalOrder.motherboards != null)
                 {
                     LocalOrder.motherboards.client_order_sets.Add(LocalOrder);
                     LocalOrder.motherboard_amount = LocalOrder.motherboards.amount;
+
+                    var DBmotherboard = db.motherboards
+                                         .SingleOrDefault(t => t.model == LocalOrder.motherboards.model && t.client_order_sets.Count == 0);
+                    DBmotherboard.amount -= LocalOrder.motherboard_amount;
+
                     db.motherboards.Add(LocalOrder.motherboards);
                 }
                 if (LocalOrder.services != null)
@@ -283,23 +248,23 @@ namespace ShopAccessApp.BackEnd.Logics
             decimal totalPrice = 0m;
             if (LocalOrder.cases != null)
             {
-                totalPrice += (decimal)LocalOrder.cases.price * (decimal)LocalOrder.case_amount;
+                totalPrice += (decimal)LocalOrder.cases.price * (decimal)LocalOrder.cases.amount;
             }
             if (LocalOrder.graphics_cards != null)
             {
-                totalPrice += (decimal)LocalOrder.graphics_cards.price * (decimal)LocalOrder.graphics_card_amount;
+                totalPrice += (decimal)LocalOrder.graphics_cards.price * (decimal)LocalOrder.graphics_cards.amount;
             }
             if (LocalOrder.processors != null)
             {
-                totalPrice += (decimal)LocalOrder.processors.price * (decimal)LocalOrder.processor_amount;
+                totalPrice += (decimal)LocalOrder.processors.price * (decimal)LocalOrder.processors.amount;
             }
             if (LocalOrder.ram_memories != null)
             {
-                totalPrice += (decimal)LocalOrder.ram_memories.price * (decimal)LocalOrder.ram_memory_amount;
+                totalPrice += (decimal)LocalOrder.ram_memories.price * (decimal)LocalOrder.ram_memories.amount;
             }
             if (LocalOrder.motherboards != null)
             {
-                totalPrice += (decimal)LocalOrder.motherboards.price * (decimal)LocalOrder.motherboard_amount;
+                totalPrice += (decimal)LocalOrder.motherboards.price * (decimal)LocalOrder.motherboards.amount;
             }
             if (LocalOrder.services != null)
             {
