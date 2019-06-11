@@ -50,5 +50,15 @@ namespace ShopAccessApp.BackEnd
                 db.SaveChanges();
             }
         }
+
+        static public void DeleteById(int id)
+        {
+            using (var db = new StudiaProjektBazyDanychEntities())
+            {
+                var userToDelete = db.users.SingleOrDefault(t => t.id == id);
+                db.users.Remove(userToDelete);
+                db.SaveChanges();
+            }
+        }
     }
 }

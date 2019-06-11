@@ -26,6 +26,16 @@ namespace ShopAccessApp.BackEnd.Logics
             }
         }
 
+        static public void ChangeAccessLevel(int userId, UserType type)
+        {
+            using (var db = new StudiaProjektBazyDanychEntities())
+            {
+                var user = db.users.SingleOrDefault(t => t.id == userId);
+                user.access_level = (short)type;
+                db.SaveChanges();
+            }
+        }
+
         static public UserType RegisterAs(string login, string password, string registrationKey)
         {
             var localRegistration = RegistrationAccessor.GetByActivationCode(registrationKey);

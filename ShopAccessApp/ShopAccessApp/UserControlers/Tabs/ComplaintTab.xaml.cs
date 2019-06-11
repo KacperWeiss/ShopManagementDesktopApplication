@@ -66,11 +66,19 @@ namespace ShopAccessApp.UserControlers.Tabs
 
         private void SubmitComplaintButton_Click(object sender, RoutedEventArgs e)
         {
-            using (var db = new StudiaProjektBazyDanychEntities())
+            try
             {
-                var localOrder = db.client_order_sets.SingleOrDefault(t => t.id == clientOrderSetsList[ClientOrderSetsListView.SelectedIndex].OrderId);
-                ReclamationManagement.AddWholeOrderToReclamation(localOrder);
-                ReclamationManagement.FinalizeReclamation(localOrder.clients);
+                int selectedItemIndex = clientOrderSetsList[ClientOrderSetsListView.SelectedIndex].OrderId;
+                using (var db = new StudiaProjektBazyDanychEntities())
+                {
+                    var localOrder = db.client_order_sets.SingleOrDefault(t => t.id == selectedItemIndex);
+                    ReclamationManagement.AddWholeOrderToReclamation(localOrder);
+                    ReclamationManagement.FinalizeReclamation(localOrder.clients);
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Nie działa!");
             }
         }
     }
