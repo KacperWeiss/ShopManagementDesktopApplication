@@ -42,6 +42,7 @@ namespace ShopAccessApp.UserControlers.Tabs
                 email = EmailTextBox.Text
             };
 
+            
             ClientOrderManagement.FinalizeOrder(OrderClient, additionalInformation);
         }
 
